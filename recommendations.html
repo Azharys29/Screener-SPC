@@ -50,7 +50,7 @@
 </div>
 
 <script>
-(()=> {
+(async()=> {
 const KEY='spc_recommendations_v1';
 let recs=[];
 let market={};
@@ -81,7 +81,6 @@ function evaluate(r){
  let state='WAITING';
  let hitDate=null;
  const entryMin=Math.min(r.entryMin,r.entryMax), entryMax=Math.max(r.entryMin,r.entryMax);
- const tp1=Math.max(r.tp1,r.tp2===undefined?r.tp1:r.tp2); // overwritten below
  const targets=[{name:'TP1',v:Number(r.tp1)},{name:'TP2',v:Number(r.tp2)}].sort((a,b)=>a.v-b.v);
  const sl=Number(r.sl);
 
@@ -91,11 +90,11 @@ function evaluate(r){
 
    if(state==='WAITING' && hi>=entryMin && lo<=entryMax) state='ENTRY';
 
-   if(state==='ENTRY'){
+   if(state==='ENTRY' || state==='TP1 HIT'){
      // TP has priority over SL on the same candle.
      if(hi>=targets[1].v){state='TP2 HIT';hitDate=m.dates[i];}
-     else if(hi>=targets[0].v){state='TP1 HIT';hitDate=m.dates[i];}
-     else if(lo<=sl){state='STOP LOSS';hitDate=m.dates[i];}
+     else if(state==='ENTRY' && hi>=targets[0].v){state='TP1 HIT';hitDate=m.dates[i];}
+     else if(state==='ENTRY' && lo<=sl){state='STOP LOSS';hitDate=m.dates[i];}
    }
  }
  // If an old recommendation is already at TP2/TP1, retain that milestone.
