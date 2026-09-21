@@ -496,7 +496,13 @@ async function loadData() {
 
 async function loadCustom() {
   let repo = [];
-  try { const r = await fetch('custom-indicators.json', {cache: 'no-cache'}); if (r.ok) repo = await r.json(); } catch {}
+  try {
+    const ctl = new AbortController();
+    const timer = setTimeout(() => ctl.abort(), 3000);
+    const r = await fetch('custom-indicators.json?v=' + Date.now(), {cache: 'no-store', signal: ctl.signal});
+    clearTimeout(timer);
+    if (r.ok) repo = await r.json();
+  } catch {}
   const local = store.get('azhs.screener.custom', []);
   const map = new Map();
   repo.filter(x => x && x.id && x.code).forEach(x => map.set(x.id, {...x, local: false}));
@@ -1039,11 +1045,25 @@ function status() {
 }
 async function init() {
   DATA = await loadData();
-  await loadCustom();
   status(); buildFilterUI(); bindFilters(); bindSettings(); bindCustom(); syncFilterUI();
+
+  // Render the main screener immediately. Custom indicators are optional and
+  // must never block the core stock table.
   recompute(); render();
+
+  // Load custom indicators after the core table is visible.
+  await loadCustom();
+  recompute(); render();
+
+  window.__SCREENER_DIAG__ = {
+    mode: DATA.mode,
+    stocks: DATA.stocks.length,
+    rows: ROWS.length,
+    asof: DATA.asof || null
+  };
+
   $('#exportCsv').addEventListener('click', exportCsv);
-  $$('dialog').forEach(d => d.addEventListener('click', e => { if (e.target === d || e.target.closest('[data-close]')) d.close(); }));
+  $('dialog').forEach(d => d.addEventListener('click', e => { if (e.target === d || e.target.closest('[data-close]')) d.close(); }));
 }
 init();
 })();
