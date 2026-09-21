@@ -583,28 +583,74 @@ function analyze(s) {
 const dirOf = sc => sc >= 15 ? 1 : sc <= -15 ? -1 : 0;
 const strengthOf = sc => { const a = Math.abs(sc); return a >= 60 ? 'Sangat kuat' : a >= 35 ? 'Kuat' : a >= 15 ? 'Moderat' : 'Netral'; };
 
+function analyzeFallback(s) {
+  // Jalur kompatibilitas: tetap tampilkan saham bila browser/storage membuat
+  // perhitungan indikator utama gagal. Tidak mengubah jalur analisis normal.
+  const c = s.c, n = c.length, i = n - 1, P = DEF.p;
+  if (n < 60 || !fin(c[i]) || !fin(c[i - 1])) return null;
+
+  const period = P.rsi, start = n - period;
+  let gain = 0, loss = 0;
+  for (let j = start; j < n; j++) {
+    const d = c[j] - c[j - 1];
+    if (d > 0) gain += d; else loss -= d;
+  }
+  const rsi = loss === 0 ? 100 : 100 - 100 / (1 + (gain / period) / (loss / period));
+  const prevD = c[n - 2] - c[n - 3];
+  const rsip = loss === 0 ? 100 : 100 - 100 / (1 + ((gain - Math.max(prevD, 0)) / period) / ((loss - Math.max(-prevD, 0)) / period));
+
+  const lo = Math.min(...s.l.slice(-P.sk)), hi = Math.max(...s.h.slice(-P.sk));
+  const K = hi === lo ? 50 : (c[i] - lo) / (hi - lo) * 100;
+  const loP = Math.min(...s.l.slice(-(P.sk + 1), -1)), hiP = Math.max(...s.h.slice(-(P.sk + 1), -1));
+  const KP = hiP === loP ? 50 : (c[i - 1] - loP) / (hiP - loP) * 100;
+  const D = (K + KP + (n > 2 ? ((c[i - 2] - Math.min(...s.l.slice(-(P.sk + 2), -2))) / Math.max(Math.min(...s.h.slice(-(P.sk + 2), -2)) - Math.min(...s.l.slice(-(P.sk + 2), -2)), 1) * 100) : K)) / 3;
+
+  const ema = (arr, p) => {
+    let e = arr.slice(0, p).reduce((a, b) => a + b, 0) / p, a = 2 / (p + 1);
+    for (let j = p; j < arr.length; j++) e = a * arr[j] + (1 - a) * e;
+    return e;
+  };
+  const ef = ema(c, P.mf), es = ema(c, P.ms);
+  const hist = ef - es;
+  const prev = c.slice(0, -1);
+  const histP = ema(prev, P.mf) - ema(prev, P.ms);
+  const rvol = s.v && s.v.length >= P.vn + 1 ? s.v[i] / (s.v.slice(-P.vn - 1, -1).reduce((a,b)=>a+b,0) / P.vn) : NaN;
+  const chg = (c[i] / c[i - 1] - 1) * 100;
+  const orient = S.mode === 'rebound' ? 1 : -1;
+  const comps = [
+    {key:'rsi',label:'RSI '+P.rsi,s:clamp((50-rsi)/20*orient,-1,1),w:S.w.rsi,val:fmt.n(rsi,1),note:'jalur kompatibilitas'},
+    {key:'stoch',label:'Stochastic '+P.sk,s:clamp((50-K)/30*orient,-1,1),w:S.w.stoch,val:fmt.n(K,1)+' / '+fmt.n(D,1),note:K>=D?'%K di atas %D':'%K di bawah %D'},
+    {key:'macd',label:'MACD '+P.mf+','+P.ms+','+P.mg,s:clamp(hist>0?1:-1,-1,1),w:S.w.macd,val:fmt.sg(hist/c[i]*100,2)+'%',note:hist>histP?'histogram menguat':'histogram melemah'},
+    {key:'vol',label:'Volume',s:fin(rvol)&&rvol>=1?((chg>=0?1:-1)*clamp(rvol-1,0,1)):0,w:S.w.vol,val:fmt.n(rvol,1)+'×',note:'jalur kompatibilitas'}
+  ];
+  const use=comps.filter(x=>x.w>0), sw=use.reduce((t,x)=>t+x.w,0);
+  const score=sw?use.reduce((t,x)=>t+x.w*x.s,0)/sw*100:0;
+  const sign=score>=0?1:-1, agree=use.filter(x=>x.s*sign>=0.2).length;
+  return {price:c[i],chg,rsi,K,D,hist,histN:hist/c[i]*100,rvol,comps,custom:{},score,agree,total:use.length,xs:null,xm:null,
+    arr:{rsi:[...new Array(n-1).fill(NaN),rsi],k:[...new Array(n-1).fill(NaN),K],d:[...new Array(n-1).fill(NaN),D],macd:[...new Array(n-1).fill(NaN),hist],sig:[...new Array(n-1).fill(NaN),0],hist:[...new Array(n-1).fill(NaN),hist],ema20:[...new Array(n-1).fill(NaN),ema(c,20)],ema50:[...new Array(n-1).fill(NaN),ema(c,50)]}};
+}
+
 function recompute() {
   CUSTOM.forEach(c => c._err = null);
   const rows = [];
   const errors = [];
   DATA.stocks.forEach(s => {
     try {
-      const a = analyze(s);
+      const a = analyze(s) || analyzeFallback(s);
       if (a) rows.push({s, a});
     } catch (e) {
-      errors.push({ticker: s.t, error: e?.message || String(e)});
+      try {
+        const a = analyzeFallback(s);
+        if (a) rows.push({s, a});
+      } catch (e2) {
+        errors.push({ticker: s.t, error: e2?.message || String(e2)});
+      }
     }
   });
-  // Jika seluruh analisis gagal, reset parameter ke default yang tervalidasi dan coba sekali lagi.
+  // Pastikan parameter tersimpan tetap tervalidasi.
   if (!rows.length && DATA.stocks.length) {
     S = cleanSettings(DEF);
     try { store.set('azhs.screener.settings.v2', S); } catch {}
-    DATA.stocks.forEach(s => {
-      try {
-        const a = analyze(s);
-        if (a) rows.push({s, a});
-      } catch (e) {}
-    });
   }
   ROWS = rows;
   if (errors.length) console.warn('Beberapa saham dilewati saat analisis:', errors.slice(0, 10));
