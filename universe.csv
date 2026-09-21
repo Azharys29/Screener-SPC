@@ -1,0 +1,73 @@
+# Universe screener. Kolom: ticker,name,sector,indices (pisahkan indeks dengan |)
+# PENTING: sektor dan keanggotaan indeks di bawah adalah ESTIMASI AWAL, verifikasi dengan
+# pengumuman resmi BEI (evaluasi berkala IDX30/LQ45/KOMPAS100) sebelum dipakai untuk konten atau klien.
+# Tambah baris baru untuk saham lain; kode tanpa suffix .JK.
+ticker,name,sector,indices
+BBCA,Bank Central Asia Tbk,Financials,IDX30|LQ45|KOMPAS100
+BBRI,Bank Rakyat Indonesia (Persero) Tbk,Financials,IDX30|LQ45|KOMPAS100
+BMRI,Bank Mandiri (Persero) Tbk,Financials,IDX30|LQ45|KOMPAS100
+BBNI,Bank Negara Indonesia (Persero) Tbk,Financials,IDX30|LQ45|KOMPAS100
+BRIS,Bank Syariah Indonesia Tbk,Financials,IDX30|LQ45|KOMPAS100
+ARTO,Bank Jago Tbk,Financials,LQ45|KOMPAS100
+BBTN,Bank Tabungan Negara (Persero) Tbk,Financials,KOMPAS100
+BNGA,Bank CIMB Niaga Tbk,Financials,KOMPAS100
+ADRO,Alamtri Resources Indonesia Tbk,Energy,IDX30|LQ45|KOMPAS100
+PTBA,Bukit Asam Tbk,Energy,IDX30|LQ45|KOMPAS100
+ITMG,Indo Tambangraya Megah Tbk,Energy,LQ45|KOMPAS100
+MEDC,Medco Energi Internasional Tbk,Energy,IDX30|LQ45|KOMPAS100
+PGAS,Perusahaan Gas Negara Tbk,Energy,IDX30|LQ45|KOMPAS100
+AKRA,AKR Corporindo Tbk,Energy,LQ45|KOMPAS100
+HRUM,Harum Energy Tbk,Energy,KOMPAS100
+ANTM,Aneka Tambang Tbk,Basic Materials,IDX30|LQ45|KOMPAS100
+MDKA,Merdeka Copper Gold Tbk,Basic Materials,IDX30|LQ45|KOMPAS100
+INCO,Vale Indonesia Tbk,Basic Materials,LQ45|KOMPAS100
+INKP,Indah Kiat Pulp & Paper Tbk,Basic Materials,IDX30|LQ45|KOMPAS100
+TPIA,Chandra Asri Pacific Tbk,Basic Materials,IDX30|LQ45|KOMPAS100
+BRPT,Barito Pacific Tbk,Basic Materials,IDX30|LQ45|KOMPAS100
+SMGR,Semen Indonesia (Persero) Tbk,Basic Materials,IDX30|LQ45|KOMPAS100
+INTP,Indocement Tunggal Prakarsa Tbk,Basic Materials,LQ45|KOMPAS100
+AMMN,Amman Mineral Internasional Tbk,Basic Materials,IDX30|LQ45|KOMPAS100
+ESSA,ESSA Industries Indonesia Tbk,Basic Materials,LQ45|KOMPAS100
+MBMA,Merdeka Battery Materials Tbk,Basic Materials,KOMPAS100
+NCKL,Trimegah Bangun Persada Tbk,Basic Materials,KOMPAS100
+TINS,Timah Tbk,Basic Materials,KOMPAS100
+UNTR,United Tractors Tbk,Industrials,IDX30|LQ45|KOMPAS100
+UNVR,Unilever Indonesia Tbk,Consumer Non-Cyclicals,IDX30|LQ45|KOMPAS100
+ICBP,Indofood CBP Sukses Makmur Tbk,Consumer Non-Cyclicals,IDX30|LQ45|KOMPAS100
+INDF,Indofood Sukses Makmur Tbk,Consumer Non-Cyclicals,IDX30|LQ45|KOMPAS100
+CPIN,Charoen Pokphand Indonesia Tbk,Consumer Non-Cyclicals,IDX30|LQ45|KOMPAS100
+JPFA,Japfa Comfeed Indonesia Tbk,Consumer Non-Cyclicals,LQ45|KOMPAS100
+AMRT,Sumber Alfaria Trijaya Tbk,Consumer Non-Cyclicals,IDX30|LQ45|KOMPAS100
+MYOR,Mayora Indah Tbk,Consumer Non-Cyclicals,KOMPAS100
+GGRM,Gudang Garam Tbk,Consumer Non-Cyclicals,KOMPAS100
+HMSP,H.M. Sampoerna Tbk,Consumer Non-Cyclicals,KOMPAS100
+CMRY,Cisarua Mountain Dairy Tbk,Consumer Non-Cyclicals,KOMPAS100
+ULTJ,Ultrajaya Milk Industry Tbk,Consumer Non-Cyclicals,KOMPAS100
+ASII,Astra International Tbk,Consumer Cyclicals,IDX30|LQ45|KOMPAS100
+ACES,Aspirasi Hidup Indonesia Tbk,Consumer Cyclicals,LQ45|KOMPAS100
+MAPI,Mitra Adiperkasa Tbk,Consumer Cyclicals,LQ45|KOMPAS100
+ERAA,Erajaya Swasembada Tbk,Consumer Cyclicals,KOMPAS100
+MNCN,Media Nusantara Citra Tbk,Consumer Cyclicals,KOMPAS100
+SCMA,Surya Citra Media Tbk,Consumer Cyclicals,KOMPAS100
+KLBF,Kalbe Farma Tbk,Healthcare,IDX30|LQ45|KOMPAS100
+SIDO,Industri Jamu dan Farmasi Sido Muncul Tbk,Healthcare,LQ45|KOMPAS100
+MIKA,Mitra Keluarga Karyasehat Tbk,Healthcare,LQ45|KOMPAS100
+HEAL,Medikaloka Hermina Tbk,Healthcare,LQ45|KOMPAS100
+SILO,Siloam International Hospitals Tbk,Healthcare,KOMPAS100
+BSDE,Bumi Serpong Damai Tbk,Properties & Real Estate,LQ45|KOMPAS100
+CTRA,Ciputra Development Tbk,Properties & Real Estate,LQ45|KOMPAS100
+PWON,Pakuwon Jati Tbk,Properties & Real Estate,LQ45|KOMPAS100
+SMRA,Summarecon Agung Tbk,Properties & Real Estate,KOMPAS100
+GOTO,GoTo Gojek Tokopedia Tbk,Technology,LQ45|KOMPAS100
+BUKA,Bukalapak.com Tbk,Technology,KOMPAS100
+EMTK,Elang Mahkota Teknologi Tbk,Technology,KOMPAS100
+DCII,DCI Indonesia Tbk,Technology,KOMPAS100
+TLKM,Telkom Indonesia (Persero) Tbk,Infrastructures,IDX30|LQ45|KOMPAS100
+EXCL,XLSmart Telecom Sejahtera Tbk,Infrastructures,LQ45|KOMPAS100
+ISAT,Indosat Tbk,Infrastructures,LQ45|KOMPAS100
+TOWR,Sarana Menara Nusantara Tbk,Infrastructures,LQ45|KOMPAS100
+TBIG,Tower Bersama Infrastructure Tbk,Infrastructures,KOMPAS100
+MTEL,Dayamitra Telekomunikasi Tbk,Infrastructures,KOMPAS100
+JSMR,Jasa Marga (Persero) Tbk,Infrastructures,LQ45|KOMPAS100
+BIRD,Blue Bird Tbk,Transportation & Logistics,KOMPAS100
+ASSA,Adi Sarana Armada Tbk,Transportation & Logistics,KOMPAS100
