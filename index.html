@@ -489,11 +489,11 @@ async function loadCustom() {
   try { const r = await fetch('custom-indicators.json', {cache: 'no-cache'}); if (r.ok) repo = await r.json(); } catch {}
   const local = store.get('azhs.screener.custom', []);
   const map = new Map();
-  repo.forEach(x => map.set(x.id, {...x, local: false}));
-  local.forEach(x => map.set(x.id, {...x, local: true}));
+  repo.filter(x => x && x.id && x.code).forEach(x => map.set(x.id, {...x, local: false}));
+  local.filter(x => x && x.id && x.code).forEach(x => map.set(x.id, {...x, local: true}));
   CUSTOM = [...map.values()];
 }
-const saveCustom = () => store.set('azhs.screener.custom', CUSTOM.filter(x => x.local).map(({id, name, weight, enabled, code}) => ({id, name, weight, enabled, code})));
+const saveCustom = () => store.set('azhs.screener.custom', CUSTOM.filter(x => x && x.local).map(({id, name, weight, enabled, code}) => ({id, name, weight, enabled, code})));
 
 /* ================= analisis ================= */
 function lastCross(diff, W) {
@@ -557,7 +557,7 @@ function analyze(s) {
 
   // Kustom
   const custom = {};
-  CUSTOM.filter(x => x.enabled).forEach(ci => {
+  CUSTOM.filter(x => x && x.enabled).forEach(ci => {
     const r = runCustom(ci, s);
     if (r) { custom[ci.id] = r; comps.push({key: 'c:' + ci.id, label: ci.name, s: r.s, w: ci.weight, val: typeof r.value === 'number' ? fmt.n(r.value, 2) : String(r.value ?? '–'), note: r.note, custom: true}); }
   });
@@ -648,7 +648,7 @@ function headHtml() {
   const cols = [
     ['ticker', 'Saham', 'l first'], ['sector', 'Sektor', 'l'], ['price', 'Harga (Rp)'], ['mcap', 'Mkt cap'], ['beta', 'Beta'],
     ['rsi', 'RSI'], ['stoch', 'Stochastic'], ['macd', 'MACD'], ['rvol', 'Volume'],
-    ...CUSTOM.filter(c => c.enabled).map(c => ['c:' + c.id, c.name]),
+    ...CUSTOM.filter(c => c && c.enabled).map(c => ['c:' + c.id, c.name]),
     ['strength', 'Kekuatan sinyal', 'l'],
   ];
   return cols.map(([k, t, cl]) => {
@@ -658,7 +658,7 @@ function headHtml() {
 }
 
 function rowHtml(r) {
-  const {s, a} = r, cu = CUSTOM.filter(c => c.enabled);
+  const {s, a} = r, cu = CUSTOM.filter(c => c && c.enabled);
   const cc = a.chg > 0 ? 'up' : a.chg < 0 ? 'dn' : '';
   const arrow = v => v > 0 ? '▲' : v < 0 ? '▼' : '◆';
   const d = dirOf(a.score), sc = a.score;
@@ -795,8 +795,8 @@ function openDetail(t) {
   const {s, a} = r, N = 120, cut = arr => arr.slice(-N);
   const d = dirOf(a.score), n = s.c.length;
   const cc = a.chg > 0 ? 'up' : a.chg < 0 ? 'dn' : '';
-  const ov = []; CUSTOM.filter(c => c.enabled).forEach(c => { const x = a.custom[c.id]; if (x && x.series && x.overlay) Object.entries(x.series).forEach(([k, v], j) => ov.push({data: cut(v), color: j % 2 ? 'var(--cream)' : 'var(--ice)', w: 1.2, dash: j ? '4 3' : '', name: c.name + ' ' + k})); });
-  const sep = CUSTOM.filter(c => c.enabled).flatMap(c => { const x = a.custom[c.id]; return x && x.series && !x.overlay ? [{c, x}] : []; });
+  const ov = []; CUSTOM.filter(c => c && c.enabled).forEach(c => { const x = a.custom[c.id]; if (x && x.series && x.overlay) Object.entries(x.series).forEach(([k, v], j) => ov.push({data: cut(v), color: j % 2 ? 'var(--cream)' : 'var(--ice)', w: 1.2, dash: j ? '4 3' : '', name: c.name + ' ' + k})); });
+  const sep = CUSTOM.filter(c => c && c.enabled).flatMap(c => { const x = a.custom[c.id]; return x && x.series && !x.overlay ? [{c, x}] : []; });
   const brk = a.comps.map(x => {
     const contrib = x.s * x.w;
     const sw = a.comps.filter(k => k.w > 0 && fin(k.s)).reduce((t, k) => t + k.w, 0);
@@ -951,7 +951,7 @@ function download(name, text, type) {
   const a = Object.assign(document.createElement('a'), {href: url, download: name}); document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
 }
 function exportCsv() {
-  const rows = ROWS.filter(passes).sort(sorter), cu = CUSTOM.filter(c => c.enabled);
+  const rows = ROWS.filter(passes).sort(sorter), cu = CUSTOM.filter(c => c && c.enabled);
   const head = ['Kode', 'Nama', 'Sektor', 'Indeks', 'Harga', 'Ubah 1D %', 'Market cap (Rp)', 'Beta', 'RSI', 'Stoch K', 'Stoch D', 'MACD hist % harga', 'RVOL', ...cu.map(c => c.name), 'Skor', 'Arah', 'Kekuatan', 'Konfluensi'];
   const q = v => `"${String(v ?? '').replace(/"/g, '""')}"`;
   const lines = rows.map(({s, a}) => [s.t, s.n, s.sec, s.ix.join('|'), a.price, a.chg.toFixed(2), Math.round(s.mc), s.b, a.rsi.toFixed(1), a.K.toFixed(1), a.D.toFixed(1), a.histN.toFixed(3), fin(a.rvol) ? a.rvol.toFixed(2) : '', ...cu.map(c => a.custom[c.id] ? (a.custom[c.id].value ?? '') : ''), a.score.toFixed(0), dirOf(a.score) > 0 ? 'Bullish' : dirOf(a.score) < 0 ? 'Bearish' : 'Netral', strengthOf(a.score), `${a.agree}/${a.total}`].map(q).join(','));
