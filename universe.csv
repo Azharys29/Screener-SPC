@@ -1,73 +1,958 @@
-# Universe screener. Kolom: ticker,name,sector,indices (pisahkan indeks dengan |)
-# PENTING: sektor dan keanggotaan indeks di bawah adalah ESTIMASI AWAL, verifikasi dengan
-# pengumuman resmi BEI (evaluasi berkala IDX30/LQ45/KOMPAS100) sebelum dipakai untuk konten atau klien.
-# Tambah baris baru untuk saham lain; kode tanpa suffix .JK.
-ticker,name,sector,indices
-BBCA,Bank Central Asia Tbk,Financials,IDX30|LQ45|KOMPAS100
-BBRI,Bank Rakyat Indonesia (Persero) Tbk,Financials,IDX30|LQ45|KOMPAS100
-BMRI,Bank Mandiri (Persero) Tbk,Financials,IDX30|LQ45|KOMPAS100
-BBNI,Bank Negara Indonesia (Persero) Tbk,Financials,IDX30|LQ45|KOMPAS100
-BRIS,Bank Syariah Indonesia Tbk,Financials,IDX30|LQ45|KOMPAS100
-ARTO,Bank Jago Tbk,Financials,LQ45|KOMPAS100
-BBTN,Bank Tabungan Negara (Persero) Tbk,Financials,KOMPAS100
-BNGA,Bank CIMB Niaga Tbk,Financials,KOMPAS100
-ADRO,Alamtri Resources Indonesia Tbk,Energy,IDX30|LQ45|KOMPAS100
-PTBA,Bukit Asam Tbk,Energy,IDX30|LQ45|KOMPAS100
-ITMG,Indo Tambangraya Megah Tbk,Energy,LQ45|KOMPAS100
-MEDC,Medco Energi Internasional Tbk,Energy,IDX30|LQ45|KOMPAS100
-PGAS,Perusahaan Gas Negara Tbk,Energy,IDX30|LQ45|KOMPAS100
-AKRA,AKR Corporindo Tbk,Energy,LQ45|KOMPAS100
-HRUM,Harum Energy Tbk,Energy,KOMPAS100
-ANTM,Aneka Tambang Tbk,Basic Materials,IDX30|LQ45|KOMPAS100
-MDKA,Merdeka Copper Gold Tbk,Basic Materials,IDX30|LQ45|KOMPAS100
-INCO,Vale Indonesia Tbk,Basic Materials,LQ45|KOMPAS100
-INKP,Indah Kiat Pulp & Paper Tbk,Basic Materials,IDX30|LQ45|KOMPAS100
-TPIA,Chandra Asri Pacific Tbk,Basic Materials,IDX30|LQ45|KOMPAS100
-BRPT,Barito Pacific Tbk,Basic Materials,IDX30|LQ45|KOMPAS100
-SMGR,Semen Indonesia (Persero) Tbk,Basic Materials,IDX30|LQ45|KOMPAS100
-INTP,Indocement Tunggal Prakarsa Tbk,Basic Materials,LQ45|KOMPAS100
-AMMN,Amman Mineral Internasional Tbk,Basic Materials,IDX30|LQ45|KOMPAS100
-ESSA,ESSA Industries Indonesia Tbk,Basic Materials,LQ45|KOMPAS100
-MBMA,Merdeka Battery Materials Tbk,Basic Materials,KOMPAS100
-NCKL,Trimegah Bangun Persada Tbk,Basic Materials,KOMPAS100
-TINS,Timah Tbk,Basic Materials,KOMPAS100
-UNTR,United Tractors Tbk,Industrials,IDX30|LQ45|KOMPAS100
-UNVR,Unilever Indonesia Tbk,Consumer Non-Cyclicals,IDX30|LQ45|KOMPAS100
-ICBP,Indofood CBP Sukses Makmur Tbk,Consumer Non-Cyclicals,IDX30|LQ45|KOMPAS100
-INDF,Indofood Sukses Makmur Tbk,Consumer Non-Cyclicals,IDX30|LQ45|KOMPAS100
-CPIN,Charoen Pokphand Indonesia Tbk,Consumer Non-Cyclicals,IDX30|LQ45|KOMPAS100
-JPFA,Japfa Comfeed Indonesia Tbk,Consumer Non-Cyclicals,LQ45|KOMPAS100
-AMRT,Sumber Alfaria Trijaya Tbk,Consumer Non-Cyclicals,IDX30|LQ45|KOMPAS100
-MYOR,Mayora Indah Tbk,Consumer Non-Cyclicals,KOMPAS100
-GGRM,Gudang Garam Tbk,Consumer Non-Cyclicals,KOMPAS100
-HMSP,H.M. Sampoerna Tbk,Consumer Non-Cyclicals,KOMPAS100
-CMRY,Cisarua Mountain Dairy Tbk,Consumer Non-Cyclicals,KOMPAS100
-ULTJ,Ultrajaya Milk Industry Tbk,Consumer Non-Cyclicals,KOMPAS100
-ASII,Astra International Tbk,Consumer Cyclicals,IDX30|LQ45|KOMPAS100
-ACES,Aspirasi Hidup Indonesia Tbk,Consumer Cyclicals,LQ45|KOMPAS100
-MAPI,Mitra Adiperkasa Tbk,Consumer Cyclicals,LQ45|KOMPAS100
-ERAA,Erajaya Swasembada Tbk,Consumer Cyclicals,KOMPAS100
-MNCN,Media Nusantara Citra Tbk,Consumer Cyclicals,KOMPAS100
-SCMA,Surya Citra Media Tbk,Consumer Cyclicals,KOMPAS100
-KLBF,Kalbe Farma Tbk,Healthcare,IDX30|LQ45|KOMPAS100
-SIDO,Industri Jamu dan Farmasi Sido Muncul Tbk,Healthcare,LQ45|KOMPAS100
-MIKA,Mitra Keluarga Karyasehat Tbk,Healthcare,LQ45|KOMPAS100
-HEAL,Medikaloka Hermina Tbk,Healthcare,LQ45|KOMPAS100
-SILO,Siloam International Hospitals Tbk,Healthcare,KOMPAS100
-BSDE,Bumi Serpong Damai Tbk,Properties & Real Estate,LQ45|KOMPAS100
-CTRA,Ciputra Development Tbk,Properties & Real Estate,LQ45|KOMPAS100
-PWON,Pakuwon Jati Tbk,Properties & Real Estate,LQ45|KOMPAS100
-SMRA,Summarecon Agung Tbk,Properties & Real Estate,KOMPAS100
-GOTO,GoTo Gojek Tokopedia Tbk,Technology,LQ45|KOMPAS100
-BUKA,Bukalapak.com Tbk,Technology,KOMPAS100
-EMTK,Elang Mahkota Teknologi Tbk,Technology,KOMPAS100
-DCII,DCI Indonesia Tbk,Technology,KOMPAS100
-TLKM,Telkom Indonesia (Persero) Tbk,Infrastructures,IDX30|LQ45|KOMPAS100
-EXCL,XLSmart Telecom Sejahtera Tbk,Infrastructures,LQ45|KOMPAS100
-ISAT,Indosat Tbk,Infrastructures,LQ45|KOMPAS100
-TOWR,Sarana Menara Nusantara Tbk,Infrastructures,LQ45|KOMPAS100
-TBIG,Tower Bersama Infrastructure Tbk,Infrastructures,KOMPAS100
-MTEL,Dayamitra Telekomunikasi Tbk,Infrastructures,KOMPAS100
-JSMR,Jasa Marga (Persero) Tbk,Infrastructures,LQ45|KOMPAS100
-BIRD,Blue Bird Tbk,Transportation & Logistics,KOMPAS100
-ASSA,Adi Sarana Armada Tbk,Transportation & Logistics,KOMPAS100
+# Universe seluruh saham IDX. Papan dan metadata emiten berasal dari daftar saham IDX yang digunakan sebagai seed; verifikasi berkala dengan data resmi BEI.
+# Kolom: ticker,name,sector,indices,board
+AALI,Astra Agro Lestari Tbk.,AALI;AALI.JK;Astra Agro Lestari Tbk.;Astra Agro Lestari,Indonesia,,,,Utama
+ABBA,Mahaka Media Tbk.,ABBA;ABBA.JK;Mahaka Media Tbk.;Mahaka Media,Indonesia,,,,Pemantauan Khusus
+ABDA,Asuransi Bina Dana Arta Tbk.,ABDA;ABDA.JK;Asuransi Bina Dana Arta Tbk.;Asuransi Bina Dana Arta,Indonesia,,,,Pengembangan
+ABMM,ABM Investama Tbk.,ABMM;ABMM.JK;ABM Investama Tbk.;ABM Investama,Indonesia,,,,Utama
+ACES,Aspirasi Hidup Indonesia Tbk.,ACES;ACES.JK;Aspirasi Hidup Indonesia Tbk.;Aspirasi Hidup Indonesia,Indonesia,,Consumer Cyclicals,LQ45|KOMPAS100,Utama
+ACST,Acset Indonusa Tbk.,ACST;ACST.JK;Acset Indonusa Tbk.;Acset Indonusa,Indonesia,,,,Pemantauan Khusus
+ADES,Akasha Wira International Tbk.,ADES;ADES.JK;Akasha Wira International Tbk.;Akasha Wira International,Indonesia,,,,Utama
+ADHI,Adhi Karya (Persero) Tbk.,ADHI;ADHI.JK;Adhi Karya (Persero) Tbk.;Adhi Karya (),Indonesia,,,,Utama
+AISA,FKS Food Sejahtera Tbk.,AISA;AISA.JK;FKS Food Sejahtera Tbk.;FKS Food Sejahtera,Indonesia,,,,Utama
+AKKU,Anugerah Kagum Karya Utama Tbk,AKKU;AKKU.JK;Anugerah Kagum Karya Utama Tbk;Anugerah Kagum Karya Utama,Indonesia,,,,Pemantauan Khusus
+AKPI,Argha Karya Prima Industry Tbk,AKPI;AKPI.JK;Argha Karya Prima Industry Tbk;Argha Karya Prima Industry,Indonesia,,,,Pengembangan
+AKRA,AKR Corporindo Tbk.,AKRA;AKRA.JK;AKR Corporindo Tbk.;AKR Corporindo,Indonesia,,Energy,LQ45|KOMPAS100,Utama
+AKSI,Mineral Sumberdaya Mandiri Tbk,AKSI;AKSI.JK;Mineral Sumberdaya Mandiri Tbk;Mineral Sumberdaya Mandiri,Indonesia,,,,Pengembangan
+ALDO,Alkindo Naratama Tbk.,ALDO;ALDO.JK;Alkindo Naratama Tbk.;Alkindo Naratama,Indonesia,,,,Utama
+ALKA,Alakasa Industrindo Tbk,ALKA;ALKA.JK;Alakasa Industrindo Tbk;Alakasa Industrindo,Indonesia,,,,Pengembangan
+ALMI,Alumindo Light Metal Industry,ALMI;ALMI.JK;Alumindo Light Metal Industry,Indonesia,,,,Pemantauan Khusus
+ALTO,Tri Banyan Tirta Tbk.,ALTO;ALTO.JK;Tri Banyan Tirta Tbk.;Tri Banyan Tirta,Indonesia,,,,Pemantauan Khusus
+AMAG,Asuransi Multi Artha Guna Tbk.,AMAG;AMAG.JK;Asuransi Multi Artha Guna Tbk.;Asuransi Multi Artha Guna,Indonesia,,,,Utama
+AMFG,Asahimas Flat Glass Tbk.,AMFG;AMFG.JK;Asahimas Flat Glass Tbk.;Asahimas Flat Glass,Indonesia,,,,Pengembangan
+AMIN,Ateliers Mecaniques D Indonesi,AMIN;AMIN.JK;Ateliers Mecaniques D Indonesi,Indonesia,,,,Pengembangan
+AMRT,Sumber Alfaria Trijaya Tbk.,AMRT;AMRT.JK;Sumber Alfaria Trijaya Tbk.;Sumber Alfaria Trijaya,Indonesia,,Consumer Non-Cyclicals,IDX30|LQ45|KOMPAS100,Utama
+ANJT,Austindo Nusantara Jaya Tbk.,ANJT;ANJT.JK;Austindo Nusantara Jaya Tbk.;Austindo Nusantara Jaya,Indonesia,,,,Pengembangan
+ANTM,Aneka Tambang Tbk.,ANTM;ANTM.JK;Aneka Tambang Tbk.;Aneka Tambang,Indonesia,,Basic Materials,IDX30|LQ45|KOMPAS100,Utama
+APEX,Apexindo Pratama Duta Tbk.,APEX;APEX.JK;Apexindo Pratama Duta Tbk.;Apexindo Pratama Duta,Indonesia,,,,Pengembangan
+APIC,Pacific Strategic Financial Tb,APIC;APIC.JK;Pacific Strategic Financial Tb,Indonesia,,,,Pengembangan
+APII,Arita Prima Indonesia Tbk.,APII;APII.JK;Arita Prima Indonesia Tbk.;Arita Prima Indonesia,Indonesia,,,,Pengembangan
+APLI,Asiaplast Industries Tbk.,APLI;APLI.JK;Asiaplast Industries Tbk.;Asiaplast Industries,Indonesia,,,,Pengembangan
+APLN,Agung Podomoro Land Tbk.,APLN;APLN.JK;Agung Podomoro Land Tbk.;Agung Podomoro Land,Indonesia,,,,Utama
+ARGO,Argo Pantes Tbk,ARGO;ARGO.JK;Argo Pantes Tbk;Argo Pantes,Indonesia,,,,Pengembangan
+ARII,Atlas Resources Tbk.,ARII;ARII.JK;Atlas Resources Tbk.;Atlas Resources,Indonesia,,,,Pengembangan
+ARNA,Arwana Citramulia Tbk.,ARNA;ARNA.JK;Arwana Citramulia Tbk.;Arwana Citramulia,Indonesia,,,,Utama
+ARTA,Arthavest Tbk,ARTA;ARTA.JK;Arthavest Tbk;Arthavest,Indonesia,,,,Pengembangan
+ARTI,Ratu Prabu Energi Tbk,ARTI;ARTI.JK;Ratu Prabu Energi Tbk;Ratu Prabu Energi,Indonesia,,,,Pemantauan Khusus
+ARTO,Bank Jago Tbk.,ARTO;ARTO.JK;Bank Jago Tbk.;Bank Jago,Indonesia,,Financials,LQ45|KOMPAS100,Utama
+ASBI,Asuransi Bintang Tbk.,ASBI;ASBI.JK;Asuransi Bintang Tbk.;Asuransi Bintang,Indonesia,,,,Pengembangan
+ASDM,Asuransi Dayin Mitra Tbk.,ASDM;ASDM.JK;Asuransi Dayin Mitra Tbk.;Asuransi Dayin Mitra,Indonesia,,,,Pengembangan
+ASGR,Astra Graphia Tbk.,ASGR;ASGR.JK;Astra Graphia Tbk.;Astra Graphia,Indonesia,,,,Utama
+ASII,Astra International Tbk.,ASII;ASII.JK;Astra International Tbk.;Astra International,Indonesia,,Consumer Cyclicals,IDX30|LQ45|KOMPAS100,Utama
+ASJT,Asuransi Jasa Tania Tbk.,ASJT;ASJT.JK;Asuransi Jasa Tania Tbk.;Asuransi Jasa Tania,Indonesia,,,,Pengembangan
+ASMI,Asuransi Maximus Graha Persada,ASMI;ASMI.JK;Asuransi Maximus Graha Persada,Indonesia,,,,Pemantauan Khusus
+ASRI,Alam Sutera Realty Tbk.,ASRI;ASRI.JK;Alam Sutera Realty Tbk.;Alam Sutera Realty,Indonesia,,,,Utama
+ASRM,Asuransi Ramayana Tbk.,ASRM;ASRM.JK;Asuransi Ramayana Tbk.;Asuransi Ramayana,Indonesia,,,,Pengembangan
+ASSA,Adi Sarana Armada Tbk.,ASSA;ASSA.JK;Adi Sarana Armada Tbk.;Adi Sarana Armada,Indonesia,,Transportation & Logistics,KOMPAS100,Utama
+ATIC,Anabatic Technologies Tbk.,ATIC;ATIC.JK;Anabatic Technologies Tbk.;Anabatic Technologies,Indonesia,,,,Pengembangan
+AUTO,Astra Otoparts Tbk.,AUTO;AUTO.JK;Astra Otoparts Tbk.;Astra Otoparts,Indonesia,,,,Utama
+BABP,Bank MNC Internasional Tbk.,BABP;BABP.JK;Bank MNC Internasional Tbk.;Bank MNC Internasional,Indonesia,,,,Pengembangan
+BACA,Bank Capital Indonesia Tbk.,BACA;BACA.JK;Bank Capital Indonesia Tbk.;Bank Capital Indonesia,Indonesia,,,,Utama
+BAJA,Saranacentral Bajatama Tbk.,BAJA;BAJA.JK;Saranacentral Bajatama Tbk.;Saranacentral Bajatama,Indonesia,,,,Pengembangan
+BALI,Bali Towerindo Sentra Tbk.,BALI;BALI.JK;Bali Towerindo Sentra Tbk.;Bali Towerindo Sentra,Indonesia,,,,Utama
+BAPA,Bekasi Asri Pemula Tbk.,BAPA;BAPA.JK;Bekasi Asri Pemula Tbk.;Bekasi Asri Pemula,Indonesia,,,,Pengembangan
+BATA,Sepatu Bata Tbk.,BATA;BATA.JK;Sepatu Bata Tbk.;Sepatu Bata,Indonesia,,,,Pemantauan Khusus
+BAYU,Bayu Buana Tbk,BAYU;BAYU.JK;Bayu Buana Tbk;Bayu Buana,Indonesia,,,,Utama
+BBCA,Bank Central Asia Tbk.,BBCA;BBCA.JK;Bank Central Asia Tbk.;Bank Central Asia,Indonesia,,Financials,IDX30|LQ45|KOMPAS100,Utama
+BBHI,Allo Bank Indonesia Tbk.,BBHI;BBHI.JK;Allo Bank Indonesia Tbk.;Allo Bank Indonesia,Indonesia,,,,Utama
+BBKP,Bank KB Indonesia Tbk.,BBKP;BBKP.JK;Bank KB Indonesia Tbk.;Bank KB Indonesia,Indonesia,,,,Pengembangan
+BBLD,Buana Finance Tbk.,BBLD;BBLD.JK;Buana Finance Tbk.;Buana Finance,Indonesia,,,,Pengembangan
+BBMD,Bank Mestika Dharma Tbk.,BBMD;BBMD.JK;Bank Mestika Dharma Tbk.;Bank Mestika Dharma,Indonesia,,,,Utama
+BBNI,Bank Negara Indonesia (Persero,BBNI;BBNI.JK;Bank Negara Indonesia (Persero;Bank Negara Indonesia (,Indonesia,,Financials,IDX30|LQ45|KOMPAS100,Utama
+BBRI,Bank Rakyat Indonesia (Persero,BBRI;BBRI.JK;Bank Rakyat Indonesia (Persero;Bank Rakyat Indonesia (,Indonesia,,Financials,IDX30|LQ45|KOMPAS100,Utama
+BBRM,Pelayaran Nasional Bina Buana,BBRM;BBRM.JK;Pelayaran Nasional Bina Buana,Indonesia,,,,Pengembangan
+BBTN,Bank Tabungan Negara (Persero),BBTN;BBTN.JK;Bank Tabungan Negara (Persero);Bank Tabungan Negara (),Indonesia,,Financials,KOMPAS100,Utama
+BBYB,Bank Neo Commerce Tbk.,BBYB;BBYB.JK;Bank Neo Commerce Tbk.;Bank Neo Commerce,Indonesia,,,,Utama
+BCAP,MNC Kapital Indonesia Tbk.,BCAP;BCAP.JK;MNC Kapital Indonesia Tbk.;MNC Kapital Indonesia,Indonesia,,,,Utama
+BCIC,Bank JTrust Indonesia Tbk.,BCIC;BCIC.JK;Bank JTrust Indonesia Tbk.;Bank JTrust Indonesia,Indonesia,,,,Pengembangan
+BCIP,Bumi Citra Permai Tbk.,BCIP;BCIP.JK;Bumi Citra Permai Tbk.;Bumi Citra Permai,Indonesia,,,,Pengembangan
+BDMN,Bank Danamon Indonesia Tbk.,BDMN;BDMN.JK;Bank Danamon Indonesia Tbk.;Bank Danamon Indonesia,Indonesia,,,,Utama
+BEKS,Bank Pembangunan Daerah Banten,BEKS;BEKS.JK;Bank Pembangunan Daerah Banten,Indonesia,,,,Pemantauan Khusus
+BEST,Bekasi Fajar Industrial Estate,BEST;BEST.JK;Bekasi Fajar Industrial Estate,Indonesia,,,,Utama
+BFIN,BFI Finance Indonesia Tbk.,BFIN;BFIN.JK;BFI Finance Indonesia Tbk.;BFI Finance Indonesia,Indonesia,,,,Utama
+BGTG,Bank Ganesha Tbk.,BGTG;BGTG.JK;Bank Ganesha Tbk.;Bank Ganesha,Indonesia,,,,Utama
+BHIT,MNC Asia Holding Tbk.,BHIT;BHIT.JK;MNC Asia Holding Tbk.;MNC Asia Holding,Indonesia,,,,Pemantauan Khusus
+BIKA,Binakarya Jaya Abadi Tbk.,BIKA;BIKA.JK;Binakarya Jaya Abadi Tbk.;Binakarya Jaya Abadi,Indonesia,,,,Pemantauan Khusus
+BIMA,Primarindo Asia Infrastructure,BIMA;BIMA.JK;Primarindo Asia Infrastructure,Indonesia,,,,Pemantauan Khusus
+BINA,Bank Ina Perdana Tbk.,BINA;BINA.JK;Bank Ina Perdana Tbk.;Bank Ina Perdana,Indonesia,,,,Utama
+BIPI,Astrindo Nusantara Infrastrukt,BIPI;BIPI.JK;Astrindo Nusantara Infrastrukt,Indonesia,,,,Pengembangan
+BIPP,Bhuwanatala Indah Permai Tbk.,BIPP;BIPP.JK;Bhuwanatala Indah Permai Tbk.;Bhuwanatala Indah Permai,Indonesia,,,,Pengembangan
+BIRD,Blue Bird Tbk.,BIRD;BIRD.JK;Blue Bird Tbk.;Blue Bird,Indonesia,,Transportation & Logistics,KOMPAS100,Utama
+BISI,BISI International Tbk.,BISI;BISI.JK;BISI International Tbk.;BISI International,Indonesia,,,,Utama
+BJBR,Bank Pembangunan Daerah Jawa B,BJBR;BJBR.JK;Bank Pembangunan Daerah Jawa B,Indonesia,,,,Utama
+BJTM,Bank Pembangunan Daerah Jawa T,BJTM;BJTM.JK;Bank Pembangunan Daerah Jawa T,Indonesia,,,,Utama
+BKDP,Bukit Darmo Property Tbk,BKDP;BKDP.JK;Bukit Darmo Property Tbk;Bukit Darmo Property,Indonesia,,,,Pengembangan
+BKSL,Sentul City Tbk.,BKSL;BKSL.JK;Sentul City Tbk.;Sentul City,Indonesia,,,,Utama
+BKSW,Bank QNB Indonesia Tbk.,BKSW;BKSW.JK;Bank QNB Indonesia Tbk.;Bank QNB Indonesia,Indonesia,,,,Pengembangan
+BLTA,Berlian Laju Tanker Tbk,BLTA;BLTA.JK;Berlian Laju Tanker Tbk;Berlian Laju Tanker,Indonesia,,,,Pemantauan Khusus
+BLTZ,Graha Layar Prima Tbk.,BLTZ;BLTZ.JK;Graha Layar Prima Tbk.;Graha Layar Prima,Indonesia,,,,Pemantauan Khusus
+BMAS,Bank Maspion Indonesia Tbk.,BMAS;BMAS.JK;Bank Maspion Indonesia Tbk.;Bank Maspion Indonesia,Indonesia,,,,Pengembangan
+BMRI,Bank Mandiri (Persero) Tbk.,BMRI;BMRI.JK;Bank Mandiri (Persero) Tbk.;Bank Mandiri (),Indonesia,,Financials,IDX30|LQ45|KOMPAS100,Utama
+BMSR,Bintang Mitra Semestaraya Tbk,BMSR;BMSR.JK;Bintang Mitra Semestaraya Tbk;Bintang Mitra Semestaraya,Indonesia,,,,Pengembangan
+BMTR,Global Mediacom Tbk.,BMTR;BMTR.JK;Global Mediacom Tbk.;Global Mediacom,Indonesia,,,,Utama
+BNBA,Bank Bumi Arta Tbk.,BNBA;BNBA.JK;Bank Bumi Arta Tbk.;Bank Bumi Arta,Indonesia,,,,Pengembangan
+BNBR,Bakrie & Brothers Tbk,BNBR;BNBR.JK;Bakrie & Brothers Tbk;Bakrie & Brothers,Indonesia,,,,Pengembangan
+BNGA,Bank CIMB Niaga Tbk.,BNGA;BNGA.JK;Bank CIMB Niaga Tbk.;Bank CIMB Niaga,Indonesia,,Financials,KOMPAS100,Utama
+BNII,Bank Maybank Indonesia Tbk.,BNII;BNII.JK;Bank Maybank Indonesia Tbk.;Bank Maybank Indonesia,Indonesia,,,,Utama
+BNLI,Bank Permata Tbk.,BNLI;BNLI.JK;Bank Permata Tbk.;Bank Permata,Indonesia,,,,Utama
+BOLT,Garuda Metalindo Tbk.,BOLT;BOLT.JK;Garuda Metalindo Tbk.;Garuda Metalindo,Indonesia,,,,Pengembangan
+BPFI,Woori Finance Indonesia Tbk.,BPFI;BPFI.JK;Woori Finance Indonesia Tbk.;Woori Finance Indonesia,Indonesia,,,,Pengembangan
+BPII,Batavia Prosperindo Internasio,BPII;BPII.JK;Batavia Prosperindo Internasio,Indonesia,,,,Pengembangan
+BRAM,Indo Kordsa Tbk.,BRAM;BRAM.JK;Indo Kordsa Tbk.;Indo Kordsa,Indonesia,,,,Pengembangan
+BRMS,Bumi Resources Minerals Tbk.,BRMS;BRMS.JK;Bumi Resources Minerals Tbk.;Bumi Resources Minerals,Indonesia,,,,Utama
+BRNA,Berlina Tbk.,BRNA;BRNA.JK;Berlina Tbk.;Berlina,Indonesia,,,,Pengembangan
+BRPT,Barito Pacific Tbk.,BRPT;BRPT.JK;Barito Pacific Tbk.;Barito Pacific,Indonesia,,Basic Materials,IDX30|LQ45|KOMPAS100,Utama
+BSDE,Bumi Serpong Damai Tbk.,BSDE;BSDE.JK;Bumi Serpong Damai Tbk.;Bumi Serpong Damai,Indonesia,,Properties & Real Estate,LQ45|KOMPAS100,Utama
+BSIM,Bank Sinarmas Tbk.,BSIM;BSIM.JK;Bank Sinarmas Tbk.;Bank Sinarmas,Indonesia,,,,Utama
+BSSR,Baramulti Suksessarana Tbk.,BSSR;BSSR.JK;Baramulti Suksessarana Tbk.;Baramulti Suksessarana,Indonesia,,,,Utama
+BSWD,Bank Of India Indonesia Tbk.,BSWD;BSWD.JK;Bank Of India Indonesia Tbk.;Bank Of India Indonesia,Indonesia,,,,Pemantauan Khusus
+BTEK,Bumi Teknokultura Unggul Tbk,BTEK;BTEK.JK;Bumi Teknokultura Unggul Tbk;Bumi Teknokultura Unggul,Indonesia,,,,Pemantauan Khusus
+BTEL,Bakrie Telecom Tbk.,BTEL;BTEL.JK;Bakrie Telecom Tbk.;Bakrie Telecom,Indonesia,,,,Pemantauan Khusus
+BTON,Betonjaya Manunggal Tbk.,BTON;BTON.JK;Betonjaya Manunggal Tbk.;Betonjaya Manunggal,Indonesia,,,,Pengembangan
+BTPN,Bank SMBC Indonesia Tbk.,BTPN;BTPN.JK;Bank SMBC Indonesia Tbk.;Bank SMBC Indonesia,Indonesia,,,,Utama
+BUDI,Budi Starch & Sweetener Tbk.,BUDI;BUDI.JK;Budi Starch & Sweetener Tbk.;Budi Starch & Sweetener,Indonesia,,,,Utama
+BUKK,Bukaka Teknik Utama Tbk.,BUKK;BUKK.JK;Bukaka Teknik Utama Tbk.;Bukaka Teknik Utama,Indonesia,,,,Pengembangan
+BULL,Buana Lintas Lautan Tbk.,BULL;BULL.JK;Buana Lintas Lautan Tbk.;Buana Lintas Lautan,Indonesia,,,,Pengembangan
+BUMI,Bumi Resources Tbk.,BUMI;BUMI.JK;Bumi Resources Tbk.;Bumi Resources,Indonesia,,,,Utama
+BUVA,Bukit Uluwatu Villa Tbk.,BUVA;BUVA.JK;Bukit Uluwatu Villa Tbk.;Bukit Uluwatu Villa,Indonesia,,,,Pengembangan
+BVIC,Bank Victoria International Tb,BVIC;BVIC.JK;Bank Victoria International Tb,Indonesia,,,,Utama
+BWPT,Eagle High Plantations Tbk.,BWPT;BWPT.JK;Eagle High Plantations Tbk.;Eagle High Plantations,Indonesia,,,,Utama
+BYAN,Bayan Resources Tbk.,BYAN;BYAN.JK;Bayan Resources Tbk.;Bayan Resources,Indonesia,,,,Utama
+CANI,Capitol Nusantara Indonesia Tb,CANI;CANI.JK;Capitol Nusantara Indonesia Tb,Indonesia,,,,Pemantauan Khusus
+CASS,Cahaya Aero Services Tbk.,CASS;CASS.JK;Cahaya Aero Services Tbk.;Cahaya Aero Services,Indonesia,,,,Utama
+CEKA,Wilmar Cahaya Indonesia Tbk.,CEKA;CEKA.JK;Wilmar Cahaya Indonesia Tbk.;Wilmar Cahaya Indonesia,Indonesia,,,,Pengembangan
+CENT,Centratama Telekomunikasi Indo,CENT;CENT.JK;Centratama Telekomunikasi Indo,Indonesia,,,,Pengembangan
+CFIN,Clipan Finance Indonesia Tbk.,CFIN;CFIN.JK;Clipan Finance Indonesia Tbk.;Clipan Finance Indonesia,Indonesia,,,,Utama
+CINT,Chitose Internasional Tbk.,CINT;CINT.JK;Chitose Internasional Tbk.;Chitose Internasional,Indonesia,,,,Pengembangan
+CITA,Cita Mineral Investindo Tbk.,CITA;CITA.JK;Cita Mineral Investindo Tbk.;Cita Mineral Investindo,Indonesia,,,,Utama
+CLPI,Colorpak Indonesia Tbk.,CLPI;CLPI.JK;Colorpak Indonesia Tbk.;Colorpak Indonesia,Indonesia,,,,Pengembangan
+CMNP,Citra Marga Nusaphala Persada,CMNP;CMNP.JK;Citra Marga Nusaphala Persada,Indonesia,,,,Utama
+CMPP,AirAsia Indonesia Tbk.,CMPP;CMPP.JK;AirAsia Indonesia Tbk.;AirAsia Indonesia,Indonesia,,,,Pemantauan Khusus
+CNKO,Exploitasi Energi Indonesia Tb,CNKO;CNKO.JK;Exploitasi Energi Indonesia Tb,Indonesia,,,,Pemantauan Khusus
+CNTX,Century Textile Industry Tbk.,CNTX;CNTX.JK;Century Textile Industry Tbk.;Century Textile Industry,Indonesia,,,,Pemantauan Khusus
+COWL,Cowell Development Tbk.,COWL;COWL.JK;Cowell Development Tbk.;Cowell Development,Indonesia,,,,Pemantauan Khusus
+CPIN,Charoen Pokphand Indonesia Tbk,CPIN;CPIN.JK;Charoen Pokphand Indonesia Tbk;Charoen Pokphand Indonesia,Indonesia,,Consumer Non-Cyclicals,IDX30|LQ45|KOMPAS100,Utama
+CPRO,Central Proteina Prima Tbk.,CPRO;CPRO.JK;Central Proteina Prima Tbk.;Central Proteina Prima,Indonesia,,,,Pengembangan
+CSAP,Catur Sentosa Adiprana Tbk.,CSAP;CSAP.JK;Catur Sentosa Adiprana Tbk.;Catur Sentosa Adiprana,Indonesia,,,,Pemantauan Khusus
+CTBN,Citra Tubindo Tbk.,CTBN;CTBN.JK;Citra Tubindo Tbk.;Citra Tubindo,Indonesia,,,,Pengembangan
+CTRA,Ciputra Development Tbk.,CTRA;CTRA.JK;Ciputra Development Tbk.;Ciputra Development,Indonesia,,Properties & Real Estate,LQ45|KOMPAS100,Utama
+CTTH,Citatah Tbk.,CTTH;CTTH.JK;Citatah Tbk.;Citatah,Indonesia,,,,Pengembangan
+DART,Duta Anggada Realty Tbk.,DART;DART.JK;Duta Anggada Realty Tbk.;Duta Anggada Realty,Indonesia,,,,Pengembangan
+DEFI,Danasupra Erapacific Tbk.,DEFI;DEFI.JK;Danasupra Erapacific Tbk.;Danasupra Erapacific,Indonesia,,,,Pengembangan
+DEWA,Darma Henwa Tbk,DEWA;DEWA.JK;Darma Henwa Tbk;Darma Henwa,Indonesia,,,,Utama
+DGIK,Nusa Konstruksi Enjiniring Tbk,DGIK;DGIK.JK;Nusa Konstruksi Enjiniring Tbk;Nusa Konstruksi Enjiniring,Indonesia,,,,Pengembangan
+DILD,Intiland Development Tbk.,DILD;DILD.JK;Intiland Development Tbk.;Intiland Development,Indonesia,,,,Utama
+DKFT,Central Omega Resources Tbk.,DKFT;DKFT.JK;Central Omega Resources Tbk.;Central Omega Resources,Indonesia,,,,Utama
+DLTA,Delta Djakarta Tbk.,DLTA;DLTA.JK;Delta Djakarta Tbk.;Delta Djakarta,Indonesia,,,,Utama
+DMAS,Puradelta Lestari Tbk.,DMAS;DMAS.JK;Puradelta Lestari Tbk.;Puradelta Lestari,Indonesia,,,,Utama
+DNAR,Bank Oke Indonesia Tbk.,DNAR;DNAR.JK;Bank Oke Indonesia Tbk.;Bank Oke Indonesia,Indonesia,,,,Pengembangan
+DNET,Indoritel Makmur Internasional,DNET;DNET.JK;Indoritel Makmur Internasional,Indonesia,,,,Utama
+DOID,BUMA Internasional Grup Tbk.,DOID;DOID.JK;BUMA Internasional Grup Tbk.;BUMA Internasional Grup,Indonesia,,,,Pengembangan
+DPNS,Duta Pertiwi Nusantara Tbk.,DPNS;DPNS.JK;Duta Pertiwi Nusantara Tbk.;Duta Pertiwi Nusantara,Indonesia,,,,Pengembangan
+DSFI,Dharma Samudera Fishing Indust,DSFI;DSFI.JK;Dharma Samudera Fishing Indust,Indonesia,,,,Pengembangan
+DSNG,Dharma Satya Nusantara Tbk.,DSNG;DSNG.JK;Dharma Satya Nusantara Tbk.;Dharma Satya Nusantara,Indonesia,,,,Utama
+DSSA,Dian Swastatika Sentosa Tbk,DSSA;DSSA.JK;Dian Swastatika Sentosa Tbk;Dian Swastatika Sentosa,Indonesia,,,,Utama
+DUTI,Duta Pertiwi Tbk,DUTI;DUTI.JK;Duta Pertiwi Tbk;Duta Pertiwi,Indonesia,,,,Pemantauan Khusus
+DVLA,Darya-Varia Laboratoria Tbk.,DVLA;DVLA.JK;Darya-Varia Laboratoria Tbk.;Darya-Varia Laboratoria,Indonesia,,,,Pengembangan
+DYAN,Dyandra Media International Tb,DYAN;DYAN.JK;Dyandra Media International Tb,Indonesia,,,,Pengembangan
+ECII,Electronic City Indonesia Tbk.,ECII;ECII.JK;Electronic City Indonesia Tbk.;Electronic City Indonesia,Indonesia,,,,Pengembangan
+EKAD,Ekadharma International Tbk.,EKAD;EKAD.JK;Ekadharma International Tbk.;Ekadharma International,Indonesia,,,,Pengembangan
+ELSA,Elnusa Tbk.,ELSA;ELSA.JK;Elnusa Tbk.;Elnusa,Indonesia,,,,Utama
+ELTY,Bakrieland Development Tbk.,ELTY;ELTY.JK;Bakrieland Development Tbk.;Bakrieland Development,Indonesia,,,,Pemantauan Khusus
+EMDE,Megapolitan Developments Tbk.,EMDE;EMDE.JK;Megapolitan Developments Tbk.;Megapolitan Developments,Indonesia,,,,Pengembangan
+EMTK,Elang Mahkota Teknologi Tbk.,EMTK;EMTK.JK;Elang Mahkota Teknologi Tbk.;Elang Mahkota Teknologi,Indonesia,,Technology,KOMPAS100,Utama
+ENRG,Energi Mega Persada Tbk.,ENRG;ENRG.JK;Energi Mega Persada Tbk.;Energi Mega Persada,Indonesia,,,,Utama
+EPMT,Enseval Putera Megatrading Tbk,EPMT;EPMT.JK;Enseval Putera Megatrading Tbk;Enseval Putera Megatrading,Indonesia,,,,Utama
+ERAA,Erajaya Swasembada Tbk.,ERAA;ERAA.JK;Erajaya Swasembada Tbk.;Erajaya Swasembada,Indonesia,,Consumer Cyclicals,KOMPAS100,Utama
+ERTX,Eratex Djaja Tbk.,ERTX;ERTX.JK;Eratex Djaja Tbk.;Eratex Djaja,Indonesia,,,,Pengembangan
+ESSA,ESSA Industries Indonesia Tbk.,ESSA;ESSA.JK;ESSA Industries Indonesia Tbk.;ESSA Industries Indonesia,Indonesia,,Basic Materials,LQ45|KOMPAS100,Utama
+ESTI,Ever Shine Tex Tbk.,ESTI;ESTI.JK;Ever Shine Tex Tbk.;Ever Shine Tex,Indonesia,,,,Pengembangan
+ETWA,Eterindo Wahanatama Tbk,ETWA;ETWA.JK;Eterindo Wahanatama Tbk;Eterindo Wahanatama,Indonesia,,,,Pemantauan Khusus
+EXCL,XLSMART Telecom Sejahtera Tbk.,EXCL;EXCL.JK;XLSMART Telecom Sejahtera Tbk.;XLSMART Telecom Sejahtera,Indonesia,,Infrastructures,LQ45|KOMPAS100,Utama
+FAST,Fast Food Indonesia Tbk.,FAST;FAST.JK;Fast Food Indonesia Tbk.;Fast Food Indonesia,Indonesia,,,,Pengembangan
+FASW,Fajar Surya Wisesa Tbk.,FASW;FASW.JK;Fajar Surya Wisesa Tbk.;Fajar Surya Wisesa,Indonesia,,,,Pemantauan Khusus
+FISH,FKS Multi Agro Tbk.,FISH;FISH.JK;FKS Multi Agro Tbk.;FKS Multi Agro,Indonesia,,,,Utama
+FMII,Fortune Mate Indonesia Tbk,FMII;FMII.JK;Fortune Mate Indonesia Tbk;Fortune Mate Indonesia,Indonesia,,,,Pengembangan
+FORU,Fortune Indonesia Tbk,FORU;FORU.JK;Fortune Indonesia Tbk;Fortune Indonesia,Indonesia,,,,Pengembangan
+FPNI,Lotte Chemical Titan Tbk.,FPNI;FPNI.JK;Lotte Chemical Titan Tbk.;Lotte Chemical Titan,Indonesia,,,,Pengembangan
+GAMA,Aksara Global Development Tbk.,GAMA;GAMA.JK;Aksara Global Development Tbk.;Aksara Global Development,Indonesia,,,,Pemantauan Khusus
+GDST,Gunawan Dianjaya Steel Tbk.,GDST;GDST.JK;Gunawan Dianjaya Steel Tbk.;Gunawan Dianjaya Steel,Indonesia,,,,Pengembangan
+GDYR,Goodyear Indonesia Tbk.,GDYR;GDYR.JK;Goodyear Indonesia Tbk.;Goodyear Indonesia,Indonesia,,,,Pengembangan
+GEMA,Gema Grahasarana Tbk.,GEMA;GEMA.JK;Gema Grahasarana Tbk.;Gema Grahasarana,Indonesia,,,,Pengembangan
+GEMS,Golden Energy Mines Tbk.,GEMS;GEMS.JK;Golden Energy Mines Tbk.;Golden Energy Mines,Indonesia,,,,Utama
+GGRM,Gudang Garam Tbk.,GGRM;GGRM.JK;Gudang Garam Tbk.;Gudang Garam,Indonesia,,Consumer Non-Cyclicals,KOMPAS100,Utama
+GIAA,Garuda Indonesia (Persero) Tbk,GIAA;GIAA.JK;Garuda Indonesia (Persero) Tbk;Garuda Indonesia (),Indonesia,,,,Pengembangan
+GJTL,Gajah Tunggal Tbk.,GJTL;GJTL.JK;Gajah Tunggal Tbk.;Gajah Tunggal,Indonesia,,,,Utama
+GLOB,Globe Kita Terang Tbk.,GLOB;GLOB.JK;Globe Kita Terang Tbk.;Globe Kita Terang,Indonesia,,,,Pemantauan Khusus
+GMTD,Gowa Makassar Tourism Developm,GMTD;GMTD.JK;Gowa Makassar Tourism Developm,Indonesia,,,,Pengembangan
+GOLD,Visi Telekomunikasi Infrastruk,GOLD;GOLD.JK;Visi Telekomunikasi Infrastruk,Indonesia,,,,Pengembangan
+GOLL,Golden Plantation Tbk.,GOLL;GOLL.JK;Golden Plantation Tbk.;Golden Plantation,Indonesia,,,,Pemantauan Khusus
+GPRA,Perdana Gapuraprima Tbk.,GPRA;GPRA.JK;Perdana Gapuraprima Tbk.;Perdana Gapuraprima,Indonesia,,,,Pengembangan
+GSMF,Equity Development Investment,GSMF;GSMF.JK;Equity Development Investment,Indonesia,,,,Pengembangan
+GTBO,Garda Tujuh Buana Tbk,GTBO;GTBO.JK;Garda Tujuh Buana Tbk;Garda Tujuh Buana,Indonesia,,,,Pengembangan
+GWSA,Greenwood Sejahtera Tbk.,GWSA;GWSA.JK;Greenwood Sejahtera Tbk.;Greenwood Sejahtera,Indonesia,,,,Pengembangan
+GZCO,Gozco Plantations Tbk.,GZCO;GZCO.JK;Gozco Plantations Tbk.;Gozco Plantations,Indonesia,,,,Utama
+HADE,Himalaya Energi Perkasa Tbk.,HADE;HADE.JK;Himalaya Energi Perkasa Tbk.;Himalaya Energi Perkasa,Indonesia,,,,Pemantauan Khusus
+HDFA,Radana Bhaskara Finance Tbk.,HDFA;HDFA.JK;Radana Bhaskara Finance Tbk.;Radana Bhaskara Finance,Indonesia,,,,Pengembangan
+HERO,DFI Retail Nusantara Tbk.,HERO;HERO.JK;DFI Retail Nusantara Tbk.;DFI Retail Nusantara,Indonesia,,,,Utama
+HEXA,Hexindo Adiperkasa Tbk.,HEXA;HEXA.JK;Hexindo Adiperkasa Tbk.;Hexindo Adiperkasa,Indonesia,,,,Utama
+HITS,Humpuss Intermoda Transportasi,HITS;HITS.JK;Humpuss Intermoda Transportasi,Indonesia,,,,Pemantauan Khusus
+HMSP,H.M. Sampoerna Tbk.,HMSP;HMSP.JK;H.M. Sampoerna Tbk.;H.M. Sampoerna,Indonesia,,Consumer Non-Cyclicals,KOMPAS100,Utama
+HOME,Hotel Mandarine Regency Tbk.,HOME;HOME.JK;Hotel Mandarine Regency Tbk.;Hotel Mandarine Regency,Indonesia,,,,Pemantauan Khusus
+HOTL,Saraswati Griya Lestari Tbk.,HOTL;HOTL.JK;Saraswati Griya Lestari Tbk.;Saraswati Griya Lestari,Indonesia,,,,Pemantauan Khusus
+HRUM,Harum Energy Tbk.,HRUM;HRUM.JK;Harum Energy Tbk.;Harum Energy,Indonesia,,Energy,KOMPAS100,Utama
+IATA,MNC Energy Investments Tbk.,IATA;IATA.JK;MNC Energy Investments Tbk.;MNC Energy Investments,Indonesia,,,,Pengembangan
+IBFN,Intan Baru Prana Tbk.,IBFN;IBFN.JK;Intan Baru Prana Tbk.;Intan Baru Prana,Indonesia,,,,Pemantauan Khusus
+IBST,Inti Bangun Sejahtera Tbk.,IBST;IBST.JK;Inti Bangun Sejahtera Tbk.;Inti Bangun Sejahtera,Indonesia,,,,Pemantauan Khusus
+ICBP,Indofood CBP Sukses Makmur Tbk,ICBP;ICBP.JK;Indofood CBP Sukses Makmur Tbk;Indofood CBP Sukses Makmur,Indonesia,,Consumer Non-Cyclicals,IDX30|LQ45|KOMPAS100,Utama
+ICON,Island Concepts Indonesia Tbk.,ICON;ICON.JK;Island Concepts Indonesia Tbk.;Island Concepts Indonesia,Indonesia,,,,Pengembangan
+IGAR,Champion Pacific Indonesia Tbk,IGAR;IGAR.JK;Champion Pacific Indonesia Tbk;Champion Pacific Indonesia,Indonesia,,,,Pengembangan
+IIKP,Inti Agri Resources Tbk,IIKP;IIKP.JK;Inti Agri Resources Tbk;Inti Agri Resources,Indonesia,,,,Pemantauan Khusus
+IKAI,Intikeramik Alamasri Industri,IKAI;IKAI.JK;Intikeramik Alamasri Industri,Indonesia,,,,Pemantauan Khusus
+IKBI,Sumi Indo Kabel Tbk.,IKBI;IKBI.JK;Sumi Indo Kabel Tbk.;Sumi Indo Kabel,Indonesia,,,,Pengembangan
+IMAS,Indomobil Sukses Internasional,IMAS;IMAS.JK;Indomobil Sukses Internasional,Indonesia,,,,Utama
+IMJS,Indomobil Multi Jasa Tbk.,IMJS;IMJS.JK;Indomobil Multi Jasa Tbk.;Indomobil Multi Jasa,Indonesia,,,,Pengembangan
+IMPC,Impack Pratama Industri Tbk.,IMPC;IMPC.JK;Impack Pratama Industri Tbk.;Impack Pratama Industri,Indonesia,,,,Utama
+INAF,Indofarma Tbk.,INAF;INAF.JK;Indofarma Tbk.;Indofarma,Indonesia,,,,Pemantauan Khusus
+INAI,Indal Aluminium Industry Tbk.,INAI;INAI.JK;Indal Aluminium Industry Tbk.;Indal Aluminium Industry,Indonesia,,,,Pengembangan
+INCI,Intanwijaya Internasional Tbk,INCI;INCI.JK;Intanwijaya Internasional Tbk;Intanwijaya Internasional,Indonesia,,,,Pengembangan
+INCO,Vale Indonesia Tbk.,INCO;INCO.JK;Vale Indonesia Tbk.;Vale Indonesia,Indonesia,,Basic Materials,LQ45|KOMPAS100,Utama
+INDF,Indofood Sukses Makmur Tbk.,INDF;INDF.JK;Indofood Sukses Makmur Tbk.;Indofood Sukses Makmur,Indonesia,,Consumer Non-Cyclicals,IDX30|LQ45|KOMPAS100,Utama
+INDR,Indo-Rama Synthetics Tbk.,INDR;INDR.JK;Indo-Rama Synthetics Tbk.;Indo-Rama Synthetics,Indonesia,,,,Pengembangan
+INDS,Indospring Tbk.,INDS;INDS.JK;Indospring Tbk.;Indospring,Indonesia,,,,Pengembangan
+INDX,Tanah Laut Tbk,INDX;INDX.JK;Tanah Laut Tbk;Tanah Laut,Indonesia,,,,Pengembangan
+INDY,Indika Energy Tbk.,INDY;INDY.JK;Indika Energy Tbk.;Indika Energy,Indonesia,,,,Utama
+INKP,Indah Kiat Pulp & Paper Tbk.,INKP;INKP.JK;Indah Kiat Pulp & Paper Tbk.;Indah Kiat Pulp & Paper,Indonesia,,Basic Materials,IDX30|LQ45|KOMPAS100,Utama
+INPC,Bank Artha Graha Internasional,INPC;INPC.JK;Bank Artha Graha Internasional,Indonesia,,,,Utama
+INPP,Indonesian Paradise Property T,INPP;INPP.JK;Indonesian Paradise Property T,Indonesia,,,,Pengembangan
+INRU,Toba Pulp Lestari Tbk.,INRU;INRU.JK;Toba Pulp Lestari Tbk.;Toba Pulp Lestari,Indonesia,,,,Pemantauan Khusus
+INTA,Intraco Penta Tbk.,INTA;INTA.JK;Intraco Penta Tbk.;Intraco Penta,Indonesia,,,,Pemantauan Khusus
+INTD,Inter Delta Tbk,INTD;INTD.JK;Inter Delta Tbk;Inter Delta,Indonesia,,,,Pengembangan
+INTP,Indocement Tunggal Prakarsa Tb,INTP;INTP.JK;Indocement Tunggal Prakarsa Tb,Indonesia,,Basic Materials,LQ45|KOMPAS100,Utama
+IPOL,Indopoly Swakarsa Industry Tbk,IPOL;IPOL.JK;Indopoly Swakarsa Industry Tbk;Indopoly Swakarsa Industry,Indonesia,,,,Pengembangan
+ISAT,Indosat Tbk.,ISAT;ISAT.JK;Indosat Tbk.;Indosat,Indonesia,,Infrastructures,LQ45|KOMPAS100,Utama
+ISSP,Steel Pipe Industry of Indones,ISSP;ISSP.JK;Steel Pipe Industry of Indones,Indonesia,,,,Utama
+ITMA,Sumber Energi Andalan Tbk.,ITMA;ITMA.JK;Sumber Energi Andalan Tbk.;Sumber Energi Andalan,Indonesia,,,,Pengembangan
+ITMG,Indo Tambangraya Megah Tbk.,ITMG;ITMG.JK;Indo Tambangraya Megah Tbk.;Indo Tambangraya Megah,Indonesia,,Energy,LQ45|KOMPAS100,Utama
+JAWA,Jaya Agra Wattie Tbk.,JAWA;JAWA.JK;Jaya Agra Wattie Tbk.;Jaya Agra Wattie,Indonesia,,,,Pengembangan
+JECC,Jembo Cable Company Tbk.,JECC;JECC.JK;Jembo Cable Company Tbk.;Jembo Cable Company,Indonesia,,,,Pemantauan Khusus
+JIHD,Jakarta International Hotels &,JIHD;JIHD.JK;Jakarta International Hotels &,Indonesia,,,,Utama
+JKON,Jaya Konstruksi Manggala Prata,JKON;JKON.JK;Jaya Konstruksi Manggala Prata,Indonesia,,,,Utama
+JPFA,Japfa Comfeed Indonesia Tbk.,JPFA;JPFA.JK;Japfa Comfeed Indonesia Tbk.;Japfa Comfeed Indonesia,Indonesia,,Consumer Non-Cyclicals,LQ45|KOMPAS100,Utama
+JRPT,Jaya Real Property Tbk.,JRPT;JRPT.JK;Jaya Real Property Tbk.;Jaya Real Property,Indonesia,,,,Utama
+JSMR,Jasa Marga (Persero) Tbk.,JSMR;JSMR.JK;Jasa Marga (Persero) Tbk.;Jasa Marga (),Indonesia,,Infrastructures,LQ45|KOMPAS100,Utama
+JSPT,Jakarta Setiabudi Internasiona,JSPT;JSPT.JK;Jakarta Setiabudi Internasiona,Indonesia,,,,Utama
+JTPE,Jasuindo Tiga Perkasa Tbk.,JTPE;JTPE.JK;Jasuindo Tiga Perkasa Tbk.;Jasuindo Tiga Perkasa,Indonesia,,,,Utama
+KAEF,Kimia Farma Tbk.,KAEF;KAEF.JK;Kimia Farma Tbk.;Kimia Farma,Indonesia,,,,Pengembangan
+KARW,Meratus Jasa Prima Tbk.,KARW;KARW.JK;Meratus Jasa Prima Tbk.;Meratus Jasa Prima,Indonesia,,,,Pemantauan Khusus
+KBLI,KMI Wire & Cable Tbk.,KBLI;KBLI.JK;KMI Wire & Cable Tbk.;KMI Wire & Cable,Indonesia,,,,Utama
+KBLM,Kabelindo Murni Tbk.,KBLM;KBLM.JK;Kabelindo Murni Tbk.;Kabelindo Murni,Indonesia,,,,Pengembangan
+KBLV,First Media Tbk.,KBLV;KBLV.JK;First Media Tbk.;First Media,Indonesia,,,,Pengembangan
+KBRI,Kertas Basuki Rachmat Indonesi,KBRI;KBRI.JK;Kertas Basuki Rachmat Indonesi,Indonesia,,,,Pemantauan Khusus
+KDSI,Kedawung Setia Industrial Tbk.,KDSI;KDSI.JK;Kedawung Setia Industrial Tbk.;Kedawung Setia Industrial,Indonesia,,,,Pengembangan
+KIAS,Keramika Indonesia Assosiasi T,KIAS;KIAS.JK;Keramika Indonesia Assosiasi T,Indonesia,,,,Pemantauan Khusus
+KICI,Kedaung Indah Can Tbk,KICI;KICI.JK;Kedaung Indah Can Tbk;Kedaung Indah Can,Indonesia,,,,Pengembangan
+KIJA,Kawasan Industri Jababeka Tbk.,KIJA;KIJA.JK;Kawasan Industri Jababeka Tbk.;Kawasan Industri Jababeka,Indonesia,,,,Utama
+KKGI,Resource Alam Indonesia Tbk.,KKGI;KKGI.JK;Resource Alam Indonesia Tbk.;Resource Alam Indonesia,Indonesia,,,,Utama
+KLBF,Kalbe Farma Tbk.,KLBF;KLBF.JK;Kalbe Farma Tbk.;Kalbe Farma,Indonesia,,Healthcare,IDX30|LQ45|KOMPAS100,Utama
+KOBX,Kobexindo Tractors Tbk.,KOBX;KOBX.JK;Kobexindo Tractors Tbk.;Kobexindo Tractors,Indonesia,,,,Pengembangan
+KOIN,Kokoh Inti Arebama Tbk,KOIN;KOIN.JK;Kokoh Inti Arebama Tbk;Kokoh Inti Arebama,Indonesia,,,,Pemantauan Khusus
+KONI,Perdana Bangun Pusaka Tbk,KONI;KONI.JK;Perdana Bangun Pusaka Tbk;Perdana Bangun Pusaka,Indonesia,,,,Pengembangan
+KOPI,Mitra Energi Persada Tbk.,KOPI;KOPI.JK;Mitra Energi Persada Tbk.;Mitra Energi Persada,Indonesia,,,,Pengembangan
+KPIG,MNC Tourism Indonesia Tbk.,KPIG;KPIG.JK;MNC Tourism Indonesia Tbk.;MNC Tourism Indonesia,Indonesia,,,,Utama
+KRAS,Krakatau Steel (Persero) Tbk.,KRAS;KRAS.JK;Krakatau Steel (Persero) Tbk.;Krakatau Steel (),Indonesia,,,,Pengembangan
+KREN,Quantum Clovera Investama Tbk.,KREN;KREN.JK;Quantum Clovera Investama Tbk.;Quantum Clovera Investama,Indonesia,,,,Pemantauan Khusus
+LAPD,Leyand International Tbk.,LAPD;LAPD.JK;Leyand International Tbk.;Leyand International,Indonesia,,,,Pengembangan
+LCGP,Eureka Prima Jakarta Tbk.,LCGP;LCGP.JK;Eureka Prima Jakarta Tbk.;Eureka Prima Jakarta,Indonesia,,,,Pemantauan Khusus
+LEAD,Logindo Samudramakmur Tbk.,LEAD;LEAD.JK;Logindo Samudramakmur Tbk.;Logindo Samudramakmur,Indonesia,,,,Pengembangan
+LINK,Link Net Tbk.,LINK;LINK.JK;Link Net Tbk.;Link Net,Indonesia,,,,Pengembangan
+LION,Lion Metal Works Tbk.,LION;LION.JK;Lion Metal Works Tbk.;Lion Metal Works,Indonesia,,,,Pengembangan
+LMAS,Limas Indonesia Makmur Tbk,LMAS;LMAS.JK;Limas Indonesia Makmur Tbk;Limas Indonesia Makmur,Indonesia,,,,Pemantauan Khusus
+LMPI,Langgeng Makmur Industri Tbk.,LMPI;LMPI.JK;Langgeng Makmur Industri Tbk.;Langgeng Makmur Industri,Indonesia,,,,Pengembangan
+LMSH,Lionmesh Prima Tbk.,LMSH;LMSH.JK;Lionmesh Prima Tbk.;Lionmesh Prima,Indonesia,,,,Pemantauan Khusus
+LPCK,Lippo Cikarang Tbk,LPCK;LPCK.JK;Lippo Cikarang Tbk;Lippo Cikarang,Indonesia,,,,Utama
+LPGI,Lippo General Insurance Tbk.,LPGI;LPGI.JK;Lippo General Insurance Tbk.;Lippo General Insurance,Indonesia,,,,Pengembangan
+LPIN,Multi Prima Sejahtera Tbk,LPIN;LPIN.JK;Multi Prima Sejahtera Tbk;Multi Prima Sejahtera,Indonesia,,,,Pengembangan
+LPKR,Lippo Karawaci Tbk.,LPKR;LPKR.JK;Lippo Karawaci Tbk.;Lippo Karawaci,Indonesia,,,,Utama
+LPLI,Star Pacific Tbk,LPLI;LPLI.JK;Star Pacific Tbk;Star Pacific,Indonesia,,,,Pengembangan
+LPPF,MDS Retailing Tbk.,LPPF;LPPF.JK;MDS Retailing Tbk.;MDS Retailing,Indonesia,,,,Utama
+LPPS,Lenox Pasifik Investama Tbk.,LPPS;LPPS.JK;Lenox Pasifik Investama Tbk.;Lenox Pasifik Investama,Indonesia,,,,Pengembangan
+LRNA,Eka Sari Lorena Transport Tbk.,LRNA;LRNA.JK;Eka Sari Lorena Transport Tbk.;Eka Sari Lorena Transport,Indonesia,,,,Pengembangan
+LSIP,PP London Sumatra Indonesia Tb,LSIP;LSIP.JK;PP London Sumatra Indonesia Tb,Indonesia,,,,Utama
+LTLS,Lautan Luas Tbk.,LTLS;LTLS.JK;Lautan Luas Tbk.;Lautan Luas,Indonesia,,,,Utama
+MAGP,Multi Agro Gemilang Plantation,MAGP;MAGP.JK;Multi Agro Gemilang Plantation,Indonesia,,,,Pemantauan Khusus
+MAIN,Malindo Feedmill Tbk.,MAIN;MAIN.JK;Malindo Feedmill Tbk.;Malindo Feedmill,Indonesia,,,,Utama
+MAPI,Mitra Adiperkasa Tbk.,MAPI;MAPI.JK;Mitra Adiperkasa Tbk.;Mitra Adiperkasa,Indonesia,,Consumer Cyclicals,LQ45|KOMPAS100,Utama
+MAYA,Bank Mayapada Internasional Tb,MAYA;MAYA.JK;Bank Mayapada Internasional Tb,Indonesia,,,,Utama
+MBAP,Mitrabara Adiperdana Tbk.,MBAP;MBAP.JK;Mitrabara Adiperdana Tbk.;Mitrabara Adiperdana,Indonesia,,,,Pengembangan
+MBSS,Mitrabahtera Segara Sejati Tbk,MBSS;MBSS.JK;Mitrabahtera Segara Sejati Tbk;Mitrabahtera Segara Sejati,Indonesia,,,,Utama
+MBTO,Martina Berto Tbk.,MBTO;MBTO.JK;Martina Berto Tbk.;Martina Berto,Indonesia,,,,Pengembangan
+MCOR,Bank China Construction Bank I,MCOR;MCOR.JK;Bank China Construction Bank I,Indonesia,,,,Utama
+MDIA,Intermedia Capital Tbk.,MDIA;MDIA.JK;Intermedia Capital Tbk.;Intermedia Capital,Indonesia,,,,Pengembangan
+MDKA,Merdeka Copper Gold Tbk.,MDKA;MDKA.JK;Merdeka Copper Gold Tbk.;Merdeka Copper Gold,Indonesia,,Basic Materials,IDX30|LQ45|KOMPAS100,Utama
+MDLN,Modernland Realty Tbk.,MDLN;MDLN.JK;Modernland Realty Tbk.;Modernland Realty,Indonesia,,,,Pengembangan
+MDRN,Modern Internasional Tbk.,MDRN;MDRN.JK;Modern Internasional Tbk.;Modern Internasional,Indonesia,,,,Pemantauan Khusus
+MEDC,Medco Energi Internasional Tbk,MEDC;MEDC.JK;Medco Energi Internasional Tbk;Medco Energi Internasional,Indonesia,,Energy,IDX30|LQ45|KOMPAS100,Utama
+MEGA,Bank Mega Tbk.,MEGA;MEGA.JK;Bank Mega Tbk.;Bank Mega,Indonesia,,,,Utama
+MERK,Merck Tbk.,MERK;MERK.JK;Merck Tbk.;Merck,Indonesia,,,,Utama
+META,Nusantara Infrastructure Tbk.,META;META.JK;Nusantara Infrastructure Tbk.;Nusantara Infrastructure,Indonesia,,,,Pengembangan
+MFMI,Multifiling Mitra Indonesia Tb,MFMI;MFMI.JK;Multifiling Mitra Indonesia Tb,Indonesia,,,,Pemantauan Khusus
+MGNA,Magna Investama Mandiri Tbk.,MGNA;MGNA.JK;Magna Investama Mandiri Tbk.;Magna Investama Mandiri,Indonesia,,,,Pengembangan
+MICE,Multi Indocitra Tbk.,MICE;MICE.JK;Multi Indocitra Tbk.;Multi Indocitra,Indonesia,,,,Pengembangan
+MIDI,Midi Utama Indonesia Tbk.,MIDI;MIDI.JK;Midi Utama Indonesia Tbk.;Midi Utama Indonesia,Indonesia,,,,Utama
+MIKA,Mitra Keluarga Karyasehat Tbk.,MIKA;MIKA.JK;Mitra Keluarga Karyasehat Tbk.;Mitra Keluarga Karyasehat,Indonesia,,Healthcare,LQ45|KOMPAS100,Utama
+MIRA,Mitra International Resources,MIRA;MIRA.JK;Mitra International Resources,Indonesia,,,,Pemantauan Khusus
+MITI,Mitra Investindo Tbk.,MITI;MITI.JK;Mitra Investindo Tbk.;Mitra Investindo,Indonesia,,,,Pengembangan
+MKPI,Metropolitan Kentjana Tbk.,MKPI;MKPI.JK;Metropolitan Kentjana Tbk.;Metropolitan Kentjana,Indonesia,,,,Pengembangan
+MLBI,Multi Bintang Indonesia Tbk.,MLBI;MLBI.JK;Multi Bintang Indonesia Tbk.;Multi Bintang Indonesia,Indonesia,,,,Utama
+MLIA,Mulia Industrindo Tbk,MLIA;MLIA.JK;Mulia Industrindo Tbk;Mulia Industrindo,Indonesia,,,,Pemantauan Khusus
+MLPL,Multipolar Tbk.,MLPL;MLPL.JK;Multipolar Tbk.;Multipolar,Indonesia,,,,Utama
+MLPT,Multipolar Technology Tbk.,MLPT;MLPT.JK;Multipolar Technology Tbk.;Multipolar Technology,Indonesia,,,,Pengembangan
+MMLP,Mega Manunggal Property Tbk.,MMLP;MMLP.JK;Mega Manunggal Property Tbk.;Mega Manunggal Property,Indonesia,,,,Pengembangan
+MNCN,Media Nusantara Citra Tbk.,MNCN;MNCN.JK;Media Nusantara Citra Tbk.;Media Nusantara Citra,Indonesia,,Consumer Cyclicals,KOMPAS100,Utama
+MPMX,Mitra Pinasthika Mustika Tbk.,MPMX;MPMX.JK;Mitra Pinasthika Mustika Tbk.;Mitra Pinasthika Mustika,Indonesia,,,,Utama
+MPPA,Matahari Putra Prima Tbk.,MPPA;MPPA.JK;Matahari Putra Prima Tbk.;Matahari Putra Prima,Indonesia,,,,Pemantauan Khusus
+MRAT,Mustika Ratu Tbk.,MRAT;MRAT.JK;Mustika Ratu Tbk.;Mustika Ratu,Indonesia,,,,Pengembangan
+MREI,Maskapai Reasuransi Indonesia,MREI;MREI.JK;Maskapai Reasuransi Indonesia,Indonesia,,,,Pengembangan
+MSKY,MNC Sky Vision Tbk.,MSKY;MSKY.JK;MNC Sky Vision Tbk.;MNC Sky Vision,Indonesia,,,,Pengembangan
+MTDL,Metrodata Electronics Tbk.,MTDL;MTDL.JK;Metrodata Electronics Tbk.;Metrodata Electronics,Indonesia,,,,Utama
+MTFN,Capitalinc Investment Tbk.,MTFN;MTFN.JK;Capitalinc Investment Tbk.;Capitalinc Investment,Indonesia,,,,Pemantauan Khusus
+MTLA,Metropolitan Land Tbk.,MTLA;MTLA.JK;Metropolitan Land Tbk.;Metropolitan Land,Indonesia,,,,Utama
+MTSM,Metro Realty Tbk.,MTSM;MTSM.JK;Metro Realty Tbk.;Metro Realty,Indonesia,,,,Pemantauan Khusus
+MYOH,Samindo Resources Tbk.,MYOH;MYOH.JK;Samindo Resources Tbk.;Samindo Resources,Indonesia,,,,Pengembangan
+MYOR,Mayora Indah Tbk.,MYOR;MYOR.JK;Mayora Indah Tbk.;Mayora Indah,Indonesia,,Consumer Non-Cyclicals,KOMPAS100,Utama
+MYTX,Asia Pacific Investama Tbk.,MYTX;MYTX.JK;Asia Pacific Investama Tbk.;Asia Pacific Investama,Indonesia,,,,Pemantauan Khusus
+NELY,Pelayaran Nelly Dwi Putri Tbk.,NELY;NELY.JK;Pelayaran Nelly Dwi Putri Tbk.;Pelayaran Nelly Dwi Putri,Indonesia,,,,Pengembangan
+NIKL,Pelat Timah Nusantara Tbk.,NIKL;NIKL.JK;Pelat Timah Nusantara Tbk.;Pelat Timah Nusantara,Indonesia,,,,Pengembangan
+NIRO,City Retail Developments Tbk.,NIRO;NIRO.JK;City Retail Developments Tbk.;City Retail Developments,Indonesia,,,,Pengembangan
+NISP,Bank OCBC NISP Tbk.,NISP;NISP.JK;Bank OCBC NISP Tbk.;Bank OCBC NISP,Indonesia,,,,Utama
+NOBU,Bank Nationalnobu Tbk.,NOBU;NOBU.JK;Bank Nationalnobu Tbk.;Bank Nationalnobu,Indonesia,,,,Utama
+NRCA,Nusa Raya Cipta Tbk.,NRCA;NRCA.JK;Nusa Raya Cipta Tbk.;Nusa Raya Cipta,Indonesia,,,,Pengembangan
+OCAP,Onix Capital Tbk.,OCAP;OCAP.JK;Onix Capital Tbk.;Onix Capital,Indonesia,,,,Pemantauan Khusus
+OKAS,Ancora Indonesia Resources Tbk,OKAS;OKAS.JK;Ancora Indonesia Resources Tbk;Ancora Indonesia Resources,Indonesia,,,,Pengembangan
+OMRE,Indonesia Prima Property Tbk,OMRE;OMRE.JK;Indonesia Prima Property Tbk;Indonesia Prima Property,Indonesia,,,,Pengembangan
+PADI,Minna Padi Investama Sekuritas,PADI;PADI.JK;Minna Padi Investama Sekuritas,Indonesia,,,,Pengembangan
+PALM,Provident Investasi Bersama Tb,PALM;PALM.JK;Provident Investasi Bersama Tb,Indonesia,,,,Utama
+PANR,Panorama Sentrawisata Tbk.,PANR;PANR.JK;Panorama Sentrawisata Tbk.;Panorama Sentrawisata,Indonesia,,,,Pengembangan
+PANS,Panin Sekuritas Tbk.,PANS;PANS.JK;Panin Sekuritas Tbk.;Panin Sekuritas,Indonesia,,,,Utama
+PBRX,Pan Brothers Tbk.,PBRX;PBRX.JK;Pan Brothers Tbk.;Pan Brothers,Indonesia,,,,Pemantauan Khusus
+PDES,Destinasi Tirta Nusantara Tbk,PDES;PDES.JK;Destinasi Tirta Nusantara Tbk;Destinasi Tirta Nusantara,Indonesia,,,,Pengembangan
+PEGE,Panca Global Kapital Tbk.,PEGE;PEGE.JK;Panca Global Kapital Tbk.;Panca Global Kapital,Indonesia,,,,Pengembangan
+PGAS,Perusahaan Gas Negara (Persero,PGAS;PGAS.JK;Perusahaan Gas Negara (Persero;Perusahaan Gas Negara (,Indonesia,,Energy,IDX30|LQ45|KOMPAS100,Utama
+PGLI,Pembangunan Graha Lestari Inda,PGLI;PGLI.JK;Pembangunan Graha Lestari Inda,Indonesia,,,,Pengembangan
+PICO,Pelangi Indah Canindo Tbk,PICO;PICO.JK;Pelangi Indah Canindo Tbk;Pelangi Indah Canindo,Indonesia,,,,Pengembangan
+PJAA,Pembangunan Jaya Ancol Tbk.,PJAA;PJAA.JK;Pembangunan Jaya Ancol Tbk.;Pembangunan Jaya Ancol,Indonesia,,,,Pengembangan
+PKPK,Paragon Karya Perkasa Tbk.,PKPK;PKPK.JK;Paragon Karya Perkasa Tbk.;Paragon Karya Perkasa,Indonesia,,,,Pengembangan
+PLAS,Polaris Investama Tbk,PLAS;PLAS.JK;Polaris Investama Tbk;Polaris Investama,Indonesia,,,,Pemantauan Khusus
+PLIN,Plaza Indonesia Realty Tbk.,PLIN;PLIN.JK;Plaza Indonesia Realty Tbk.;Plaza Indonesia Realty,Indonesia,,,,Pemantauan Khusus
+PNBN,Bank Pan Indonesia Tbk,PNBN;PNBN.JK;Bank Pan Indonesia Tbk;Bank Pan Indonesia,Indonesia,,,,Utama
+PNBS,Bank Panin Dubai Syariah Tbk.,PNBS;PNBS.JK;Bank Panin Dubai Syariah Tbk.;Bank Panin Dubai Syariah,Indonesia,,,,Pengembangan
+PNIN,Paninvest Tbk.,PNIN;PNIN.JK;Paninvest Tbk.;Paninvest,Indonesia,,,,Utama
+PNLF,Panin Financial Tbk.,PNLF;PNLF.JK;Panin Financial Tbk.;Panin Financial,Indonesia,,,,Utama
+PSAB,J Resources Asia Pasifik Tbk.,PSAB;PSAB.JK;J Resources Asia Pasifik Tbk.;J Resources Asia Pasifik,Indonesia,,,,Pengembangan
+PSDN,Prasidha Aneka Niaga Tbk,PSDN;PSDN.JK;Prasidha Aneka Niaga Tbk;Prasidha Aneka Niaga,Indonesia,,,,Pengembangan
+PSKT,Red Planet Indonesia Tbk.,PSKT;PSKT.JK;Red Planet Indonesia Tbk.;Red Planet Indonesia,Indonesia,,,,Pengembangan
+PTBA,Bukit Asam (Persero) Tbk.,PTBA;PTBA.JK;Bukit Asam (Persero) Tbk.;Bukit Asam (),Indonesia,,Energy,IDX30|LQ45|KOMPAS100,Utama
+PTIS,Indo Straits Tbk.,PTIS;PTIS.JK;Indo Straits Tbk.;Indo Straits,Indonesia,,,,Pengembangan
+PTPP,PP (Persero) Tbk.,PTPP;PTPP.JK;PP (Persero) Tbk.;PP (),Indonesia,,,,Utama
+PTRO,Petrosea Tbk.,PTRO;PTRO.JK;Petrosea Tbk.;Petrosea,Indonesia,,,,Utama
+PTSN,Sat Nusapersada Tbk,PTSN;PTSN.JK;Sat Nusapersada Tbk;Sat Nusapersada,Indonesia,,,,Pengembangan
+PTSP,Pioneerindo Gourmet Internatio,PTSP;PTSP.JK;Pioneerindo Gourmet Internatio,Indonesia,,,,Pengembangan
+PUDP,Pudjiadi Prestige Tbk.,PUDP;PUDP.JK;Pudjiadi Prestige Tbk.;Pudjiadi Prestige,Indonesia,,,,Pengembangan
+PWON,Pakuwon Jati Tbk.,PWON;PWON.JK;Pakuwon Jati Tbk.;Pakuwon Jati,Indonesia,,Properties & Real Estate,LQ45|KOMPAS100,Utama
+PYFA,Pyridam Farma Tbk,PYFA;PYFA.JK;Pyridam Farma Tbk;Pyridam Farma,Indonesia,,,,Pengembangan
+RAJA,Rukun Raharja Tbk.,RAJA;RAJA.JK;Rukun Raharja Tbk.;Rukun Raharja,Indonesia,,,,Utama
+RALS,Ramayana Lestari Sentosa Tbk.,RALS;RALS.JK;Ramayana Lestari Sentosa Tbk.;Ramayana Lestari Sentosa,Indonesia,,,,Utama
+RANC,Supra Boga Lestari Tbk.,RANC;RANC.JK;Supra Boga Lestari Tbk.;Supra Boga Lestari,Indonesia,,,,Pengembangan
+RBMS,Ristia Bintang Mahkotasejati T,RBMS;RBMS.JK;Ristia Bintang Mahkotasejati T,Indonesia,,,,Pengembangan
+RDTX,Roda Vivatex Tbk,RDTX;RDTX.JK;Roda Vivatex Tbk;Roda Vivatex,Indonesia,,,,Pengembangan
+RELI,Reliance Sekuritas Indonesia T,RELI;RELI.JK;Reliance Sekuritas Indonesia T,Indonesia,,,,Pengembangan
+RICY,Ricky Putra Globalindo Tbk,RICY;RICY.JK;Ricky Putra Globalindo Tbk;Ricky Putra Globalindo,Indonesia,,,,Pengembangan
+RIGS,Rig Tenders Indonesia Tbk.,RIGS;RIGS.JK;Rig Tenders Indonesia Tbk.;Rig Tenders Indonesia,Indonesia,,,,Pengembangan
+RIMO,Rimo International Lestari Tbk,RIMO;RIMO.JK;Rimo International Lestari Tbk;Rimo International Lestari,Indonesia,,,,Pemantauan Khusus
+RODA,Pikko Land Development Tbk.,RODA;RODA.JK;Pikko Land Development Tbk.;Pikko Land Development,Indonesia,,,,Pengembangan
+ROTI,Nippon Indosari Corpindo Tbk.,ROTI;ROTI.JK;Nippon Indosari Corpindo Tbk.;Nippon Indosari Corpindo,Indonesia,,,,Pengembangan
+RUIS,Radiant Utama Interinsco Tbk.,RUIS;RUIS.JK;Radiant Utama Interinsco Tbk.;Radiant Utama Interinsco,Indonesia,,,,Pengembangan
+SAFE,Steady Safe Tbk,SAFE;SAFE.JK;Steady Safe Tbk;Steady Safe,Indonesia,,,,Pengembangan
+SAME,Sarana Meditama Metropolitan T,SAME;SAME.JK;Sarana Meditama Metropolitan T,Indonesia,,,,Utama
+SCCO,Supreme Cable Manufacturing &,SCCO;SCCO.JK;Supreme Cable Manufacturing &,Indonesia,,,,Pengembangan
+SCMA,Surya Citra Media Tbk.,SCMA;SCMA.JK;Surya Citra Media Tbk.;Surya Citra Media,Indonesia,,Consumer Cyclicals,KOMPAS100,Utama
+SCPI,Organon Pharma Indonesia Tbk.,SCPI;SCPI.JK;Organon Pharma Indonesia Tbk.;Organon Pharma Indonesia,Indonesia,,,,Pemantauan Khusus
+SDMU,Sidomulyo Selaras Tbk.,SDMU;SDMU.JK;Sidomulyo Selaras Tbk.;Sidomulyo Selaras,Indonesia,,,,Pengembangan
+SDPC,Millennium Pharmacon Internati,SDPC;SDPC.JK;Millennium Pharmacon Internati,Indonesia,,,,Pengembangan
+SDRA,Bank Woori Saudara Indonesia 1,SDRA;SDRA.JK;Bank Woori Saudara Indonesia 1,Indonesia,,,,Pengembangan
+SGRO,Prime Agri Resources Tbk.,SGRO;SGRO.JK;Prime Agri Resources Tbk.;Prime Agri Resources,Indonesia,,,,Utama
+SHID,Hotel Sahid Jaya International,SHID;SHID.JK;Hotel Sahid Jaya International,Indonesia,,,,Pengembangan
+SIDO,Industri Jamu dan Farmasi Sido,SIDO;SIDO.JK;Industri Jamu dan Farmasi Sido,Indonesia,,Healthcare,LQ45|KOMPAS100,Utama
+SILO,Siloam International Hospitals,SILO;SILO.JK;Siloam International Hospitals,Indonesia,,Healthcare,KOMPAS100,Utama
+SIMA,Siwani Makmur Tbk,SIMA;SIMA.JK;Siwani Makmur Tbk;Siwani Makmur,Indonesia,,,,Pemantauan Khusus
+SIMP,Salim Ivomas Pratama Tbk.,SIMP;SIMP.JK;Salim Ivomas Pratama Tbk.;Salim Ivomas Pratama,Indonesia,,,,Utama
+SIPD,Sreeya Sewu Indonesia Tbk.,SIPD;SIPD.JK;Sreeya Sewu Indonesia Tbk.;Sreeya Sewu Indonesia,Indonesia,,,,Pengembangan
+SKBM,Sekar Bumi Tbk.,SKBM;SKBM.JK;Sekar Bumi Tbk.;Sekar Bumi,Indonesia,,,,Pengembangan
+SKLT,Sekar Laut Tbk.,SKLT;SKLT.JK;Sekar Laut Tbk.;Sekar Laut,Indonesia,,,,Pengembangan
+SKYB,Northcliff Citranusa Indonesia,SKYB;SKYB.JK;Northcliff Citranusa Indonesia,Indonesia,,,,Pemantauan Khusus
+SMAR,Sinar Mas Agro Resources and T,SMAR;SMAR.JK;Sinar Mas Agro Resources and T,Indonesia,,,,Utama
+SMBR,Semen Baturaja (Persero) Tbk.,SMBR;SMBR.JK;Semen Baturaja (Persero) Tbk.;Semen Baturaja (),Indonesia,,,,Utama
+SMCB,Solusi Bangun Indonesia Tbk.,SMCB;SMCB.JK;Solusi Bangun Indonesia Tbk.;Solusi Bangun Indonesia,Indonesia,,,,Pemantauan Khusus
+SMDM,Suryamas Dutamakmur Tbk.,SMDM;SMDM.JK;Suryamas Dutamakmur Tbk.;Suryamas Dutamakmur,Indonesia,,,,Pengembangan
+SMDR,Samudera Indonesia Tbk.,SMDR;SMDR.JK;Samudera Indonesia Tbk.;Samudera Indonesia,Indonesia,,,,Utama
+SMGR,Semen Indonesia (Persero) Tbk.,SMGR;SMGR.JK;Semen Indonesia (Persero) Tbk.;Semen Indonesia (),Indonesia,,Basic Materials,IDX30|LQ45|KOMPAS100,Utama
+SMMA,Sinarmas Multiartha Tbk.,SMMA;SMMA.JK;Sinarmas Multiartha Tbk.;Sinarmas Multiartha,Indonesia,,,,Pengembangan
+SMMT,Golden Eagle Energy Tbk.,SMMT;SMMT.JK;Golden Eagle Energy Tbk.;Golden Eagle Energy,Indonesia,,,,Pengembangan
+SMRA,Summarecon Agung Tbk.,SMRA;SMRA.JK;Summarecon Agung Tbk.;Summarecon Agung,Indonesia,,Properties & Real Estate,KOMPAS100,Utama
+SMRU,SMR Utama Tbk.,SMRU;SMRU.JK;SMR Utama Tbk.;SMR Utama,Indonesia,,,,Pemantauan Khusus
+SMSM,Selamat Sempurna Tbk.,SMSM;SMSM.JK;Selamat Sempurna Tbk.;Selamat Sempurna,Indonesia,,,,Utama
+SOCI,Soechi Lines Tbk.,SOCI;SOCI.JK;Soechi Lines Tbk.;Soechi Lines,Indonesia,,,,Pengembangan
+SONA,Sona Topas Tourism Industry Tb,SONA;SONA.JK;Sona Topas Tourism Industry Tb,Indonesia,,,,Pengembangan
+SPMA,Suparma Tbk.,SPMA;SPMA.JK;Suparma Tbk.;Suparma,Indonesia,,,,Pengembangan
+SQMI,Wilton Makmur Indonesia Tbk.,SQMI;SQMI.JK;Wilton Makmur Indonesia Tbk.;Wilton Makmur Indonesia,Indonesia,,,,Pemantauan Khusus
+SRAJ,Sejahteraraya Anugrahjaya Tbk.,SRAJ;SRAJ.JK;Sejahteraraya Anugrahjaya Tbk.;Sejahteraraya Anugrahjaya,Indonesia,,,,Pengembangan
+SRIL,Sri Rejeki Isman Tbk.,SRIL;SRIL.JK;Sri Rejeki Isman Tbk.;Sri Rejeki Isman,Indonesia,,,,Pemantauan Khusus
+SRSN,Indo Acidatama Tbk,SRSN;SRSN.JK;Indo Acidatama Tbk;Indo Acidatama,Indonesia,,,,Pengembangan
+SRTG,Saratoga Investama Sedaya Tbk.,SRTG;SRTG.JK;Saratoga Investama Sedaya Tbk.;Saratoga Investama Sedaya,Indonesia,,,,Utama
+SSIA,Surya Semesta Internusa Tbk.,SSIA;SSIA.JK;Surya Semesta Internusa Tbk.;Surya Semesta Internusa,Indonesia,,,,Utama
+SSMS,Sawit Sumbermas Sarana Tbk.,SSMS;SSMS.JK;Sawit Sumbermas Sarana Tbk.;Sawit Sumbermas Sarana,Indonesia,,,,Utama
+SSTM,Sunson Textile Manufacture Tbk,SSTM;SSTM.JK;Sunson Textile Manufacture Tbk;Sunson Textile Manufacture,Indonesia,,,,Pengembangan
+STAR,Calculus Global Ventures Tbk.,STAR;STAR.JK;Calculus Global Ventures Tbk.;Calculus Global Ventures,Indonesia,,,,Pengembangan
+STTP,Siantar Top Tbk.,STTP;STTP.JK;Siantar Top Tbk.;Siantar Top,Indonesia,,,,Pengembangan
+SUGI,Sugih Energy Tbk.,SUGI;SUGI.JK;Sugih Energy Tbk.;Sugih Energy,Indonesia,,,,Pemantauan Khusus
+SULI,SLJ Global Tbk.,SULI;SULI.JK;SLJ Global Tbk.;SLJ Global,Indonesia,,,,Pengembangan
+SUPR,Solusi Tunas Pratama Tbk.,SUPR;SUPR.JK;Solusi Tunas Pratama Tbk.;Solusi Tunas Pratama,Indonesia,,,,Pemantauan Khusus
+TALF,Tunas Alfin Tbk.,TALF;TALF.JK;Tunas Alfin Tbk.;Tunas Alfin,Indonesia,,,,Pengembangan
+TARA,Agung Semesta Sejahtera Tbk.,TARA;TARA.JK;Agung Semesta Sejahtera Tbk.;Agung Semesta Sejahtera,Indonesia,,,,Pemantauan Khusus
+TAXI,Express Transindo Utama Tbk.,TAXI;TAXI.JK;Express Transindo Utama Tbk.;Express Transindo Utama,Indonesia,,,,Pemantauan Khusus
+TBIG,Tower Bersama Infrastructure T,TBIG;TBIG.JK;Tower Bersama Infrastructure T,Indonesia,,Infrastructures,KOMPAS100,Utama
+TBLA,Tunas Baru Lampung Tbk.,TBLA;TBLA.JK;Tunas Baru Lampung Tbk.;Tunas Baru Lampung,Indonesia,,,,Utama
+TBMS,Tembaga Mulia Semanan Tbk.,TBMS;TBMS.JK;Tembaga Mulia Semanan Tbk.;Tembaga Mulia Semanan,Indonesia,,,,Pengembangan
+TCID,Mandom Indonesia Tbk.,TCID;TCID.JK;Mandom Indonesia Tbk.;Mandom Indonesia,Indonesia,,,,Pengembangan
+TELE,Omni Inovasi Indonesia Tbk.,TELE;TELE.JK;Omni Inovasi Indonesia Tbk.;Omni Inovasi Indonesia,Indonesia,,,,Pemantauan Khusus
+TFCO,Tifico Fiber Indonesia Tbk.,TFCO;TFCO.JK;Tifico Fiber Indonesia Tbk.;Tifico Fiber Indonesia,Indonesia,,,,Pemantauan Khusus
+TGKA,Tigaraksa Satria Tbk.,TGKA;TGKA.JK;Tigaraksa Satria Tbk.;Tigaraksa Satria,Indonesia,,,,Pengembangan
+TIFA,KDB Tifa Finance Tbk.,TIFA;TIFA.JK;KDB Tifa Finance Tbk.;KDB Tifa Finance,Indonesia,,,,Pengembangan
+TINS,Timah Tbk.,TINS;TINS.JK;Timah Tbk.;Timah,Indonesia,,Basic Materials,KOMPAS100,Utama
+TIRA,Tira Austenite Tbk,TIRA;TIRA.JK;Tira Austenite Tbk;Tira Austenite,Indonesia,,,,Pengembangan
+TIRT,Tirta Mahakam Resources Tbk,TIRT;TIRT.JK;Tirta Mahakam Resources Tbk;Tirta Mahakam Resources,Indonesia,,,,Pemantauan Khusus
+TKIM,Pabrik Kertas Tjiwi Kimia Tbk.,TKIM;TKIM.JK;Pabrik Kertas Tjiwi Kimia Tbk.;Pabrik Kertas Tjiwi Kimia,Indonesia,,,,Utama
+TLKM,Telkom Indonesia (Persero) Tbk,TLKM;TLKM.JK;Telkom Indonesia (Persero) Tbk;Telkom Indonesia (),Indonesia,,Infrastructures,IDX30|LQ45|KOMPAS100,Utama
+TMAS,Temas Tbk.,TMAS;TMAS.JK;Temas Tbk.;Temas,Indonesia,,,,Utama
+TMPO,Tempo Intimedia Tbk.,TMPO;TMPO.JK;Tempo Intimedia Tbk.;Tempo Intimedia,Indonesia,,,,Pengembangan
+TOBA,TBS Energi Utama Tbk.,TOBA;TOBA.JK;TBS Energi Utama Tbk.;TBS Energi Utama,Indonesia,,,,Utama
+TOTL,Total Bangun Persada Tbk.,TOTL;TOTL.JK;Total Bangun Persada Tbk.;Total Bangun Persada,Indonesia,,,,Utama
+TOTO,Surya Toto Indonesia Tbk.,TOTO;TOTO.JK;Surya Toto Indonesia Tbk.;Surya Toto Indonesia,Indonesia,,,,Utama
+TOWR,Sarana Menara Nusantara Tbk.,TOWR;TOWR.JK;Sarana Menara Nusantara Tbk.;Sarana Menara Nusantara,Indonesia,,Infrastructures,LQ45|KOMPAS100,Utama
+TPIA,Chandra Asri Pacific Tbk.,TPIA;TPIA.JK;Chandra Asri Pacific Tbk.;Chandra Asri Pacific,Indonesia,,Basic Materials,IDX30|LQ45|KOMPAS100,Utama
+TPMA,Trans Power Marine Tbk.,TPMA;TPMA.JK;Trans Power Marine Tbk.;Trans Power Marine,Indonesia,,,,Utama
+TRAM,Trada Alam Minera Tbk.,TRAM;TRAM.JK;Trada Alam Minera Tbk.;Trada Alam Minera,Indonesia,,,,Pemantauan Khusus
+TRIL,Triwira Insanlestari Tbk.,TRIL;TRIL.JK;Triwira Insanlestari Tbk.;Triwira Insanlestari,Indonesia,,,,Pemantauan Khusus
+TRIM,Trimegah Sekuritas Indonesia T,TRIM;TRIM.JK;Trimegah Sekuritas Indonesia T,Indonesia,,,,Utama
+TRIO,Trikomsel Oke Tbk.,TRIO;TRIO.JK;Trikomsel Oke Tbk.;Trikomsel Oke,Indonesia,,,,Pemantauan Khusus
+TRIS,Trisula International Tbk.,TRIS;TRIS.JK;Trisula International Tbk.;Trisula International,Indonesia,,,,Pengembangan
+TRST,Trias Sentosa Tbk.,TRST;TRST.JK;Trias Sentosa Tbk.;Trias Sentosa,Indonesia,,,,Pengembangan
+TRUS,Trust Finance Indonesia Tbk,TRUS;TRUS.JK;Trust Finance Indonesia Tbk;Trust Finance Indonesia,Indonesia,,,,Pengembangan
+TSPC,Tempo Scan Pacific Tbk.,TSPC;TSPC.JK;Tempo Scan Pacific Tbk.;Tempo Scan Pacific,Indonesia,,,,Utama
+ULTJ,Ultrajaya Milk Industry & Trad,ULTJ;ULTJ.JK;Ultrajaya Milk Industry & Trad,Indonesia,,Consumer Non-Cyclicals,KOMPAS100,Utama
+UNIC,Unggul Indah Cahaya Tbk.,UNIC;UNIC.JK;Unggul Indah Cahaya Tbk.;Unggul Indah Cahaya,Indonesia,,,,Utama
+UNIT,Nusantara Inti Corpora Tbk,UNIT;UNIT.JK;Nusantara Inti Corpora Tbk;Nusantara Inti Corpora,Indonesia,,,,Pengembangan
+UNSP,Bakrie Sumatera Plantations Tb,UNSP;UNSP.JK;Bakrie Sumatera Plantations Tb,Indonesia,,,,Pemantauan Khusus
+UNTR,United Tractors Tbk.,UNTR;UNTR.JK;United Tractors Tbk.;United Tractors,Indonesia,,Industrials,IDX30|LQ45|KOMPAS100,Utama
+UNVR,Unilever Indonesia Tbk.,UNVR;UNVR.JK;Unilever Indonesia Tbk.;Unilever Indonesia,Indonesia,,Consumer Non-Cyclicals,IDX30|LQ45|KOMPAS100,Utama
+VICO,Victoria Investama Tbk.,VICO;VICO.JK;Victoria Investama Tbk.;Victoria Investama,Indonesia,,,,Utama
+VINS,Victoria Insurance Tbk.,VINS;VINS.JK;Victoria Insurance Tbk.;Victoria Insurance,Indonesia,,,,Pengembangan
+VIVA,Visi Media Asia Tbk.,VIVA;VIVA.JK;Visi Media Asia Tbk.;Visi Media Asia,Indonesia,,,,Pemantauan Khusus
+VOKS,Voksel Electric Tbk.,VOKS;VOKS.JK;Voksel Electric Tbk.;Voksel Electric,Indonesia,,,,Pengembangan
+VRNA,Mizuho Leasing Indonesia Tbk.,VRNA;VRNA.JK;Mizuho Leasing Indonesia Tbk.;Mizuho Leasing Indonesia,Indonesia,,,,Pengembangan
+WAPO,Wahana Pronatural Tbk.,WAPO;WAPO.JK;Wahana Pronatural Tbk.;Wahana Pronatural,Indonesia,,,,Pengembangan
+WEHA,WEHA Transportasi Indonesia Tb,WEHA;WEHA.JK;WEHA Transportasi Indonesia Tb,Indonesia,,,,Pengembangan
+WICO,Wicaksana Overseas Internation,WICO;WICO.JK;Wicaksana Overseas Internation,Indonesia,,,,Pemantauan Khusus
+WIIM,Wismilak Inti Makmur Tbk.,WIIM;WIIM.JK;Wismilak Inti Makmur Tbk.;Wismilak Inti Makmur,Indonesia,,,,Utama
+WIKA,Wijaya Karya (Persero) Tbk.,WIKA;WIKA.JK;Wijaya Karya (Persero) Tbk.;Wijaya Karya (),Indonesia,,,,Pemantauan Khusus
+WINS,Wintermar Offshore Marine Tbk.,WINS;WINS.JK;Wintermar Offshore Marine Tbk.;Wintermar Offshore Marine,Indonesia,,,,Utama
+WOMF,Wahana Ottomitra Multiartha Tb,WOMF;WOMF.JK;Wahana Ottomitra Multiartha Tb,Indonesia,,,,Pengembangan
+WSKT,Waskita Karya (Persero) Tbk.,WSKT;WSKT.JK;Waskita Karya (Persero) Tbk.;Waskita Karya (),Indonesia,,,,Pemantauan Khusus
+WTON,Wijaya Karya Beton Tbk.,WTON;WTON.JK;Wijaya Karya Beton Tbk.;Wijaya Karya Beton,Indonesia,,,,Utama
+YPAS,Yanaprima Hastapersada Tbk,YPAS;YPAS.JK;Yanaprima Hastapersada Tbk;Yanaprima Hastapersada,Indonesia,,,,Pengembangan
+YULE,Yulie Sekuritas Indonesia Tbk.,YULE;YULE.JK;Yulie Sekuritas Indonesia Tbk.;Yulie Sekuritas Indonesia,Indonesia,,,,Pengembangan
+ZBRA,Dosni Roha Indonesia Tbk.,ZBRA;ZBRA.JK;Dosni Roha Indonesia Tbk.;Dosni Roha Indonesia,Indonesia,,,,Pemantauan Khusus
+SHIP,Sillo Maritime Perdana Tbk.,SHIP;SHIP.JK;Sillo Maritime Perdana Tbk.;Sillo Maritime Perdana,Indonesia,,,,Utama
+CASA,Capital Financial Indonesia Tb,CASA;CASA.JK;Capital Financial Indonesia Tb,Indonesia,,,,Pengembangan
+DAYA,Duta Intidaya Tbk.,DAYA;DAYA.JK;Duta Intidaya Tbk.;Duta Intidaya,Indonesia,,,,Pengembangan
+DPUM,Dua Putra Utama Makmur Tbk.,DPUM;DPUM.JK;Dua Putra Utama Makmur Tbk.;Dua Putra Utama Makmur,Indonesia,,,,Pengembangan
+IDPR,Indonesia Pondasi Raya Tbk.,IDPR;IDPR.JK;Indonesia Pondasi Raya Tbk.;Indonesia Pondasi Raya,Indonesia,,,,Pengembangan
+JGLE,Graha Andrasentra Propertindo,JGLE;JGLE.JK;Graha Andrasentra Propertindo,Indonesia,,,,Pengembangan
+KINO,Kino Indonesia Tbk.,KINO;KINO.JK;Kino Indonesia Tbk.;Kino Indonesia,Indonesia,,,,Pengembangan
+MARI,Mahaka Radio Integra Tbk.,MARI;MARI.JK;Mahaka Radio Integra Tbk.;Mahaka Radio Integra,Indonesia,,,,Pemantauan Khusus
+MKNT,Mitra Komunikasi Nusantara Tbk,MKNT;MKNT.JK;Mitra Komunikasi Nusantara Tbk;Mitra Komunikasi Nusantara,Indonesia,,,,Pemantauan Khusus
+MTRA,Mitra Pemuda Tbk.,MTRA;MTRA.JK;Mitra Pemuda Tbk.;Mitra Pemuda,Indonesia,,,,Pemantauan Khusus
+OASA,Maharaksa Biru Energi Tbk.,OASA;OASA.JK;Maharaksa Biru Energi Tbk.;Maharaksa Biru Energi,Indonesia,,,,Pengembangan
+POWR,Cikarang Listrindo Tbk.,POWR;POWR.JK;Cikarang Listrindo Tbk.;Cikarang Listrindo,Indonesia,,,,Utama
+INCF,Indo Komoditi Korpora Tbk.,INCF;INCF.JK;Indo Komoditi Korpora Tbk.;Indo Komoditi Korpora,Indonesia,,,,Pengembangan
+WSBP,Waskita Beton Precast Tbk.,WSBP;WSBP.JK;Waskita Beton Precast Tbk.;Waskita Beton Precast,Indonesia,,,,Pemantauan Khusus
+PBSA,Paramita Bangun Sarana Tbk.,PBSA;PBSA.JK;Paramita Bangun Sarana Tbk.;Paramita Bangun Sarana,Indonesia,,,,Pengembangan
+PRDA,Prodia Widyahusada Tbk.,PRDA;PRDA.JK;Prodia Widyahusada Tbk.;Prodia Widyahusada,Indonesia,,,,Utama
+BOGA,Apollo Global Interactive Tbk.,BOGA;BOGA.JK;Apollo Global Interactive Tbk.;Apollo Global Interactive,Indonesia,,,,Pengembangan
+BRIS,Bank Syariah Indonesia (Perser,BRIS;BRIS.JK;Bank Syariah Indonesia (Perser,Indonesia,,Financials,IDX30|LQ45|KOMPAS100,Utama
+PORT,Nusantara Pelabuhan Handal Tbk,PORT;PORT.JK;Nusantara Pelabuhan Handal Tbk;Nusantara Pelabuhan Handal,Indonesia,,,,Utama
+CARS,Industri dan Perdagangan Bintr,CARS;CARS.JK;Industri dan Perdagangan Bintr,Indonesia,,,,Utama
+MINA,Sanurhasta Mitra Tbk.,MINA;MINA.JK;Sanurhasta Mitra Tbk.;Sanurhasta Mitra,Indonesia,,,,Pengembangan
+CLEO,Sariguna Primatirta Tbk.,CLEO;CLEO.JK;Sariguna Primatirta Tbk.;Sariguna Primatirta,Indonesia,,,,Utama
+TAMU,Pelayaran Tamarin Samudra Tbk.,TAMU;TAMU.JK;Pelayaran Tamarin Samudra Tbk.;Pelayaran Tamarin Samudra,Indonesia,,,,Pemantauan Khusus
+CSIS,Cahayasakti Investindo Sukses,CSIS;CSIS.JK;Cahayasakti Investindo Sukses,Indonesia,,,,Pengembangan
+TGRA,Terregra Asia Energy Tbk.,TGRA;TGRA.JK;Terregra Asia Energy Tbk.;Terregra Asia Energy,Indonesia,,,,Pemantauan Khusus
+FIRE,Alfa Energi Investama Tbk.,FIRE;FIRE.JK;Alfa Energi Investama Tbk.;Alfa Energi Investama,Indonesia,,,,Pengembangan
+TOPS,Totalindo Eka Persada Tbk.,TOPS;TOPS.JK;Totalindo Eka Persada Tbk.;Totalindo Eka Persada,Indonesia,,,,Pemantauan Khusus
+KMTR,Kirana Megatara Tbk.,KMTR;KMTR.JK;Kirana Megatara Tbk.;Kirana Megatara,Indonesia,,,,Pengembangan
+ARMY,Armidian Karyatama Tbk.,ARMY;ARMY.JK;Armidian Karyatama Tbk.;Armidian Karyatama,Indonesia,,,,Pemantauan Khusus
+MAPB,MAP Boga Adiperkasa Tbk.,MAPB;MAPB.JK;MAP Boga Adiperkasa Tbk.;MAP Boga Adiperkasa,Indonesia,,,,Pemantauan Khusus
+WOOD,Integra Indocabinet Tbk.,WOOD;WOOD.JK;Integra Indocabinet Tbk.;Integra Indocabinet,Indonesia,,,,Utama
+HRTA,Hartadinata Abadi Tbk.,HRTA;HRTA.JK;Hartadinata Abadi Tbk.;Hartadinata Abadi,Indonesia,,,,Utama
+MABA,Marga Abhinaya Abadi Tbk.,MABA;MABA.JK;Marga Abhinaya Abadi Tbk.;Marga Abhinaya Abadi,Indonesia,,,,Pemantauan Khusus
+HOKI,Buyung Poetra Sembada Tbk.,HOKI;HOKI.JK;Buyung Poetra Sembada Tbk.;Buyung Poetra Sembada,Indonesia,,,,Pengembangan
+MPOW,Megapower Makmur Tbk.,MPOW;MPOW.JK;Megapower Makmur Tbk.;Megapower Makmur,Indonesia,,,,Pengembangan
+MARK,Mark Dynamics Indonesia Tbk.,MARK;MARK.JK;Mark Dynamics Indonesia Tbk.;Mark Dynamics Indonesia,Indonesia,,,,Utama
+NASA,Andalan Perkasa Abadi Tbk.,NASA;NASA.JK;Andalan Perkasa Abadi Tbk.;Andalan Perkasa Abadi,Indonesia,,,,Pemantauan Khusus
+MDKI,Emdeki Utama Tbk.,MDKI;MDKI.JK;Emdeki Utama Tbk.;Emdeki Utama,Indonesia,,,,Pengembangan
+BELL,Trisula Textile Industries Tbk,BELL;BELL.JK;Trisula Textile Industries Tbk;Trisula Textile Industries,Indonesia,,,,Pengembangan
+KIOS,Kioson Komersial Indonesia Tbk,KIOS;KIOS.JK;Kioson Komersial Indonesia Tbk;Kioson Komersial Indonesia,Indonesia,,,,Pengembangan
+GMFI,Garuda Maintenance Facility Ae,GMFI;GMFI.JK;Garuda Maintenance Facility Ae,Indonesia,,,,Pengembangan
+MTWI,Malacca Trust Wuwungan Insuran,MTWI;MTWI.JK;Malacca Trust Wuwungan Insuran,Indonesia,,,,Pengembangan
+ZINC,Kapuas Prima Coal Tbk.,ZINC;ZINC.JK;Kapuas Prima Coal Tbk.;Kapuas Prima Coal,Indonesia,,,,Pemantauan Khusus
+MCAS,M Cash Integrasi Tbk.,MCAS;MCAS.JK;M Cash Integrasi Tbk.;M Cash Integrasi,Indonesia,,,,Pengembangan
+PPRE,PP Presisi Tbk.,PPRE;PPRE.JK;PP Presisi Tbk.;PP Presisi,Indonesia,,,,Pengembangan
+WEGE,Wijaya Karya Bangunan Gedung T,WEGE;WEGE.JK;Wijaya Karya Bangunan Gedung T,Indonesia,,,,Pengembangan
+PSSI,IMC Pelita Logistik Tbk.,PSSI;PSSI.JK;IMC Pelita Logistik Tbk.;IMC Pelita Logistik,Indonesia,,,,Utama
+MORA,Ekamas Mora Republik Tbk.,MORA;MORA.JK;Ekamas Mora Republik Tbk.;Ekamas Mora Republik,Indonesia,,,,Utama
+DWGL,Dwi Guna Laksana Tbk.,DWGL;DWGL.JK;Dwi Guna Laksana Tbk.;Dwi Guna Laksana,Indonesia,,,,Pengembangan
+PBID,Panca Budi Idaman Tbk.,PBID;PBID.JK;Panca Budi Idaman Tbk.;Panca Budi Idaman,Indonesia,,,,Utama
+JMAS,Asuransi Jiwa Syariah Jasa Mit,JMAS;JMAS.JK;Asuransi Jiwa Syariah Jasa Mit,Indonesia,,,,Pengembangan
+CAMP,Campina Ice Cream Industry Tbk,CAMP;CAMP.JK;Campina Ice Cream Industry Tbk;Campina Ice Cream Industry,Indonesia,,,,Pengembangan
+IPCM,Jasa Armada Indonesia Tbk.,IPCM;IPCM.JK;Jasa Armada Indonesia Tbk.;Jasa Armada Indonesia,Indonesia,,,,Utama
+PCAR,Prima Cakrawala Abadi Tbk.,PCAR;PCAR.JK;Prima Cakrawala Abadi Tbk.;Prima Cakrawala Abadi,Indonesia,,,,Pemantauan Khusus
+LCKM,LCK Global Kedaton Tbk.,LCKM;LCKM.JK;LCK Global Kedaton Tbk.;LCK Global Kedaton,Indonesia,,,,Pengembangan
+BOSS,Borneo Olah Sarana Sukses Tbk.,BOSS;BOSS.JK;Borneo Olah Sarana Sukses Tbk.;Borneo Olah Sarana Sukses,Indonesia,,,,Pemantauan Khusus
+HELI,Jaya Trishindo Tbk.,HELI;HELI.JK;Jaya Trishindo Tbk.;Jaya Trishindo,Indonesia,,,,Pengembangan
+JSKY,Sky Energy Indonesia Tbk.,JSKY;JSKY.JK;Sky Energy Indonesia Tbk.;Sky Energy Indonesia,Indonesia,,,,Pemantauan Khusus
+INPS,Indah Prakasa Sentosa Tbk.,INPS;INPS.JK;Indah Prakasa Sentosa Tbk.;Indah Prakasa Sentosa,Indonesia,,,,Pemantauan Khusus
+GHON,Gihon Telekomunikasi Indonesia,GHON;GHON.JK;Gihon Telekomunikasi Indonesia,Indonesia,,,,Pengembangan
+TDPM,Tianrong Chemicals Industry Tb,TDPM;TDPM.JK;Tianrong Chemicals Industry Tb,Indonesia,,,,Pemantauan Khusus
+DFAM,Dafam Property Indonesia Tbk.,DFAM;DFAM.JK;Dafam Property Indonesia Tbk.;Dafam Property Indonesia,Indonesia,,,,Pengembangan
+NICK,Charnic Capital Tbk.,NICK;NICK.JK;Charnic Capital Tbk.;Charnic Capital,Indonesia,,,,Pengembangan
+BTPS,Bank BTPN Syariah Tbk.,BTPS;BTPS.JK;Bank BTPN Syariah Tbk.;Bank BTPN Syariah,Indonesia,,,,Utama
+SPTO,Surya Pertiwi Tbk.,SPTO;SPTO.JK;Surya Pertiwi Tbk.;Surya Pertiwi,Indonesia,,,,Utama
+PRIM,Royal Prima Tbk.,PRIM;PRIM.JK;Royal Prima Tbk.;Royal Prima,Indonesia,,,,Pengembangan
+HEAL,Medikaloka Hermina Tbk.,HEAL;HEAL.JK;Medikaloka Hermina Tbk.;Medikaloka Hermina,Indonesia,,Healthcare,LQ45|KOMPAS100,Utama
+TRUK,Guna Timur Raya Tbk.,TRUK;TRUK.JK;Guna Timur Raya Tbk.;Guna Timur Raya,Indonesia,,,,Pengembangan
+PZZA,Sarimelati Kencana Tbk.,PZZA;PZZA.JK;Sarimelati Kencana Tbk.;Sarimelati Kencana,Indonesia,,,,Pengembangan
+TUGU,Asuransi Tugu Pratama Indonesi,TUGU;TUGU.JK;Asuransi Tugu Pratama Indonesi,Indonesia,,,,Utama
+MSIN,MNC Digital Entertainment Tbk.,MSIN;MSIN.JK;MNC Digital Entertainment Tbk.;MNC Digital Entertainment,Indonesia,,,,Utama
+SWAT,Sriwahana Adityakarta Tbk.,SWAT;SWAT.JK;Sriwahana Adityakarta Tbk.;Sriwahana Adityakarta,Indonesia,,,,Pemantauan Khusus
+TNCA,Trimuda Nuansa Citra Tbk.,TNCA;TNCA.JK;Trimuda Nuansa Citra Tbk.;Trimuda Nuansa Citra,Indonesia,,,,Pengembangan
+MAPA,Map Aktif Adiperkasa Tbk.,MAPA;MAPA.JK;Map Aktif Adiperkasa Tbk.;Map Aktif Adiperkasa,Indonesia,,,,Utama
+TCPI,Transcoal Pacific Tbk.,TCPI;TCPI.JK;Transcoal Pacific Tbk.;Transcoal Pacific,Indonesia,,,,Pengembangan
+IPCC,Indonesia Kendaraan Terminal T,IPCC;IPCC.JK;Indonesia Kendaraan Terminal T,Indonesia,,,,Utama
+RISE,Jaya Sukses Makmur Sentosa Tbk,RISE;RISE.JK;Jaya Sukses Makmur Sentosa Tbk;Jaya Sukses Makmur Sentosa,Indonesia,,,,Pengembangan
+BPTR,Batavia Prosperindo Trans Tbk.,BPTR;BPTR.JK;Batavia Prosperindo Trans Tbk.;Batavia Prosperindo Trans,Indonesia,,,,Pengembangan
+POLL,Pollux Properties Indonesia Tb,POLL;POLL.JK;Pollux Properties Indonesia Tb,Indonesia,,,,Pemantauan Khusus
+NFCX,NFC Indonesia Tbk.,NFCX;NFCX.JK;NFC Indonesia Tbk.;NFC Indonesia,Indonesia,,,,Pengembangan
+MGRO,Mahkota Group Tbk.,MGRO;MGRO.JK;Mahkota Group Tbk.;Mahkota Group,Indonesia,,,,Pengembangan
+NUSA,Sinergi Megah Internusa Tbk.,NUSA;NUSA.JK;Sinergi Megah Internusa Tbk.;Sinergi Megah Internusa,Indonesia,,,,Pemantauan Khusus
+FILM,MD Entertainment Tbk.,FILM;FILM.JK;MD Entertainment Tbk.;MD Entertainment,Indonesia,,,,Utama
+ANDI,Andira Agro Tbk.,ANDI;ANDI.JK;Andira Agro Tbk.;Andira Agro,Indonesia,,,,Pemantauan Khusus
+LAND,Trimitra Propertindo Tbk.,LAND;LAND.JK;Trimitra Propertindo Tbk.;Trimitra Propertindo,Indonesia,,,,Pengembangan
+MOLI,Madusari Murni Indah Tbk.,MOLI;MOLI.JK;Madusari Murni Indah Tbk.;Madusari Murni Indah,Indonesia,,,,Pengembangan
+PANI,Pantai Indah Kapuk Dua Tbk.,PANI;PANI.JK;Pantai Indah Kapuk Dua Tbk.;Pantai Indah Kapuk Dua,Indonesia,,,,Utama
+DIGI,Arkadia Digital Media Tbk.,DIGI;DIGI.JK;Arkadia Digital Media Tbk.;Arkadia Digital Media,Indonesia,,,,Pemantauan Khusus
+CITY,Natura City Developments Tbk.,CITY;CITY.JK;Natura City Developments Tbk.;Natura City Developments,Indonesia,,,,Pengembangan
+SAPX,Satria Antaran Prima Tbk.,SAPX;SAPX.JK;Satria Antaran Prima Tbk.;Satria Antaran Prima,Indonesia,,,,Pengembangan
+SURE,Super Energy Tbk.,SURE;SURE.JK;Super Energy Tbk.;Super Energy,Indonesia,,,,Pengembangan
+HKMU,HK Metals Utama Tbk.,HKMU;HKMU.JK;HK Metals Utama Tbk.;HK Metals Utama,Indonesia,,,,Pemantauan Khusus
+MPRO,Maha Properti Indonesia Tbk.,MPRO;MPRO.JK;Maha Properti Indonesia Tbk.;Maha Properti Indonesia,Indonesia,,,,Pengembangan
+DUCK,Jaya Bersama Indo Tbk.,DUCK;DUCK.JK;Jaya Bersama Indo Tbk.;Jaya Bersama Indo,Indonesia,,,,Pemantauan Khusus
+GOOD,Garudafood Putra Putri Jaya Tb,GOOD;GOOD.JK;Garudafood Putra Putri Jaya Tb,Indonesia,,,,Utama
+SKRN,Superkrane Mitra Utama Tbk.,SKRN;SKRN.JK;Superkrane Mitra Utama Tbk.;Superkrane Mitra Utama,Indonesia,,,,Utama
+YELO,Yelooo Integra Datanet Tbk.,YELO;YELO.JK;Yelooo Integra Datanet Tbk.;Yelooo Integra Datanet,Indonesia,,,,Pengembangan
+CAKK,Cahayaputra Asa Keramik Tbk.,CAKK;CAKK.JK;Cahayaputra Asa Keramik Tbk.;Cahayaputra Asa Keramik,Indonesia,,,,Pengembangan
+SATU,Kota Satu Properti Tbk.,SATU;SATU.JK;Kota Satu Properti Tbk.;Kota Satu Properti,Indonesia,,,,Pengembangan
+SOSS,Shield On Service Tbk.,SOSS;SOSS.JK;Shield On Service Tbk.;Shield On Service,Indonesia,,,,Pemantauan Khusus
+DEAL,Dewata Freightinternational Tb,DEAL;DEAL.JK;Dewata Freightinternational Tb,Indonesia,,,,Pemantauan Khusus
+POLA,Pool Advista Finance Tbk.,POLA;POLA.JK;Pool Advista Finance Tbk.;Pool Advista Finance,Indonesia,,,,Pengembangan
+DIVA,Distribusi Voucher Nusantara T,DIVA;DIVA.JK;Distribusi Voucher Nusantara T,Indonesia,,,,Pengembangan
+LUCK,Sentral Mitra Informatika Tbk.,LUCK;LUCK.JK;Sentral Mitra Informatika Tbk.;Sentral Mitra Informatika,Indonesia,,,,Pengembangan
+URBN,Urban Jakarta Propertindo Tbk.,URBN;URBN.JK;Urban Jakarta Propertindo Tbk.;Urban Jakarta Propertindo,Indonesia,,,,Pemantauan Khusus
+SOTS,Satria Mega Kencana Tbk.,SOTS;SOTS.JK;Satria Mega Kencana Tbk.;Satria Mega Kencana,Indonesia,,,,Pengembangan
+ZONE,Mega Perintis Tbk.,ZONE;ZONE.JK;Mega Perintis Tbk.;Mega Perintis,Indonesia,,,,Pengembangan
+PEHA,Phapros Tbk.,PEHA;PEHA.JK;Phapros Tbk.;Phapros,Indonesia,,,,Pengembangan
+FOOD,Sentra Food Indonesia Tbk.,FOOD;FOOD.JK;Sentra Food Indonesia Tbk.;Sentra Food Indonesia,Indonesia,,,,Pemantauan Khusus
+BEEF,Estika Tata Tiara Tbk.,BEEF;BEEF.JK;Estika Tata Tiara Tbk.;Estika Tata Tiara,Indonesia,,,,Pengembangan
+POLI,Pollux Hotels Group Tbk.,POLI;POLI.JK;Pollux Hotels Group Tbk.;Pollux Hotels Group,Indonesia,,,,Pengembangan
+CLAY,Citra Putra Realty Tbk.,CLAY;CLAY.JK;Citra Putra Realty Tbk.;Citra Putra Realty,Indonesia,,,,Pengembangan
+NATO,Olympus Strategic Indonesia Tb,NATO;NATO.JK;Olympus Strategic Indonesia Tb,Indonesia,,,,Pengembangan
+JAYA,Armada Berjaya Trans Tbk.,JAYA;JAYA.JK;Armada Berjaya Trans Tbk.;Armada Berjaya Trans,Indonesia,,,,Pengembangan
+COCO,Wahana Interfood Nusantara Tbk,COCO;COCO.JK;Wahana Interfood Nusantara Tbk;Wahana Interfood Nusantara,Indonesia,,,,Pengembangan
+MTPS,Meta Epsi Tbk.,MTPS;MTPS.JK;Meta Epsi Tbk.;Meta Epsi,Indonesia,,,,Pemantauan Khusus
+CPRI,Capri Nusa Satu Properti Tbk.,CPRI;CPRI.JK;Capri Nusa Satu Properti Tbk.;Capri Nusa Satu Properti,Indonesia,,,,Pemantauan Khusus
+HRME,Menteng Heritage Realty Tbk.,HRME;HRME.JK;Menteng Heritage Realty Tbk.;Menteng Heritage Realty,Indonesia,,,,Pemantauan Khusus
+POSA,Bliss Properti Indonesia Tbk.,POSA;POSA.JK;Bliss Properti Indonesia Tbk.;Bliss Properti Indonesia,Indonesia,,,,Pemantauan Khusus
+JAST,Jasnita Telekomindo Tbk.,JAST;JAST.JK;Jasnita Telekomindo Tbk.;Jasnita Telekomindo,Indonesia,,,,Pengembangan
+FITT,Hotel Fitra International Tbk.,FITT;FITT.JK;Hotel Fitra International Tbk.;Hotel Fitra International,Indonesia,,,,Pengembangan
+BOLA,Bali Bintang Sejahtera Tbk.,BOLA;BOLA.JK;Bali Bintang Sejahtera Tbk.;Bali Bintang Sejahtera,Indonesia,,,,Utama
+CCSI,Communication Cable Systems In,CCSI;CCSI.JK;Communication Cable Systems In,Indonesia,,,,Pengembangan
+SFAN,Surya Fajar Capital Tbk.,SFAN;SFAN.JK;Surya Fajar Capital Tbk.;Surya Fajar Capital,Indonesia,,,,Pengembangan
+POLU,Golden Flower Tbk.,POLU;POLU.JK;Golden Flower Tbk.;Golden Flower,Indonesia,,,,Pengembangan
+KJEN,Krida Jaringan Nusantara Tbk.,KJEN;KJEN.JK;Krida Jaringan Nusantara Tbk.;Krida Jaringan Nusantara,Indonesia,,,,Pengembangan
+KAYU,Darmi Bersaudara Tbk.,KAYU;KAYU.JK;Darmi Bersaudara Tbk.;Darmi Bersaudara,Indonesia,,,,Pemantauan Khusus
+ITIC,Indonesian Tobacco Tbk.,ITIC;ITIC.JK;Indonesian Tobacco Tbk.;Indonesian Tobacco,Indonesia,,,,Pengembangan
+PAMG,Bima Sakti Pertiwi Tbk.,PAMG;PAMG.JK;Bima Sakti Pertiwi Tbk.;Bima Sakti Pertiwi,Indonesia,,,,Pengembangan
+IPTV,MNC Vision Networks Tbk.,IPTV;IPTV.JK;MNC Vision Networks Tbk.;MNC Vision Networks,Indonesia,,,,Pemantauan Khusus
+BLUE,Berkah Prima Perkasa Tbk.,BLUE;BLUE.JK;Berkah Prima Perkasa Tbk.;Berkah Prima Perkasa,Indonesia,,,,Pengembangan
+ENVY,Envy Technologies Indonesia Tb,ENVY;ENVY.JK;Envy Technologies Indonesia Tb,Indonesia,,,,Pemantauan Khusus
+EAST,Eastparc Hotel Tbk.,EAST;EAST.JK;Eastparc Hotel Tbk.;Eastparc Hotel,Indonesia,,,,Pengembangan
+LIFE,MSIG Life Insurance Indonesia,LIFE;LIFE.JK;MSIG Life Insurance Indonesia,Indonesia,,,,Pengembangan
+FUJI,Fuji Finance Indonesia Tbk.,FUJI;FUJI.JK;Fuji Finance Indonesia Tbk.;Fuji Finance Indonesia,Indonesia,,,,Pengembangan
+KOTA,DMS Propertindo Tbk.,KOTA;KOTA.JK;DMS Propertindo Tbk.;DMS Propertindo,Indonesia,,,,Utama
+INOV,Inocycle Technology Group Tbk.,INOV;INOV.JK;Inocycle Technology Group Tbk.;Inocycle Technology Group,Indonesia,,,,Pengembangan
+ARKA,Arkha Jayanti Persada Tbk.,ARKA;ARKA.JK;Arkha Jayanti Persada Tbk.;Arkha Jayanti Persada,Indonesia,,,,Pemantauan Khusus
+SMKL,Satyamitra Kemas Lestari Tbk.,SMKL;SMKL.JK;Satyamitra Kemas Lestari Tbk.;Satyamitra Kemas Lestari,Indonesia,,,,Pengembangan
+HDIT,Hensel Davest Indonesia Tbk.,HDIT;HDIT.JK;Hensel Davest Indonesia Tbk.;Hensel Davest Indonesia,Indonesia,,,,Pengembangan
+KEEN,Kencana Energi Lestari Tbk.,KEEN;KEEN.JK;Kencana Energi Lestari Tbk.;Kencana Energi Lestari,Indonesia,,,,Utama
+BAPI,Bhakti Agung Propertindo Tbk.,BAPI;BAPI.JK;Bhakti Agung Propertindo Tbk.;Bhakti Agung Propertindo,Indonesia,,,,Pemantauan Khusus
+TFAS,Telefast Indonesia Tbk.,TFAS;TFAS.JK;Telefast Indonesia Tbk.;Telefast Indonesia,Indonesia,,,,Pengembangan
+GGRP,Gunung Raja Paksi Tbk.,GGRP;GGRP.JK;Gunung Raja Paksi Tbk.;Gunung Raja Paksi,Indonesia,,,,Pengembangan
+OPMS,Optima Prima Metal Sinergi Tbk,OPMS;OPMS.JK;Optima Prima Metal Sinergi Tbk;Optima Prima Metal Sinergi,Indonesia,,,,Pengembangan
+NZIA,Nusantara Almazia Tbk.,NZIA;NZIA.JK;Nusantara Almazia Tbk.;Nusantara Almazia,Indonesia,,,,Pengembangan
+SLIS,Gaya Abadi Sempurna Tbk.,SLIS;SLIS.JK;Gaya Abadi Sempurna Tbk.;Gaya Abadi Sempurna,Indonesia,,,,Pengembangan
+PURE,Trinitan Metals and Minerals T,PURE;PURE.JK;Trinitan Metals and Minerals T,Indonesia,,,,Pemantauan Khusus
+IRRA,Itama Ranoraya Tbk.,IRRA;IRRA.JK;Itama Ranoraya Tbk.;Itama Ranoraya,Indonesia,,,,Pengembangan
+DMMX,Digital Mediatama Maxima Tbk.,DMMX;DMMX.JK;Digital Mediatama Maxima Tbk.;Digital Mediatama Maxima,Indonesia,,,,Pengembangan
+SINI,Singaraja Putra Tbk.,SINI;SINI.JK;Singaraja Putra Tbk.;Singaraja Putra,Indonesia,,,,Pemantauan Khusus
+WOWS,Ginting Jaya Energi Tbk.,WOWS;WOWS.JK;Ginting Jaya Energi Tbk.;Ginting Jaya Energi,Indonesia,,,,Pengembangan
+ESIP,Sinergi Inti Plastindo Tbk.,ESIP;ESIP.JK;Sinergi Inti Plastindo Tbk.;Sinergi Inti Plastindo,Indonesia,,,,Pengembangan
+TEBE,Dana Brata Luhur Tbk.,TEBE;TEBE.JK;Dana Brata Luhur Tbk.;Dana Brata Luhur,Indonesia,,,,Utama
+KEJU,Mulia Boga Raya Tbk.,KEJU;KEJU.JK;Mulia Boga Raya Tbk.;Mulia Boga Raya,Indonesia,,,,Utama
+PSGO,Palma Serasih Tbk.,PSGO;PSGO.JK;Palma Serasih Tbk.;Palma Serasih,Indonesia,,,,Utama
+AGAR,Asia Sejahtera Mina Tbk.,AGAR;AGAR.JK;Asia Sejahtera Mina Tbk.;Asia Sejahtera Mina,Indonesia,,,,Pengembangan
+IFSH,Ifishdeco Tbk.,IFSH;IFSH.JK;Ifishdeco Tbk.;Ifishdeco,Indonesia,,,,Pemantauan Khusus
+REAL,Repower Asia Indonesia Tbk.,REAL;REAL.JK;Repower Asia Indonesia Tbk.;Repower Asia Indonesia,Indonesia,,,,Pengembangan
+IFII,Indonesia Fibreboard Industry,IFII;IFII.JK;Indonesia Fibreboard Industry,Indonesia,,,,Pengembangan
+PMJS,Putra Mandiri Jembar Tbk.,PMJS;PMJS.JK;Putra Mandiri Jembar Tbk.;Putra Mandiri Jembar,Indonesia,,,,Pengembangan
+UCID,Uni-Charm Indonesia Tbk.,UCID;UCID.JK;Uni-Charm Indonesia Tbk.;Uni-Charm Indonesia,Indonesia,,,,Utama
+GLVA,Galva Technologies Tbk.,GLVA;GLVA.JK;Galva Technologies Tbk.;Galva Technologies,Indonesia,,,,Utama
+PGJO,Bahtera Bumi Raya Tbk.,PGJO;PGJO.JK;Bahtera Bumi Raya Tbk.;Bahtera Bumi Raya,Indonesia,,,,Pemantauan Khusus
+AMAR,Bank Amar Indonesia Tbk.,AMAR;AMAR.JK;Bank Amar Indonesia Tbk.;Bank Amar Indonesia,Indonesia,,,,Utama
+CSRA,Cisadane Sawit Raya Tbk.,CSRA;CSRA.JK;Cisadane Sawit Raya Tbk.;Cisadane Sawit Raya,Indonesia,,,,Pengembangan
+INDO,Royalindo Investa Wijaya Tbk.,INDO;INDO.JK;Royalindo Investa Wijaya Tbk.;Royalindo Investa Wijaya,Indonesia,,,,Pengembangan
+AMOR,Ashmore Asset Management Indon,AMOR;AMOR.JK;Ashmore Asset Management Indon,Indonesia,,,,Pengembangan
+TRIN,Perintis Triniti Properti Tbk.,TRIN;TRIN.JK;Perintis Triniti Properti Tbk.;Perintis Triniti Properti,Indonesia,,,,Pengembangan
+DMND,Diamond Food Indonesia Tbk.,DMND;DMND.JK;Diamond Food Indonesia Tbk.;Diamond Food Indonesia,Indonesia,,,,Utama
+PURA,Putra Rajawali Kencana Tbk.,PURA;PURA.JK;Putra Rajawali Kencana Tbk.;Putra Rajawali Kencana,Indonesia,,,,Pemantauan Khusus
+PTPW,Pratama Widya Tbk.,PTPW;PTPW.JK;Pratama Widya Tbk.;Pratama Widya,Indonesia,,,,Pengembangan
+TAMA,Lancartama Sejati Tbk.,TAMA;TAMA.JK;Lancartama Sejati Tbk.;Lancartama Sejati,Indonesia,,,,Pengembangan
+IKAN,Era Mandiri Cemerlang Tbk.,IKAN;IKAN.JK;Era Mandiri Cemerlang Tbk.;Era Mandiri Cemerlang,Indonesia,,,,Pengembangan
+SAMF,Saraswanti Anugerah Makmur Tbk,SAMF;SAMF.JK;Saraswanti Anugerah Makmur Tbk;Saraswanti Anugerah Makmur,Indonesia,,,,Utama
+SBAT,Sejahtera Bintang Abadi Textil,SBAT;SBAT.JK;Sejahtera Bintang Abadi Textil,Indonesia,,,,Pemantauan Khusus
+KBAG,Karya Bersama Anugerah Tbk.,KBAG;KBAG.JK;Karya Bersama Anugerah Tbk.;Karya Bersama Anugerah,Indonesia,,,,Pemantauan Khusus
+CBMF,Cahaya Bintang Medan Tbk.,CBMF;CBMF.JK;Cahaya Bintang Medan Tbk.;Cahaya Bintang Medan,Indonesia,,,,Pemantauan Khusus
+RONY,Aracord Nusantara Group Tbk.,RONY;RONY.JK;Aracord Nusantara Group Tbk.;Aracord Nusantara Group,Indonesia,,,,Pengembangan
+CSMI,Cipta Selera Murni Tbk.,CSMI;CSMI.JK;Cipta Selera Murni Tbk.;Cipta Selera Murni,Indonesia,,,,Pengembangan
+BBSS,Bumi Benowo Sukses Sejahtera T,BBSS;BBSS.JK;Bumi Benowo Sukses Sejahtera T,Indonesia,,,,Pengembangan
+BHAT,Bhakti Multi Artha Tbk.,BHAT;BHAT.JK;Bhakti Multi Artha Tbk.;Bhakti Multi Artha,Indonesia,,,,Pengembangan
+CASH,Cashlez Worldwide Indonesia Tb,CASH;CASH.JK;Cashlez Worldwide Indonesia Tb,Indonesia,,,,Akselerasi
+TECH,Indosterling Technomedia Tbk.,TECH;TECH.JK;Indosterling Technomedia Tbk.;Indosterling Technomedia,Indonesia,,,,Pemantauan Khusus
+EPAC,Megalestari Epack Sentosaraya,EPAC;EPAC.JK;Megalestari Epack Sentosaraya,Indonesia,,,,Pengembangan
+UANG,Pakuan Tbk.,UANG;UANG.JK;Pakuan Tbk.;Pakuan,Indonesia,,,,Pengembangan
+PGUN,Pradiksi Gunatama Tbk.,PGUN;PGUN.JK;Pradiksi Gunatama Tbk.;Pradiksi Gunatama,Indonesia,,,,Pengembangan
+SOFA,Solusi Environment Asia Tbk.,SOFA;SOFA.JK;Solusi Environment Asia Tbk.;Solusi Environment Asia,Indonesia,,,,Akselerasi
+PPGL,Prima Globalindo Logistik Tbk.,PPGL;PPGL.JK;Prima Globalindo Logistik Tbk.;Prima Globalindo Logistik,Indonesia,,,,Akselerasi
+TOYS,Sunindo Adipersada Tbk.,TOYS;TOYS.JK;Sunindo Adipersada Tbk.;Sunindo Adipersada,Indonesia,,,,Pemantauan Khusus
+SGER,Sumber Global Energy Tbk.,SGER;SGER.JK;Sumber Global Energy Tbk.;Sumber Global Energy,Indonesia,,,,Utama
+TRJA,Transkon Jaya Tbk.,TRJA;TRJA.JK;Transkon Jaya Tbk.;Transkon Jaya,Indonesia,,,,Pengembangan
+PNGO,Pinago Utama Tbk.,PNGO;PNGO.JK;Pinago Utama Tbk.;Pinago Utama,Indonesia,,,,Utama
+SCNP,Selaras Citra Nusantara Perkas,SCNP;SCNP.JK;Selaras Citra Nusantara Perkas,Indonesia,,,,Pengembangan
+BBSI,Krom Bank Indonesia Tbk.,BBSI;BBSI.JK;Krom Bank Indonesia Tbk.;Krom Bank Indonesia,Indonesia,,,,Utama
+KMDS,Kurniamitra Duta Sentosa Tbk.,KMDS;KMDS.JK;Kurniamitra Duta Sentosa Tbk.;Kurniamitra Duta Sentosa,Indonesia,,,,Pengembangan
+PURI,Puri Global Sukses Tbk.,PURI;PURI.JK;Puri Global Sukses Tbk.;Puri Global Sukses,Indonesia,,,,Pengembangan
+SOHO,Soho Global Health Tbk.,SOHO;SOHO.JK;Soho Global Health Tbk.;Soho Global Health,Indonesia,,,,Pengembangan
+HOMI,Grand House Mulia Tbk.,HOMI;HOMI.JK;Grand House Mulia Tbk.;Grand House Mulia,Indonesia,,,,Pengembangan
+ROCK,Rockfields Properti Indonesia,ROCK;ROCK.JK;Rockfields Properti Indonesia,Indonesia,,,,Pengembangan
+ENZO,Morenzo Abadi Perkasa Tbk.,ENZO;ENZO.JK;Morenzo Abadi Perkasa Tbk.;Morenzo Abadi Perkasa,Indonesia,,,,Pengembangan
+PLAN,Planet Properindo Jaya Tbk.,PLAN;PLAN.JK;Planet Properindo Jaya Tbk.;Planet Properindo Jaya,Indonesia,,,,Akselerasi
+PTDU,Djasa Ubersakti Tbk.,PTDU;PTDU.JK;Djasa Ubersakti Tbk.;Djasa Ubersakti,Indonesia,,,,Pemantauan Khusus
+ATAP,Trimitra Prawara Goldland Tbk.,ATAP;ATAP.JK;Trimitra Prawara Goldland Tbk.;Trimitra Prawara Goldland,Indonesia,,,,Pengembangan
+VICI,Victoria Care Indonesia Tbk.,VICI;VICI.JK;Victoria Care Indonesia Tbk.;Victoria Care Indonesia,Indonesia,,,,Utama
+PMMP,Panca Mitra Multiperdana Tbk.,PMMP;PMMP.JK;Panca Mitra Multiperdana Tbk.;Panca Mitra Multiperdana,Indonesia,,,,Pemantauan Khusus
+BANK,Bank Aladin Syariah Tbk.,BANK;BANK.JK;Bank Aladin Syariah Tbk.;Bank Aladin Syariah,Indonesia,,,,Pengembangan
+WMUU,Widodo Makmur Unggas Tbk.,WMUU;WMUU.JK;Widodo Makmur Unggas Tbk.;Widodo Makmur Unggas,Indonesia,,,,Pengembangan
+EDGE,Indointernet Tbk.,EDGE;EDGE.JK;Indointernet Tbk.;Indointernet,Indonesia,,,,Pengembangan
+UNIQ,Ulima Nitra Tbk.,UNIQ;UNIQ.JK;Ulima Nitra Tbk.;Ulima Nitra,Indonesia,,,,Pengembangan
+BEBS,Berkah Beton Sadaya Tbk.,BEBS;BEBS.JK;Berkah Beton Sadaya Tbk.;Berkah Beton Sadaya,Indonesia,,,,Pemantauan Khusus
+SNLK,Sunter Lakeside Hotel Tbk.,SNLK;SNLK.JK;Sunter Lakeside Hotel Tbk.;Sunter Lakeside Hotel,Indonesia,,,,Pengembangan
+ZYRX,Zyrexindo Mandiri Buana Tbk.,ZYRX;ZYRX.JK;Zyrexindo Mandiri Buana Tbk.;Zyrexindo Mandiri Buana,Indonesia,,,,Pengembangan
+LFLO,Imago Mulia Persada Tbk.,LFLO;LFLO.JK;Imago Mulia Persada Tbk.;Imago Mulia Persada,Indonesia,,,,Akselerasi
+FIMP,Fimperkasa Utama Tbk.,FIMP;FIMP.JK;Fimperkasa Utama Tbk.;Fimperkasa Utama,Indonesia,,,,Pemantauan Khusus
+TAPG,Triputra Agro Persada Tbk.,TAPG;TAPG.JK;Triputra Agro Persada Tbk.;Triputra Agro Persada,Indonesia,,,,Utama
+NPGF,Nusa Palapa Gemilang Tbk.,NPGF;NPGF.JK;Nusa Palapa Gemilang Tbk.;Nusa Palapa Gemilang,Indonesia,,,,Pengembangan
+LUCY,Lima Dua Lima Tiga Tbk.,LUCY;LUCY.JK;Lima Dua Lima Tiga Tbk.;Lima Dua Lima Tiga,Indonesia,,,,Akselerasi
+ADCP,Adhi Commuter Properti Tbk.,ADCP;ADCP.JK;Adhi Commuter Properti Tbk.;Adhi Commuter Properti,Indonesia,,,,Pengembangan
+HOPE,Harapan Duta Pertiwi Tbk.,HOPE;HOPE.JK;Harapan Duta Pertiwi Tbk.;Harapan Duta Pertiwi,Indonesia,,,,Pengembangan
+MGLV,Panca Anugrah Wisesa Tbk.,MGLV;MGLV.JK;Panca Anugrah Wisesa Tbk.;Panca Anugrah Wisesa,Indonesia,,,,Akselerasi
+TRUE,Triniti Dinamik Tbk.,TRUE;TRUE.JK;Triniti Dinamik Tbk.;Triniti Dinamik,Indonesia,,,,Pengembangan
+LABA,Green Power Group Tbk.,LABA;LABA.JK;Green Power Group Tbk.;Green Power Group,Indonesia,,,,Pengembangan
+ARCI,Archi Indonesia Tbk.,ARCI;ARCI.JK;Archi Indonesia Tbk.;Archi Indonesia,Indonesia,,,,Pengembangan
+IPAC,Era Graharealty Tbk.,IPAC;IPAC.JK;Era Graharealty Tbk.;Era Graharealty,Indonesia,,,,Akselerasi
+MASB,Bank Multiarta Sentosa Tbk.,MASB;MASB.JK;Bank Multiarta Sentosa Tbk.;Bank Multiarta Sentosa,Indonesia,,,,Utama
+BMHS,Bundamedik Tbk.,BMHS;BMHS.JK;Bundamedik Tbk.;Bundamedik,Indonesia,,,,Utama
+FLMC,Falmaco Nonwoven Industri Tbk.,FLMC;FLMC.JK;Falmaco Nonwoven Industri Tbk.;Falmaco Nonwoven Industri,Indonesia,,,,Akselerasi
+NICL,PAM Mineral Tbk.,NICL;NICL.JK;PAM Mineral Tbk.;PAM Mineral,Indonesia,,,,Pengembangan
+UVCR,Trimegah Karya Pratama Tbk.,UVCR;UVCR.JK;Trimegah Karya Pratama Tbk.;Trimegah Karya Pratama,Indonesia,,,,Pengembangan
+HAIS,Hasnur Internasional Shipping,HAIS;HAIS.JK;Hasnur Internasional Shipping,Indonesia,,,,Pengembangan
+OILS,Indo Oil Perkasa Tbk.,OILS;OILS.JK;Indo Oil Perkasa Tbk.;Indo Oil Perkasa,Indonesia,,,,Pengembangan
+GPSO,Geoprima Solusi Tbk.,GPSO;GPSO.JK;Geoprima Solusi Tbk.;Geoprima Solusi,Indonesia,,,,Pengembangan
+MCOL,Prima Andalan Mandiri Tbk.,MCOL;MCOL.JK;Prima Andalan Mandiri Tbk.;Prima Andalan Mandiri,Indonesia,,,,Utama
+RSGK,Kedoya Adyaraya Tbk.,RSGK;RSGK.JK;Kedoya Adyaraya Tbk.;Kedoya Adyaraya,Indonesia,,,,Pengembangan
+RUNS,Global Sukses Solusi Tbk.,RUNS;RUNS.JK;Global Sukses Solusi Tbk.;Global Sukses Solusi,Indonesia,,,,Akselerasi
+SBMA,Surya Biru Murni Acetylene Tbk,SBMA;SBMA.JK;Surya Biru Murni Acetylene Tbk;Surya Biru Murni Acetylene,Indonesia,,,,Pengembangan
+CMNT,Cemindo Gemilang Tbk.,CMNT;CMNT.JK;Cemindo Gemilang Tbk.;Cemindo Gemilang,Indonesia,,,,Pengembangan
+GTSI,GTS Internasional Tbk.,GTSI;GTSI.JK;GTS Internasional Tbk.;GTS Internasional,Indonesia,,,,Pengembangan
+IDEA,Idea Indonesia Akademi Tbk.,IDEA;IDEA.JK;Idea Indonesia Akademi Tbk.;Idea Indonesia Akademi,Indonesia,,,,Akselerasi
+KUAS,Ace Oldfields Tbk.,KUAS;KUAS.JK;Ace Oldfields Tbk.;Ace Oldfields,Indonesia,,,,Pengembangan
+BOBA,Formosa Ingredient Factory Tbk,BOBA;BOBA.JK;Formosa Ingredient Factory Tbk;Formosa Ingredient Factory,Indonesia,,,,Pengembangan
+MTEL,Dayamitra Telekomunikasi Tbk.,MTEL;MTEL.JK;Dayamitra Telekomunikasi Tbk.;Dayamitra Telekomunikasi,Indonesia,,Infrastructures,KOMPAS100,Utama
+DEPO,Caturkarda Depo Bangunan Tbk.,DEPO;DEPO.JK;Caturkarda Depo Bangunan Tbk.;Caturkarda Depo Bangunan,Indonesia,,,,Pengembangan
+BINO,Perma Plasindo Tbk.,BINO;BINO.JK;Perma Plasindo Tbk.;Perma Plasindo,Indonesia,,,,Pengembangan
+CMRY,Cisarua Mountain Dairy Tbk.,CMRY;CMRY.JK;Cisarua Mountain Dairy Tbk.;Cisarua Mountain Dairy,Indonesia,,Consumer Non-Cyclicals,KOMPAS100,Utama
+WGSH,Wira Global Solusi Tbk.,WGSH;WGSH.JK;Wira Global Solusi Tbk.;Wira Global Solusi,Indonesia,,,,Akselerasi
+TAYS,Jaya Swarasa Agung Tbk.,TAYS;TAYS.JK;Jaya Swarasa Agung Tbk.;Jaya Swarasa Agung,Indonesia,,,,Pengembangan
+WMPP,Widodo Makmur Perkasa Tbk.,WMPP;WMPP.JK;Widodo Makmur Perkasa Tbk.;Widodo Makmur Perkasa,Indonesia,,,,Pemantauan Khusus
+RMKE,RMK Energy Tbk.,RMKE;RMKE.JK;RMK Energy Tbk.;RMK Energy,Indonesia,,,,Utama
+OBMD,OBM Drilchem Tbk.,OBMD;OBMD.JK;OBM Drilchem Tbk.;OBM Drilchem,Indonesia,,,,Pengembangan
+AVIA,Avia Avian Tbk.,AVIA;AVIA.JK;Avia Avian Tbk.;Avia Avian,Indonesia,,,,Utama
+IPPE,Indo Pureco Pratama Tbk.,IPPE;IPPE.JK;Indo Pureco Pratama Tbk.;Indo Pureco Pratama,Indonesia,,,,Pemantauan Khusus
+NASI,Wahana Inti Makmur Tbk.,NASI;NASI.JK;Wahana Inti Makmur Tbk.;Wahana Inti Makmur,Indonesia,,,,Pengembangan
+BSML,Bintang Samudera Mandiri Lines,BSML;BSML.JK;Bintang Samudera Mandiri Lines,Indonesia,,,,Pengembangan
+DRMA,Dharma Polimetal Tbk.,DRMA;DRMA.JK;Dharma Polimetal Tbk.;Dharma Polimetal,Indonesia,,,,Utama
+ADMR,Alamtri Minerals Indonesia Tbk,ADMR;ADMR.JK;Alamtri Minerals Indonesia Tbk;Alamtri Minerals Indonesia,Indonesia,,,,Utama
+SEMA,Semacom Integrated Tbk.,SEMA;SEMA.JK;Semacom Integrated Tbk.;Semacom Integrated,Indonesia,,,,Pengembangan
+ASLC,Autopedia Sukses Lestari Tbk.,ASLC;ASLC.JK;Autopedia Sukses Lestari Tbk.;Autopedia Sukses Lestari,Indonesia,,,,Pengembangan
+NETV,MDTV Media Technologies Tbk.,NETV;NETV.JK;MDTV Media Technologies Tbk.;MDTV Media Technologies,Indonesia,,,,Pengembangan
+BAUT,Mitra Angkasa Sejahtera Tbk.,BAUT;BAUT.JK;Mitra Angkasa Sejahtera Tbk.;Mitra Angkasa Sejahtera,Indonesia,,,,Pemantauan Khusus
+ENAK,Champ Resto Indonesia Tbk.,ENAK;ENAK.JK;Champ Resto Indonesia Tbk.;Champ Resto Indonesia,Indonesia,,,,Pengembangan
+NTBK,Nusatama Berkah Tbk.,NTBK;NTBK.JK;Nusatama Berkah Tbk.;Nusatama Berkah,Indonesia,,,,Pengembangan
+SMKM,Sumber Mas Konstruksi Tbk.,SMKM;SMKM.JK;Sumber Mas Konstruksi Tbk.;Sumber Mas Konstruksi,Indonesia,,,,Akselerasi
+STAA,Sumber Tani Agung Resources Tb,STAA;STAA.JK;Sumber Tani Agung Resources Tb,Indonesia,,,,Utama
+NANO,Nanotech Indonesia Global Tbk.,NANO;NANO.JK;Nanotech Indonesia Global Tbk.;Nanotech Indonesia Global,Indonesia,,,,Akselerasi
+BIKE,Sepeda Bersama Indonesia Tbk.,BIKE;BIKE.JK;Sepeda Bersama Indonesia Tbk.;Sepeda Bersama Indonesia,Indonesia,,,,Pengembangan
+WIRG,WIR ASIA Tbk.,WIRG;WIRG.JK;WIR ASIA Tbk.;WIR ASIA,Indonesia,,,,Pengembangan
+SICO,Sigma Energy Compressindo Tbk.,SICO;SICO.JK;Sigma Energy Compressindo Tbk.;Sigma Energy Compressindo,Indonesia,,,,Pengembangan
+GOTO,GoTo Gojek Tokopedia Tbk.,GOTO;GOTO.JK;GoTo Gojek Tokopedia Tbk.;GoTo Gojek Tokopedia,Indonesia,,Technology,LQ45|KOMPAS100,Pengembangan
+TLDN,Teladan Prima Agro Tbk.,TLDN;TLDN.JK;Teladan Prima Agro Tbk.;Teladan Prima Agro,Indonesia,,,,Utama
+MTMH,Murni Sadar Tbk.,MTMH;MTMH.JK;Murni Sadar Tbk.;Murni Sadar,Indonesia,,,,Utama
+WINR,Winner Nusantara Jaya Tbk.,WINR;WINR.JK;Winner Nusantara Jaya Tbk.;Winner Nusantara Jaya,Indonesia,,,,Pemantauan Khusus
+IBOS,Indo Boga Sukses Tbk.,IBOS;IBOS.JK;Indo Boga Sukses Tbk.;Indo Boga Sukses,Indonesia,,,,Akselerasi
+OLIV,Oscar Mitra Sukses Sejahtera T,OLIV;OLIV.JK;Oscar Mitra Sukses Sejahtera T,Indonesia,,,,Akselerasi
+ASHA,Cilacap Samudera Fishing Indus,ASHA;ASHA.JK;Cilacap Samudera Fishing Indus,Indonesia,,,,Pengembangan
+SWID,Saraswanti Indoland Developmen,SWID;SWID.JK;Saraswanti Indoland Developmen,Indonesia,,,,Pengembangan
+TRGU,Cerestar Indonesia Tbk.,TRGU;TRGU.JK;Cerestar Indonesia Tbk.;Cerestar Indonesia,Indonesia,,,,Utama
+ARKO,Arkora Hydro Tbk.,ARKO;ARKO.JK;Arkora Hydro Tbk.;Arkora Hydro,Indonesia,,,,Pengembangan
+CHEM,Chemstar Indonesia Tbk.,CHEM;CHEM.JK;Chemstar Indonesia Tbk.;Chemstar Indonesia,Indonesia,,,,Pengembangan
+DEWI,Dewi Shri Farmindo Tbk.,DEWI;DEWI.JK;Dewi Shri Farmindo Tbk.;Dewi Shri Farmindo,Indonesia,,,,Pengembangan
+AXIO,Tera Data Indonusa Tbk.,AXIO;AXIO.JK;Tera Data Indonusa Tbk.;Tera Data Indonusa,Indonesia,,,,Pengembangan
+KRYA,Bangun Karya Perkasa Jaya Tbk.,KRYA;KRYA.JK;Bangun Karya Perkasa Jaya Tbk.;Bangun Karya Perkasa Jaya,Indonesia,,,,Pengembangan
+HATM,Habco Trans Maritima Tbk.,HATM;HATM.JK;Habco Trans Maritima Tbk.;Habco Trans Maritima,Indonesia,,,,Utama
+RCCC,Utama Radar Cahaya Tbk.,RCCC;RCCC.JK;Utama Radar Cahaya Tbk.;Utama Radar Cahaya,Indonesia,,,,Akselerasi
+GULA,Aman Agrindo Tbk.,GULA;GULA.JK;Aman Agrindo Tbk.;Aman Agrindo,Indonesia,,,,Pengembangan
+JARR,Jhonlin Agro Raya Tbk.,JARR;JARR.JK;Jhonlin Agro Raya Tbk.;Jhonlin Agro Raya,Indonesia,,,,Utama
+AMMS,Agung Menjangan Mas Tbk.,AMMS;AMMS.JK;Agung Menjangan Mas Tbk.;Agung Menjangan Mas,Indonesia,,,,Akselerasi
+RAFI,Sari Kreasi Boga Tbk.,RAFI;RAFI.JK;Sari Kreasi Boga Tbk.;Sari Kreasi Boga,Indonesia,,,,Pemantauan Khusus
+KKES,Kusuma Kemindo Sentosa Tbk.,KKES;KKES.JK;Kusuma Kemindo Sentosa Tbk.;Kusuma Kemindo Sentosa,Indonesia,,,,Pemantauan Khusus
+ELPI,Pelayaran Nasional Ekalya Purn,ELPI;ELPI.JK;Pelayaran Nasional Ekalya Purn,Indonesia,,,,Utama
+EURO,Estee Gold Feet Tbk.,EURO;EURO.JK;Estee Gold Feet Tbk.;Estee Gold Feet,Indonesia,,,,Akselerasi
+KLIN,Klinko Karya Imaji Tbk.,KLIN;KLIN.JK;Klinko Karya Imaji Tbk.;Klinko Karya Imaji,Indonesia,,,,Akselerasi
+TOOL,Rohartindo Nusantara Luas Tbk.,TOOL;TOOL.JK;Rohartindo Nusantara Luas Tbk.;Rohartindo Nusantara Luas,Indonesia,,,,Pengembangan
+BUAH,Segar Kumala Indonesia Tbk.,BUAH;BUAH.JK;Segar Kumala Indonesia Tbk.;Segar Kumala Indonesia,Indonesia,,,,Pengembangan
+CRAB,Toba Surimi Industries Tbk.,CRAB;CRAB.JK;Toba Surimi Industries Tbk.;Toba Surimi Industries,Indonesia,,,,Pengembangan
+MEDS,Hetzer Medical Indonesia Tbk.,MEDS;MEDS.JK;Hetzer Medical Indonesia Tbk.;Hetzer Medical Indonesia,Indonesia,,,,Pengembangan
+COAL,Black Diamond Resources Tbk.,COAL;COAL.JK;Black Diamond Resources Tbk.;Black Diamond Resources,Indonesia,,,,Pemantauan Khusus
+PRAY,Famon Awal Bros Sedaya Tbk.,PRAY;PRAY.JK;Famon Awal Bros Sedaya Tbk.;Famon Awal Bros Sedaya,Indonesia,,,,Utama
+CBUT,Citra Borneo Utama Tbk.,CBUT;CBUT.JK;Citra Borneo Utama Tbk.;Citra Borneo Utama,Indonesia,,,,Utama
+BELI,Global Digital Niaga Tbk.,BELI;BELI.JK;Global Digital Niaga Tbk.;Global Digital Niaga,Indonesia,,,,Pengembangan
+MKTR,Menthobi Karyatama Raya Tbk.,MKTR;MKTR.JK;Menthobi Karyatama Raya Tbk.;Menthobi Karyatama Raya,Indonesia,,,,Utama
+OMED,Jayamas Medica Industri Tbk.,OMED;OMED.JK;Jayamas Medica Industri Tbk.;Jayamas Medica Industri,Indonesia,,,,Utama
+BSBK,Wulandari Bangun Laksana Tbk.,BSBK;BSBK.JK;Wulandari Bangun Laksana Tbk.;Wulandari Bangun Laksana,Indonesia,,,,Pengembangan
+PDPP,Primadaya Plastisindo Tbk.,PDPP;PDPP.JK;Primadaya Plastisindo Tbk.;Primadaya Plastisindo,Indonesia,,,,Pengembangan
+KDTN,Puri Sentul Permai Tbk.,KDTN;KDTN.JK;Puri Sentul Permai Tbk.;Puri Sentul Permai,Indonesia,,,,Pengembangan
+ZATA,Bersama Zatta Jaya Tbk.,ZATA;ZATA.JK;Bersama Zatta Jaya Tbk.;Bersama Zatta Jaya,Indonesia,,,,Pengembangan
+NINE,Techno9 Indonesia Tbk.,NINE;NINE.JK;Techno9 Indonesia Tbk.;Techno9 Indonesia,Indonesia,,,,Akselerasi
+MMIX,Multi Medika Internasional Tbk,MMIX;MMIX.JK;Multi Medika Internasional Tbk;Multi Medika Internasional,Indonesia,,,,Pengembangan
+PADA,Personel Alih Daya Tbk.,PADA;PADA.JK;Personel Alih Daya Tbk.;Personel Alih Daya,Indonesia,,,,Pengembangan
+ISAP,Isra Presisi Indonesia Tbk.,ISAP;ISAP.JK;Isra Presisi Indonesia Tbk.;Isra Presisi Indonesia,Indonesia,,,,Akselerasi
+VTNY,Venteny Fortuna International,VTNY;VTNY.JK;Venteny Fortuna International,Indonesia,,,,Pengembangan
+SOUL,Mitra Tirta Buwana Tbk.,SOUL;SOUL.JK;Mitra Tirta Buwana Tbk.;Mitra Tirta Buwana,Indonesia,,,,Akselerasi
+ELIT,Data Sinergitama Jaya Tbk.,ELIT;ELIT.JK;Data Sinergitama Jaya Tbk.;Data Sinergitama Jaya,Indonesia,,,,Pengembangan
+BEER,Jobubu Jarum Minahasa Tbk.,BEER;BEER.JK;Jobubu Jarum Minahasa Tbk.;Jobubu Jarum Minahasa,Indonesia,,,,Pengembangan
+CBPE,Citra Buana Prasida Tbk.,CBPE;CBPE.JK;Citra Buana Prasida Tbk.;Citra Buana Prasida,Indonesia,,,,Pengembangan
+SUNI,Sunindo Pratama Tbk.,SUNI;SUNI.JK;Sunindo Pratama Tbk.;Sunindo Pratama,Indonesia,,,,Utama
+CBRE,Cakra Buana Resources Energi T,CBRE;CBRE.JK;Cakra Buana Resources Energi T,Indonesia,,,,Pengembangan
+WINE,Hatten Bali Tbk.,WINE;WINE.JK;Hatten Bali Tbk.;Hatten Bali,Indonesia,,,,Pengembangan
+BMBL,Lavender Bina Cendikia Tbk.,BMBL;BMBL.JK;Lavender Bina Cendikia Tbk.;Lavender Bina Cendikia,Indonesia,,,,Akselerasi
+PEVE,Penta Valent Tbk.,PEVE;PEVE.JK;Penta Valent Tbk.;Penta Valent,Indonesia,,,,Pengembangan
+LAJU,Jasa Berdikari Logistics Tbk.,LAJU;LAJU.JK;Jasa Berdikari Logistics Tbk.;Jasa Berdikari Logistics,Indonesia,,,,Pengembangan
+FWCT,Wijaya Cahaya Timber Tbk.,FWCT;FWCT.JK;Wijaya Cahaya Timber Tbk.;Wijaya Cahaya Timber,Indonesia,,,,Pengembangan
+NAYZ,Hassana Boga Sejahtera Tbk.,NAYZ;NAYZ.JK;Hassana Boga Sejahtera Tbk.;Hassana Boga Sejahtera,Indonesia,,,,Akselerasi
+IRSX,Folago Global Nusantara Tbk.,IRSX;IRSX.JK;Folago Global Nusantara Tbk.;Folago Global Nusantara,Indonesia,,,,Pengembangan
+PACK,Abadi Nusantara Hijau Investam,PACK;PACK.JK;Abadi Nusantara Hijau Investam,Indonesia,,,,Akselerasi
+VAST,Vastland Indonesia Tbk.,VAST;VAST.JK;Vastland Indonesia Tbk.;Vastland Indonesia,Indonesia,,,,Pengembangan
+CHIP,Pelita Teknologi Global Tbk.,CHIP;CHIP.JK;Pelita Teknologi Global Tbk.;Pelita Teknologi Global,Indonesia,,,,Akselerasi
+HALO,Haloni Jane Tbk.,HALO;HALO.JK;Haloni Jane Tbk.;Haloni Jane,Indonesia,,,,Pengembangan
+KING,Hoffmen Cleanindo Tbk.,KING;KING.JK;Hoffmen Cleanindo Tbk.;Hoffmen Cleanindo,Indonesia,,,,Akselerasi
+PGEO,Pertamina Geothermal Energy Tb,PGEO;PGEO.JK;Pertamina Geothermal Energy Tb,Indonesia,,,,Utama
+FUTR,Futura Energi Global Tbk.,FUTR;FUTR.JK;Futura Energi Global Tbk.;Futura Energi Global,Indonesia,,,,Pengembangan
+HILL,Hillcon Tbk.,HILL;HILL.JK;Hillcon Tbk.;Hillcon,Indonesia,,,,Pemantauan Khusus
+BDKR,Berdikari Pondasi Perkasa Tbk.,BDKR;BDKR.JK;Berdikari Pondasi Perkasa Tbk.;Berdikari Pondasi Perkasa,Indonesia,,,,Utama
+PTMP,Mitra Pack Tbk.,PTMP;PTMP.JK;Mitra Pack Tbk.;Mitra Pack,Indonesia,,,,Pengembangan
+SAGE,Saptausaha Gemilangindah Tbk.,SAGE;SAGE.JK;Saptausaha Gemilangindah Tbk.;Saptausaha Gemilangindah,Indonesia,,,,Pemantauan Khusus
+TRON,Teknologi Karya Digital Nusa T,TRON;TRON.JK;Teknologi Karya Digital Nusa T,Indonesia,,,,Pengembangan
+CUAN,Petrindo Jaya Kreasi Tbk.,CUAN;CUAN.JK;Petrindo Jaya Kreasi Tbk.;Petrindo Jaya Kreasi,Indonesia,,,,Utama
+NSSS,Nusantara Sawit Sejahtera Tbk.,NSSS;NSSS.JK;Nusantara Sawit Sejahtera Tbk.;Nusantara Sawit Sejahtera,Indonesia,,,,Pengembangan
+GTRA,Grahaprima Suksesmandiri Tbk.,GTRA;GTRA.JK;Grahaprima Suksesmandiri Tbk.;Grahaprima Suksesmandiri,Indonesia,,,,Pengembangan
+HAJJ,Arsy Buana Travelindo Tbk.,HAJJ;HAJJ.JK;Arsy Buana Travelindo Tbk.;Arsy Buana Travelindo,Indonesia,,,,Akselerasi
+JATI,Informasi Teknologi Indonesia,JATI;JATI.JK;Informasi Teknologi Indonesia,Indonesia,,,,Pengembangan
+TYRE,King Tire Indonesia Tbk.,TYRE;TYRE.JK;King Tire Indonesia Tbk.;King Tire Indonesia,Indonesia,,,,Pengembangan
+MPXL,MPX Logistics International Tb,MPXL;MPXL.JK;MPX Logistics International Tb,Indonesia,,,,Pengembangan
+SMIL,Sarana Mitra Luas Tbk.,SMIL;SMIL.JK;Sarana Mitra Luas Tbk.;Sarana Mitra Luas,Indonesia,,,,Utama
+KLAS,Pelayaran Kurnia Lautan Semest,KLAS;KLAS.JK;Pelayaran Kurnia Lautan Semest,Indonesia,,,,Pengembangan
+MAXI,Maxindo Karya Anugerah Tbk.,MAXI;MAXI.JK;Maxindo Karya Anugerah Tbk.;Maxindo Karya Anugerah,Indonesia,,,,Pengembangan
+VKTR,VKTR Teknologi Mobilitas Tbk.,VKTR;VKTR.JK;VKTR Teknologi Mobilitas Tbk.;VKTR Teknologi Mobilitas,Indonesia,,,,Pengembangan
+RELF,Graha Mitra Asia Tbk.,RELF;RELF.JK;Graha Mitra Asia Tbk.;Graha Mitra Asia,Indonesia,,,,Akselerasi
+AMMN,Amman Mineral Internasional Tb,AMMN;AMMN.JK;Amman Mineral Internasional Tb,Indonesia,,Basic Materials,IDX30|LQ45|KOMPAS100,Utama
+CRSN,Carsurin Tbk.,CRSN;CRSN.JK;Carsurin Tbk.;Carsurin,Indonesia,,,,Pengembangan
+GRPM,Graha Prima Mentari Tbk.,GRPM;GRPM.JK;Graha Prima Mentari Tbk.;Graha Prima Mentari,Indonesia,,,,Akselerasi
+WIDI,Widiant Jaya Krenindo Tbk.,WIDI;WIDI.JK;Widiant Jaya Krenindo Tbk.;Widiant Jaya Krenindo,Indonesia,,,,Akselerasi
+TGUK,Platinum Wahab Nusantara Tbk.,TGUK;TGUK.JK;Platinum Wahab Nusantara Tbk.;Platinum Wahab Nusantara,Indonesia,,,,Pemantauan Khusus
+INET,Sinergi Inti Andalan Prima Tbk,INET;INET.JK;Sinergi Inti Andalan Prima Tbk;Sinergi Inti Andalan Prima,Indonesia,,,,Pengembangan
+MAHA,Mandiri Herindo Adiperkasa Tbk,MAHA;MAHA.JK;Mandiri Herindo Adiperkasa Tbk;Mandiri Herindo Adiperkasa,Indonesia,,,,Utama
+RMKO,Royaltama Mulia Kontraktorindo,RMKO;RMKO.JK;Royaltama Mulia Kontraktorindo,Indonesia,,,,Pengembangan
+CNMA,Nusantara Sejahtera Raya Tbk.,CNMA;CNMA.JK;Nusantara Sejahtera Raya Tbk.;Nusantara Sejahtera Raya,Indonesia,,,,Pengembangan
+FOLK,Multi Garam Utama Tbk.,FOLK;FOLK.JK;Multi Garam Utama Tbk.;Multi Garam Utama,Indonesia,,,,Pengembangan
+HBAT,Minahasa Membangun Hebat Tbk.,HBAT;HBAT.JK;Minahasa Membangun Hebat Tbk.;Minahasa Membangun Hebat,Indonesia,,,,Akselerasi
+GRIA,Ingria Pratama Capitalindo Tbk,GRIA;GRIA.JK;Ingria Pratama Capitalindo Tbk;Ingria Pratama Capitalindo,Indonesia,,,,Pengembangan
+PPRI,Paperocks Indonesia Tbk.,PPRI;PPRI.JK;Paperocks Indonesia Tbk.;Paperocks Indonesia,Indonesia,,,,Pengembangan
+ERAL,Sinar Eka Selaras Tbk.,ERAL;ERAL.JK;Sinar Eka Selaras Tbk.;Sinar Eka Selaras,Indonesia,,,,Utama
+CYBR,ITSEC Asia Tbk.,CYBR;CYBR.JK;ITSEC Asia Tbk.;ITSEC Asia,Indonesia,,,,Pengembangan
+MUTU,Mutuagung Lestari Tbk.,MUTU;MUTU.JK;Mutuagung Lestari Tbk.;Mutuagung Lestari,Indonesia,,,,Pengembangan
+LMAX,Lupromax Pelumas Indonesia Tbk,LMAX;LMAX.JK;Lupromax Pelumas Indonesia Tbk;Lupromax Pelumas Indonesia,Indonesia,,,,Akselerasi
+HUMI,Humpuss Maritim Internasional,HUMI;HUMI.JK;Humpuss Maritim Internasional,Indonesia,,,,Pengembangan
+MSIE,Multisarana Intan Eduka Tbk.,MSIE;MSIE.JK;Multisarana Intan Eduka Tbk.;Multisarana Intan Eduka,Indonesia,,,,Pemantauan Khusus
+RSCH,Charlie Hospital Semarang Tbk.,RSCH;RSCH.JK;Charlie Hospital Semarang Tbk.;Charlie Hospital Semarang,Indonesia,,,,Pengembangan
+BABY,Multitrend Indo Tbk.,BABY;BABY.JK;Multitrend Indo Tbk.;Multitrend Indo,Indonesia,,,,Pengembangan
+AEGS,Anugerah Spareparts Sejahtera,AEGS;AEGS.JK;Anugerah Spareparts Sejahtera,Indonesia,,,,Akselerasi
+IOTF,Sumber Sinergi Makmur Tbk.,IOTF;IOTF.JK;Sumber Sinergi Makmur Tbk.;Sumber Sinergi Makmur,Indonesia,,,,Pengembangan
+KOCI,Kokoh Exa Nusantara Tbk.,KOCI;KOCI.JK;Kokoh Exa Nusantara Tbk.;Kokoh Exa Nusantara,Indonesia,,,,Pengembangan
+PTPS,Pulau Subur Tbk.,PTPS;PTPS.JK;Pulau Subur Tbk.;Pulau Subur,Indonesia,,,,Pengembangan
+BREN,Barito Renewables Energy Tbk.,BREN;BREN.JK;Barito Renewables Energy Tbk.;Barito Renewables Energy,Indonesia,,,,Utama
+STRK,Lovina Beach Brewery Tbk.,STRK;STRK.JK;Lovina Beach Brewery Tbk.;Lovina Beach Brewery,Indonesia,,,,Pengembangan
+KOKA,Koka Indonesia Tbk.,KOKA;KOKA.JK;Koka Indonesia Tbk.;Koka Indonesia,Indonesia,,,,Pengembangan
+LOPI,Logisticsplus International Tb,LOPI;LOPI.JK;Logisticsplus International Tb,Indonesia,,,,Akselerasi
+UDNG,Agro Bahari Nusantara Tbk.,UDNG;UDNG.JK;Agro Bahari Nusantara Tbk.;Agro Bahari Nusantara,Indonesia,,,,Akselerasi
+RGAS,Kian Santang Muliatama Tbk.,RGAS;RGAS.JK;Kian Santang Muliatama Tbk.;Kian Santang Muliatama,Indonesia,,,,Pengembangan
+MSTI,Mastersystem Infotama Tbk.,MSTI;MSTI.JK;Mastersystem Infotama Tbk.;Mastersystem Infotama,Indonesia,,,,Utama
+IKPM,Ikapharmindo Putramas Tbk.,IKPM;IKPM.JK;Ikapharmindo Putramas Tbk.;Ikapharmindo Putramas,Indonesia,,,,Pengembangan
+AYAM,Janu Putra Sejahtera Tbk.,AYAM;AYAM.JK;Janu Putra Sejahtera Tbk.;Janu Putra Sejahtera,Indonesia,,,,Pengembangan
+SURI,Maja Agung Latexindo Tbk.,SURI;SURI.JK;Maja Agung Latexindo Tbk.;Maja Agung Latexindo,Indonesia,,,,Pengembangan
+ASLI,Asri Karya Lestari Tbk.,ASLI;ASLI.JK;Asri Karya Lestari Tbk.;Asri Karya Lestari,Indonesia,,,,Pengembangan
+GRPH,Griptha Putra Persada Tbk.,GRPH;GRPH.JK;Griptha Putra Persada Tbk.;Griptha Putra Persada,Indonesia,,,,Pengembangan
+SMGA,Sumber Mineral Global Abadi Tb,SMGA;SMGA.JK;Sumber Mineral Global Abadi Tb,Indonesia,,,,Pengembangan
+UNTD,Terang Dunia Internusa Tbk.,UNTD;UNTD.JK;Terang Dunia Internusa Tbk.;Terang Dunia Internusa,Indonesia,,,,Pengembangan
+TOSK,Topindo Solusi Komunika Tbk.,TOSK;TOSK.JK;Topindo Solusi Komunika Tbk.;Topindo Solusi Komunika,Indonesia,,,,Pengembangan
+MPIX,Mitra Pedagang Indonesia Tbk.,MPIX;MPIX.JK;Mitra Pedagang Indonesia Tbk.;Mitra Pedagang Indonesia,Indonesia,,,,Pengembangan
+ALII,Ancara Logistics Indonesia Tbk,ALII;ALII.JK;Ancara Logistics Indonesia Tbk;Ancara Logistics Indonesia,Indonesia,,,,Utama
+MKAP,Multikarya Asia Pasifik Raya T,MKAP;MKAP.JK;Multikarya Asia Pasifik Raya T,Indonesia,,,,Pengembangan
+MEJA,Harta Djaya Karya Tbk.,MEJA;MEJA.JK;Harta Djaya Karya Tbk.;Harta Djaya Karya,Indonesia,,,,Akselerasi
+LIVE,Homeco Victoria Makmur Tbk.,LIVE;LIVE.JK;Homeco Victoria Makmur Tbk.;Homeco Victoria Makmur,Indonesia,,,,Pengembangan
+HYGN,Ecocare Indo Pasifik Tbk.,HYGN;HYGN.JK;Ecocare Indo Pasifik Tbk.;Ecocare Indo Pasifik,Indonesia,,,,Pengembangan
+BAIK,Bersama Mencapai Puncak Tbk.,BAIK;BAIK.JK;Bersama Mencapai Puncak Tbk.;Bersama Mencapai Puncak,Indonesia,,,,Pengembangan
+VISI,Satu Visi Putra Tbk.,VISI;VISI.JK;Satu Visi Putra Tbk.;Satu Visi Putra,Indonesia,,,,Pengembangan
+AREA,Dunia Virtual Online Tbk.,AREA;AREA.JK;Dunia Virtual Online Tbk.;Dunia Virtual Online,Indonesia,,,,Pengembangan
+MHKI,Multi Hanna Kreasindo Tbk.,MHKI;MHKI.JK;Multi Hanna Kreasindo Tbk.;Multi Hanna Kreasindo,Indonesia,,,,Pengembangan
+ATLA,Atlantis Subsea Indonesia Tbk.,ATLA;ATLA.JK;Atlantis Subsea Indonesia Tbk.;Atlantis Subsea Indonesia,Indonesia,,,,Pengembangan
+DATA,Remala Abadi Tbk.,DATA;DATA.JK;Remala Abadi Tbk.;Remala Abadi,Indonesia,,,,Pengembangan
+SOLA,Xolare RCR Energy Tbk.,SOLA;SOLA.JK;Xolare RCR Energy Tbk.;Xolare RCR Energy,Indonesia,,,,Pengembangan
+BATR,Benteng Api Technic Tbk.,BATR;BATR.JK;Benteng Api Technic Tbk.;Benteng Api Technic,Indonesia,,,,Pengembangan
+SPRE,Soraya Berjaya Indonesia Tbk.,SPRE;SPRE.JK;Soraya Berjaya Indonesia Tbk.;Soraya Berjaya Indonesia,Indonesia,,,,Akselerasi
+PART,Cipta Perdana Lancar Tbk.,PART;PART.JK;Cipta Perdana Lancar Tbk.;Cipta Perdana Lancar,Indonesia,,,,Pengembangan
+GOLF,Intra Golflink Resorts Tbk.,GOLF;GOLF.JK;Intra Golflink Resorts Tbk.;Intra Golflink Resorts,Indonesia,,,,Utama
+ISEA,Indo American Seafoods Tbk.,ISEA;ISEA.JK;Indo American Seafoods Tbk.;Indo American Seafoods,Indonesia,,,,Pengembangan
+BLES,Superior Prima Sukses Tbk.,BLES;BLES.JK;Superior Prima Sukses Tbk.;Superior Prima Sukses,Indonesia,,,,Pengembangan
+GUNA,Gunanusa Eramandiri Tbk.,GUNA;GUNA.JK;Gunanusa Eramandiri Tbk.;Gunanusa Eramandiri,Indonesia,,,,Pengembangan
+LABS,UBC Medical Indonesia Tbk.,LABS;LABS.JK;UBC Medical Indonesia Tbk.;UBC Medical Indonesia,Indonesia,,,,Pengembangan
+DOSS,Global Sukses Digital Tbk.,DOSS;DOSS.JK;Global Sukses Digital Tbk.;Global Sukses Digital,Indonesia,,,,Pengembangan
+NEST,Esta Indonesia Tbk.,NEST;NEST.JK;Esta Indonesia Tbk.;Esta Indonesia,Indonesia,,,,Pengembangan
+PTMR,Master Print Tbk.,PTMR;PTMR.JK;Master Print Tbk.;Master Print,Indonesia,,,,Pemantauan Khusus
+VERN,Verona Indah Pictures Tbk.,VERN;VERN.JK;Verona Indah Pictures Tbk.;Verona Indah Pictures,Indonesia,,,,Pengembangan
+DAAZ,Daaz Bara Lestari Tbk.,DAAZ;DAAZ.JK;Daaz Bara Lestari Tbk.;Daaz Bara Lestari,Indonesia,,,,Utama
+BOAT,Newport Marine Services Tbk.,BOAT;BOAT.JK;Newport Marine Services Tbk.;Newport Marine Services,Indonesia,,,,Pengembangan
+NAIK,Adiwarna Anugerah Abadi Tbk.,NAIK;NAIK.JK;Adiwarna Anugerah Abadi Tbk.;Adiwarna Anugerah Abadi,Indonesia,,,,Pengembangan
+AADI,Adaro Andalan Indonesia Tbk.,AADI;AADI.JK;Adaro Andalan Indonesia Tbk.;Adaro Andalan Indonesia,Indonesia,,,,Utama
+MDIY,Daya Intiguna Yasa Tbk.,MDIY;MDIY.JK;Daya Intiguna Yasa Tbk.;Daya Intiguna Yasa,Indonesia,,,,Utama
+KSIX,Kentanix Supra International T,KSIX;KSIX.JK;Kentanix Supra International T,Indonesia,,,,Pengembangan
+RATU,Raharja Energi Cepu Tbk.,RATU;RATU.JK;Raharja Energi Cepu Tbk.;Raharja Energi Cepu,Indonesia,,,,Pengembangan
+YOII,Asuransi Digital Bersama Tbk.,YOII;YOII.JK;Asuransi Digital Bersama Tbk.;Asuransi Digital Bersama,Indonesia,,,,Pengembangan
+HGII,Hero Global Investment Tbk.,HGII;HGII.JK;Hero Global Investment Tbk.;Hero Global Investment,Indonesia,,,,Pengembangan
+BRRC,Raja Roti Cemerlang Tbk.,BRRC;BRRC.JK;Raja Roti Cemerlang Tbk.;Raja Roti Cemerlang,Indonesia,,,,Pengembangan
+DGWG,Delta Giri Wacana Tbk.,DGWG;DGWG.JK;Delta Giri Wacana Tbk.;Delta Giri Wacana,Indonesia,,,,Utama
+CBDK,Bangun Kosambi Sukses Tbk.,CBDK;CBDK.JK;Bangun Kosambi Sukses Tbk.;Bangun Kosambi Sukses,Indonesia,,,,Utama
+OBAT,Brigit Biofarmaka Teknologi Tb,OBAT;OBAT.JK;Brigit Biofarmaka Teknologi Tb,Indonesia,,,,Pengembangan
+MINE,Sinar Terang Mandiri Tbk.,MINE;MINE.JK;Sinar Terang Mandiri Tbk.;Sinar Terang Mandiri,Indonesia,,,,Pengembangan
+ASPR,Asia Pramulia Tbk.,ASPR;ASPR.JK;Asia Pramulia Tbk.;Asia Pramulia,Indonesia,,,,Pengembangan
+PSAT,Pancaran Samudera Transport Tb,PSAT;PSAT.JK;Pancaran Samudera Transport Tb,Indonesia,,,,Pengembangan
+COIN,Indokripto Koin Semesta Tbk.,COIN;COIN.JK;Indokripto Koin Semesta Tbk.;Indokripto Koin Semesta,Indonesia,,,,Pengembangan
+CDIA,Chandra Daya Investasi Tbk.,CDIA;CDIA.JK;Chandra Daya Investasi Tbk.;Chandra Daya Investasi,Indonesia,,,,Pengembangan
+BLOG,Trimitra Trans Persada Tbk.,BLOG;BLOG.JK;Trimitra Trans Persada Tbk.;Trimitra Trans Persada,Indonesia,,,,Utama
+MERI,Merry Riana Edukasi Tbk.,MERI;MERI.JK;Merry Riana Edukasi Tbk.;Merry Riana Edukasi,Indonesia,,,,Pengembangan
+KAQI,Jantra Grupo Indonesia Tbk.,KAQI;KAQI.JK;Jantra Grupo Indonesia Tbk.;Jantra Grupo Indonesia,Indonesia,,,,Pengembangan
+YUPI,Yupi Indo Jelly Gum Tbk.,YUPI;YUPI.JK;Yupi Indo Jelly Gum Tbk.;Yupi Indo Jelly Gum,Indonesia,,,,Utama
+FORE,Fore Kopi Indonesia Tbk.,FORE;FORE.JK;Fore Kopi Indonesia Tbk.;Fore Kopi Indonesia,Indonesia,,,,Pengembangan
+MDLA,Medela Potentia Tbk.,MDLA;MDLA.JK;Medela Potentia Tbk.;Medela Potentia,Indonesia,,,,Utama
+DKHH,Cipta Sarana Medika Tbk.,DKHH;DKHH.JK;Cipta Sarana Medika Tbk.;Cipta Sarana Medika,Indonesia,,,,Pengembangan
+AYLS,Arkayana Lestari Grup Tbk.,AYLS;AYLS.JK;Arkayana Lestari Grup Tbk.;Arkayana Lestari Grup,Indonesia,,,,Pengembangan
+DADA,Diamond Citra Propertindo Tbk.,DADA;DADA.JK;Diamond Citra Propertindo Tbk.;Diamond Citra Propertindo,Indonesia,,,,Pengembangan
+ASPI,Andalan Sakti Primaindo Tbk.,ASPI;ASPI.JK;Andalan Sakti Primaindo Tbk.;Andalan Sakti Primaindo,Indonesia,,,,Pengembangan
+ESTA,Esta Multi Usaha Tbk.,ESTA;ESTA.JK;Esta Multi Usaha Tbk.;Esta Multi Usaha,Indonesia,,,,Pengembangan
+BESS,Batulicin Nusantara Maritim Tb,BESS;BESS.JK;Batulicin Nusantara Maritim Tb,Indonesia,,,,Pengembangan
+AMAN,Makmur Berkah Amanda Tbk.,AMAN;AMAN.JK;Makmur Berkah Amanda Tbk.;Makmur Berkah Amanda,Indonesia,,,,Pengembangan
+CARE,Metro Healthcare Indonesia Tbk,CARE;CARE.JK;Metro Healthcare Indonesia Tbk;Metro Healthcare Indonesia,Indonesia,,,,Pengembangan
+PIPA,Multi Makmur Lemindo Tbk.,PIPA;PIPA.JK;Multi Makmur Lemindo Tbk.;Multi Makmur Lemindo,Indonesia,,,,Pengembangan
+NCKL,Trimegah Bangun Persada Tbk.,NCKL;NCKL.JK;Trimegah Bangun Persada Tbk.;Trimegah Bangun Persada,Indonesia,,Basic Materials,KOMPAS100,Pengembangan
+MENN,Menn Teknologi Indonesia Tbk.,MENN;MENN.JK;Menn Teknologi Indonesia Tbk.;Menn Teknologi Indonesia,Indonesia,,,,Pemantauan Khusus
+AWAN,Era Digital Media Tbk.,AWAN;AWAN.JK;Era Digital Media Tbk.;Era Digital Media,Indonesia,,,,Pengembangan
+MBMA,Merdeka Battery Materials Tbk.,MBMA;MBMA.JK;Merdeka Battery Materials Tbk.;Merdeka Battery Materials,Indonesia,,Basic Materials,KOMPAS100,Utama
+RAAM,Tripar Multivision Plus Tbk.,RAAM;RAAM.JK;Tripar Multivision Plus Tbk.;Tripar Multivision Plus,Indonesia,,,,Utama
+DOOH,Era Media Sejahtera Tbk.,DOOH;DOOH.JK;Era Media Sejahtera Tbk.;Era Media Sejahtera,Indonesia,,,,Pengembangan
+CGAS,Citra Nusantara Gemilang Tbk.,CGAS;CGAS.JK;Citra Nusantara Gemilang Tbk.;Citra Nusantara Gemilang,Indonesia,,,,Pengembangan
+NICE,Adhi Kartiko Pratama Tbk.,NICE;NICE.JK;Adhi Kartiko Pratama Tbk.;Adhi Kartiko Pratama,Indonesia,,,,Pengembangan
+MSJA,Multi Spunindo Jaya Tbk.,MSJA;MSJA.JK;Multi Spunindo Jaya Tbk.;Multi Spunindo Jaya,Indonesia,,,,Pengembangan
+SMLE,Sinergi Multi Lestarindo Tbk.,SMLE;SMLE.JK;Sinergi Multi Lestarindo Tbk.;Sinergi Multi Lestarindo,Indonesia,,,,Pengembangan
+ACRO,Samcro Hyosung Adilestari Tbk.,ACRO;ACRO.JK;Samcro Hyosung Adilestari Tbk.;Samcro Hyosung Adilestari,Indonesia,,,,Pengembangan
+MANG,Manggung Polahraya Tbk.,MANG;MANG.JK;Manggung Polahraya Tbk.;Manggung Polahraya,Indonesia,,,,Akselerasi
+WIFI,Solusi Sinergi Digital Tbk.,WIFI;WIFI.JK;Solusi Sinergi Digital Tbk.;Solusi Sinergi Digital,Indonesia,,,,Pengembangan
+FAPA,FAP Agri Tbk.,FAPA;FAPA.JK;FAP Agri Tbk.;FAP Agri,Indonesia,,,,Pengembangan
+DCII,DCI Indonesia Tbk.,DCII;DCII.JK;DCI Indonesia Tbk.;DCI Indonesia,Indonesia,,Technology,KOMPAS100,Pengembangan
+KETR,Ketrosden Triasmitra Tbk.,KETR;KETR.JK;Ketrosden Triasmitra Tbk.;Ketrosden Triasmitra,Indonesia,,,,Pengembangan
+DGNS,Diagnos Laboratorium Utama Tbk,DGNS;DGNS.JK;Diagnos Laboratorium Utama Tbk;Diagnos Laboratorium Utama,Indonesia,,,,Pengembangan
+UFOE,Damai Sejahtera Abadi Tbk.,UFOE;UFOE.JK;Damai Sejahtera Abadi Tbk.;Damai Sejahtera Abadi,Indonesia,,,,Pengembangan
+CHEK,Diastika Biotekindo Tbk.,CHEK;CHEK.JK;Diastika Biotekindo Tbk.;Diastika Biotekindo,Indonesia,,,,Pengembangan
+PMUI,Prima Multi Usaha Indonesia Tb,PMUI;PMUI.JK;Prima Multi Usaha Indonesia Tb,Indonesia,,,,Pengembangan
+EMAS,Merdeka Gold Resources Tbk.,EMAS;EMAS.JK;Merdeka Gold Resources Tbk.;Merdeka Gold Resources,Indonesia,,,,Pengembangan
+PJHB,Pelayaran Jaya Hidup Baru Tbk.,PJHB;PJHB.JK;Pelayaran Jaya Hidup Baru Tbk.;Pelayaran Jaya Hidup Baru,Indonesia,,,,Pengembangan
+RLCO,Abadi Lestari Indonesia Tbk.,RLCO;RLCO.JK;Abadi Lestari Indonesia Tbk.;Abadi Lestari Indonesia,Indonesia,,,,Pengembangan
+SUPA,Super Bank Indonesia Tbk.,SUPA;SUPA.JK;Super Bank Indonesia Tbk.;Super Bank Indonesia,Indonesia,,,,Pengembangan
+WBSA,BSA Logistics Indonesia Tbk.,WBSA;WBSA.JK;BSA Logistics Indonesia Tbk.;BSA Logistics Indonesia,Indonesia,,,,Pengembangan
+ADMF,Adira Dinamika Multi Finance T,ADMF;ADMF.JK;Adira Dinamika Multi Finance T,Indonesia,,,,Pengembangan
+ADMG,Polychem Indonesia Tbk,ADMG;ADMG.JK;Polychem Indonesia Tbk;Polychem Indonesia,Indonesia,,,,Pengembangan
+ADRO,Alamtri Resources Indonesia Tb,ADRO;ADRO.JK;Alamtri Resources Indonesia Tb,Indonesia,,Energy,IDX30|LQ45|KOMPAS100,Utama
+AGII,Samator Indo Gas Tbk.,AGII;AGII.JK;Samator Indo Gas Tbk.;Samator Indo Gas,Indonesia,,,,Pengembangan
+AGRO,Bank Raya Indonesia Tbk.,AGRO;AGRO.JK;Bank Raya Indonesia Tbk.;Bank Raya Indonesia,Indonesia,,,,Utama
+AGRS,Bank IBK Indonesia Tbk.,AGRS;AGRS.JK;Bank IBK Indonesia Tbk.;Bank IBK Indonesia,Indonesia,,,,Pengembangan
+AHAP,Asuransi Harta Aman Pratama Tb,AHAP;AHAP.JK;Asuransi Harta Aman Pratama Tb,Indonesia,,,,Pengembangan
+AIMS,Artha Mahiya Investama Tbk.,AIMS;AIMS.JK;Artha Mahiya Investama Tbk.;Artha Mahiya Investama,Indonesia,,,,Pengembangan
+PNSE,Pudjiadi & Sons Tbk.,PNSE;PNSE.JK;Pudjiadi & Sons Tbk.;Pudjiadi & Sons,Indonesia,,,,Pengembangan
+POLY,Asia Pacific Fibers Tbk,POLY;POLY.JK;Asia Pacific Fibers Tbk;Asia Pacific Fibers,Indonesia,,,,Pemantauan Khusus
+POOL,Pool Advista Indonesia Tbk.,POOL;POOL.JK;Pool Advista Indonesia Tbk.;Pool Advista Indonesia,Indonesia,,,,Pemantauan Khusus
+PPRO,PP Properti Tbk.,PPRO;PPRO.JK;PP Properti Tbk.;PP Properti,Indonesia,,,,Pemantauan Khusus
