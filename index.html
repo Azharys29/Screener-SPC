@@ -575,7 +575,18 @@ const strengthOf = sc => { const a = Math.abs(sc); return a >= 60 ? 'Sangat kuat
 
 function recompute() {
   CUSTOM.forEach(c => c._err = null);
-  ROWS = DATA.stocks.map(s => ({s, a: analyze(s)})).filter(r => r.a);
+  const rows = [];
+  const errors = [];
+  DATA.stocks.forEach(s => {
+    try {
+      const a = analyze(s);
+      if (a) rows.push({s, a});
+    } catch (e) {
+      errors.push({ticker: s.t, error: e?.message || String(e)});
+    }
+  });
+  ROWS = rows;
+  if (errors.length) console.warn('Beberapa saham dilewati saat analisis:', errors.slice(0, 10));
 }
 
 /* ================= filter ================= */
