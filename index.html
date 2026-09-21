@@ -573,20 +573,50 @@ function analyze(s) {
 const dirOf = sc => sc >= 15 ? 1 : sc <= -15 ? -1 : 0;
 const strengthOf = sc => { const a = Math.abs(sc); return a >= 60 ? 'Sangat kuat' : a >= 35 ? 'Kuat' : a >= 15 ? 'Moderat' : 'Netral'; };
 
-function recompute() {
+let recomputeToken = 0;
+async function recompute() {
+  const token = ++recomputeToken;
   CUSTOM.forEach(c => c._err = null);
   const rows = [];
   const errors = [];
-  DATA.stocks.forEach(s => {
-    try {
-      const a = analyze(s);
-      if (a) rows.push({s, a});
-    } catch (e) {
-      errors.push({ticker: s.t, error: e?.message || String(e)});
+  const total = DATA.stocks.length;
+  const batchSize = 24;
+
+  ROWS = [];
+  $('#thead').innerHTML = headHtml();
+  $('#tbody').innerHTML = '';
+  $('#empty').hidden = true;
+  $('#count').textContent = total ? 'Menyiapkan analisis…' : '0 saham';
+  $('#status').textContent = DATA.mode === 'live' ? 'Menganalisis data…' : 'Menyiapkan demo…';
+
+  for (let start = 0; start < total; start += batchSize) {
+    if (token !== recomputeToken) return;
+
+    const end = Math.min(start + batchSize, total);
+    for (let i = start; i < end; i++) {
+      const s = DATA.stocks[i];
+      try {
+        const a = analyze(s);
+        if (a) rows.push({s, a});
+      } catch (e) {
+        errors.push({ticker: s.t, error: e?.message || String(e)});
+      }
     }
-  });
+
+    ROWS = rows.slice();
+
+    // Give the browser a chance to paint between batches so the page
+    // remains responsive even with hundreds of stocks.
+    $('#count').textContent = `Menghitung ${end} / ${total} saham…`;
+    if (end === batchSize || end === total || end % 96 === 0) render();
+    await new Promise(resolve => setTimeout(resolve, 0));
+  }
+
+  if (token !== recomputeToken) return;
   ROWS = rows;
   if (errors.length) console.warn('Beberapa saham dilewati saat analisis:', errors.slice(0, 10));
+  status();
+  render();
 }
 
 /* ================= filter ================= */
@@ -838,9 +868,9 @@ function bindSettings() {
     Object.keys(DEF.p).forEach(k => p[k] = Math.max(1, Math.round(+$('#p_' + k).value || DEF.p[k])));
     if (p.mf >= p.ms) { p.mf = DEF.p.mf; p.ms = DEF.p.ms; }
     S = {mode, w, p}; store.set('azhs.screener.settings', S);
-    $('#dlgSet').close(); recompute(); render();
+    $('#dlgSet').close(); recompute();
   });
-  $('#resetSet').addEventListener('click', () => { S = JSON.parse(JSON.stringify(DEF)); store.set('azhs.screener.settings', S); fillSettings(); recompute(); render(); });
+  $('#resetSet').addEventListener('click', () => { S = JSON.parse(JSON.stringify(DEF)); store.set('azhs.screener.settings', S); fillSettings(); recompute(); });
 }
 
 /* ================= indikator kustom ================= */
@@ -911,7 +941,7 @@ function bindCustom() {
   $('#ciList').addEventListener('click', e => {
     const ed = e.target.closest('[data-ci-ed]'), del = e.target.closest('[data-ci-del]');
     if (ed) ciEdit(+ed.dataset.ciEd);
-    if (del) { CUSTOM.splice(+del.dataset.ciDel, 1); saveCustom(); ciList(); recompute(); render(); }
+    if (del) { CUSTOM.splice(+del.dataset.ciDel, 1); saveCustom(); ciList(); recompute(); }
   });
   $('#ciList').addEventListener('change', e => { const c = e.target.closest('[data-ci-en]'); if (!c) return; const ci = CUSTOM[+c.dataset.ciEn]; ci.enabled = c.checked; ci.local = true; saveCustom(); recompute(); render(); ciList(); });
   $('#ciTest').addEventListener('click', () => {
@@ -931,7 +961,7 @@ function bindCustom() {
       let id = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'ind'; while (CUSTOM.some(c => c.id === id)) id += '-2';
       CUSTOM.push({id, name, weight, enabled: true, code, local: true});
     } else Object.assign(CUSTOM[editing], {name, weight, code, local: true});
-    saveCustom(); $('#ciEditor').hidden = true; ciList(); recompute(); render();
+    saveCustom(); $('#ciEditor').hidden = true; ciList(); recompute();
   });
   $('#ciExport').addEventListener('click', () => download('custom-indicators.json', JSON.stringify(CUSTOM.map(({id, name, weight, enabled, code}) => ({id, name, weight, enabled, code})), null, 2), 'application/json'));
   $('#ciImport').addEventListener('click', () => $('#ciFile').click());
@@ -939,7 +969,7 @@ function bindCustom() {
     try {
       const arr = JSON.parse(await e.target.files[0].text());
       arr.forEach(x => { if (x.id && x.code) { const k = CUSTOM.findIndex(c => c.id === x.id); const item = {id: x.id, name: x.name || x.id, weight: +x.weight || 20, enabled: x.enabled !== false, code: x.code, local: true}; k >= 0 ? CUSTOM[k] = item : CUSTOM.push(item); } });
-      saveCustom(); ciList(); recompute(); render();
+      saveCustom(); ciList(); recompute();
     } catch { $('#ciRes').textContent = 'File JSON tidak valid.'; }
     e.target.value = '';
   });
@@ -974,7 +1004,7 @@ async function init() {
   DATA = await loadData();
   await loadCustom();
   status(); buildFilterUI(); bindFilters(); bindSettings(); bindCustom(); syncFilterUI();
-  recompute(); render();
+  await recompute();
   $('#exportCsv').addEventListener('click', exportCsv);
   $$('dialog').forEach(d => d.addEventListener('click', e => { if (e.target === d || e.target.closest('[data-close]')) d.close(); }));
 }
