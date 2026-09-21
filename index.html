@@ -203,6 +203,11 @@ textarea.code{min-height:250px;font:400 12.5px/1.55 var(--f-mono);tab-size:2;whi
         <p class="hint">Cocok dengan salah satu indeks terpilih.</p>
       </div>
       <div class="fs">
+        <h3>Papan pencatatan</h3>
+        <div class="chips" id="boardChips"></div>
+        <p class="hint">Filter berdasarkan papan pencatatan BEI.</p>
+      </div>
+      <div class="fs">
         <h3>Sektor (IDX-IC)</h3>
         <div class="checks" id="secList"></div>
       </div>
@@ -472,7 +477,7 @@ async function loadData() {
     const r = await fetch('data/screener.json', {cache: 'no-cache'});
     if (!r.ok) throw new Error(r.status);
     const j = await r.json();
-    const stocks = j.stocks.map(s => ({t: s.t, n: s.n, sec: s.s, ix: s.ix || [], mc: s.mc, b: s.b, d: s.d, o: s.o, h: s.h, l: s.l, c: s.c, v: s.v}));
+    const stocks = j.stocks.map(s => ({t: s.t, n: s.n, sec: s.s, ix: s.ix || [], board: s.board || '', mc: s.mc, b: s.b, d: s.d, o: s.o, h: s.h, l: s.l, c: s.c, v: s.v}));
     return {mode: 'live', stocks, asof: j.asof, generated: j.generated_at};
   } catch (e) {
     return demoData();
@@ -590,7 +595,7 @@ const PRESETS = [
   {n: 'Jenuh beli, waspada', f: {conds: ['rsi_ob'], dir: 'all', minScore: 0, minConf: 0}},
   {n: 'Konfluensi bearish kuat', f: {conds: [], dir: 'down', minScore: 50, minConf: 3}},
 ];
-const F0 = () => ({q: '', ix: new Set(), sec: new Set(), mcMin: null, mcMax: null, bMin: null, bMax: null, dir: 'all', minScore: 0, minConf: 0, conds: new Set()});
+const F0 = () => ({q: '', ix: new Set(), board: new Set(), sec: new Set(), mcMin: null, mcMax: null, bMin: null, bMax: null, dir: 'all', minScore: 0, minConf: 0, conds: new Set()});
 let F = F0();
 let sort = {key: 'strength', dir: 'desc'};
 
@@ -598,6 +603,7 @@ function passes(r) {
   const {s, a} = r;
   if (F.q) { const q = F.q.toLowerCase(); if (!s.t.toLowerCase().includes(q) && !s.n.toLowerCase().includes(q)) return false; }
   if (F.ix.size && !s.ix.some(x => F.ix.has(x))) return false;
+  if (F.board.size && !F.board.has(s.board)) return false;
   if (F.sec.size && !F.sec.has(s.sec)) return false;
   const mc = s.mc / 1e12;
   if (F.mcMin != null && !(mc >= F.mcMin)) return false;
@@ -694,6 +700,8 @@ function buildFilterUI() {
   const IXO = ['IDX30', 'LQ45', 'IDX80', 'KOMPAS100', 'IDX BUMN20', 'IDX HIDIV20', 'ISSI', 'JII'];
   const ixs = [...new Set(DATA.stocks.flatMap(s => s.ix))].sort((a, b) => (IXO.indexOf(a) + 1 || 99) - (IXO.indexOf(b) + 1 || 99) || a.localeCompare(b));
   $('#ixChips').innerHTML = ixs.length ? ixs.map(x => `<button class="chip" data-ix="${esc(x)}" aria-pressed="false">${esc(x)}</button>`).join('') : '<span class="hint" style="margin:0">Isi kolom indices di universe.csv untuk memakai filter ini.</span>';
+  const boards = ['Utama','Pengembangan','Akselerasi','Pemantauan Khusus','Ekonomi-Baru'].filter(x => DATA.stocks.some(s => s.board === x));
+  $('#boardChips').innerHTML = boards.map(x => '<button class="chip" data-board="'+esc(x)+'" aria-pressed="false">'+esc(x)+'</button>').join('');
   const secs = {}; DATA.stocks.forEach(s => secs[s.sec] = (secs[s.sec] || 0) + 1);
   $('#secList').innerHTML = Object.keys(secs).sort().map(k => `<label><span><input type="checkbox" data-sec="${esc(k)}">${esc(k)}</span><span class="n">${secs[k]}</span></label>`).join('');
   $('#condChips').innerHTML = CONDS.map(c => `<button class="chip" data-cond="${c.id}" aria-pressed="false">${c.label}</button>`).join('');
@@ -702,7 +710,8 @@ function buildFilterUI() {
 }
 function syncFilterUI() {
   $('#q').value = F.q;
-  $$('#ixChips [data-ix]').forEach(b => b.setAttribute('aria-pressed', F.ix.has(b.dataset.ix)));
+  $('#ixChips [data-ix]').forEach(b => b.setAttribute('aria-pressed', F.ix.has(b.dataset.ix)));
+  $('#boardChips [data-board]').forEach(b => b.setAttribute('aria-pressed', F.board.has(b.dataset.board)));
   $$('#secList [data-sec]').forEach(b => b.checked = F.sec.has(b.dataset.sec));
   $$('#condChips [data-cond]').forEach(b => b.setAttribute('aria-pressed', F.conds.has(b.dataset.cond)));
   $('#mcMin').value = F.mcMin ?? ''; $('#mcMax').value = F.mcMax ?? '';
@@ -716,6 +725,7 @@ const pair = str => str.split(',').map(x => x === '' ? null : +x);
 function bindFilters() {
   $('#q').addEventListener('input', e => { F.q = e.target.value.trim(); render(); });
   $('#ixChips').addEventListener('click', e => { const b = e.target.closest('[data-ix]'); if (!b) return; F.ix.has(b.dataset.ix) ? F.ix.delete(b.dataset.ix) : F.ix.add(b.dataset.ix); syncFilterUI(); render(); });
+  $('#boardChips').addEventListener('click', e => { const b = e.target.closest('[data-board]'); if (!b) return; F.board.has(b.dataset.board) ? F.board.delete(b.dataset.board) : F.board.add(b.dataset.board); syncFilterUI(); render(); });
   $('#secList').addEventListener('change', e => { const b = e.target.closest('[data-sec]'); if (!b) return; b.checked ? F.sec.add(b.dataset.sec) : F.sec.delete(b.dataset.sec); render(); });
   $('#condChips').addEventListener('click', e => { const b = e.target.closest('[data-cond]'); if (!b) return; F.conds.has(b.dataset.cond) ? F.conds.delete(b.dataset.cond) : F.conds.add(b.dataset.cond); syncFilterUI(); render(); });
   $('#mcMin').addEventListener('input', e => { F.mcMin = num(e.target.value); render(); });
