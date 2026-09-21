@@ -7,7 +7,7 @@
 <meta name="description" content="Dashboard rekomendasi saham dengan entry, TP, stop loss, chart, dan status otomatis.">
 <style>
 :root{--bg:#090D13;--panel:#0F151D;--panel2:#141C26;--line:#2E4A68;--line-soft:#1B2836;--ice:#85B7EB;--ice-brt:#ADD6FF;--tx:#F3F6FA;--tx2:#A3ADBC;--tx3:#7C879A;--green:#72D39A;--red:#F27D7D;--yellow:#E8C66A;--f:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",monospace}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:var(--f)}a{color:inherit}.wrap{max-width:1320px;margin:auto;padding:28px 22px 60px}.top{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line-soft);padding-bottom:18px;margin-bottom:24px}.brand{font-weight:800;letter-spacing:.02em}.nav{margin-left:auto;display:flex;gap:8px}.nav a,.btn{border:1px solid var(--line);background:var(--panel);color:var(--tx);padding:9px 13px;border-radius:8px;text-decoration:none;cursor:pointer}.nav a.active{background:var(--ice);color:#07111d}.hero{display:flex;gap:20px;align-items:end;justify-content:space-between;margin-bottom:24px}.eyebrow{font:12px var(--mono);color:var(--ice);text-transform:uppercase;letter-spacing:.12em}.hero h1{font-size:38px;margin:7px 0}.muted{color:var(--tx2)}.grid{display:grid;grid-template-columns:340px 1fr;gap:18px}.panel{background:var(--panel);border:1px solid var(--line-soft);border-radius:12px;padding:18px}.panel h2{font-size:16px;margin:0 0 16px}.field{margin-bottom:12px}.field label{display:block;font-size:12px;color:var(--tx2);margin-bottom:6px}.field input{width:100%;padding:10px 11px;background:#0a1017;border:1px solid var(--line);color:var(--tx);border-radius:7px;outline:none}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.publish{width:100%;background:var(--ice);color:#07111d;border:0;font-weight:800;margin-top:5px}.drop{border:1px dashed var(--line);padding:18px;text-align:center;border-radius:8px;color:var(--tx2);cursor:pointer}.drop img{max-width:100%;max-height:220px;border-radius:7px;margin-top:10px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{background:var(--panel);border:1px solid var(--line-soft);border-radius:12px;overflow:hidden}.card-img{width:100%;max-height:310px;object-fit:contain;background:#070b10;display:block}.body{padding:17px}.head{display:flex;justify-content:space-between;gap:10px}.ticker{font:700 20px var(--mono)}.date{font:12px var(--mono);color:var(--tx3)}.status{display:inline-block;padding:5px 8px;border-radius:5px;font:700 11px var(--mono);margin-top:8px}.s-wait{background:#26303a;color:var(--tx2)}.s-entry{background:#183d2b;color:var(--green)}.s-tp{background:#173b42;color:#8ce1ea}.s-sl{background:#4a2025;color:var(--red)}.s-closed{background:#30343a;color:var(--tx2)}.levels{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:15px 0}.level{border:1px solid var(--line-soft);padding:9px;border-radius:7px}.level small{display:block;color:var(--tx3);font-size:10px;margin-bottom:4px}.level strong{font:600 13px var(--mono)}.price{font:700 24px var(--mono);margin:10px 0}.meta{font-size:12px;color:var(--tx2)}.actions{display:flex;gap:8px;margin-top:14px}.danger{color:var(--red)}.empty{border:1px dashed var(--line);padding:40px;text-align:center;color:var(--tx2);border-radius:10px}.hint{font-size:11px;color:var(--tx3);line-height:1.5}.toolbar{display:flex;gap:8px;align-items:center;margin-bottom:15px}.toolbar .muted{margin-left:auto;font:12px var(--mono)}@media(max-width:900px){.grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.hero{display:block}.levels{grid-template-columns:1fr 1fr}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:var(--f)}a{color:inherit}.wrap{max-width:1320px;margin:auto;padding:28px 22px 60px}.top{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line-soft);padding-bottom:18px;margin-bottom:24px}.brand{font-weight:800;letter-spacing:.02em}.nav{margin-left:auto;display:flex;gap:8px}.nav a,.btn{border:1px solid var(--line);background:var(--panel);color:var(--tx);padding:9px 13px;border-radius:8px;text-decoration:none;cursor:pointer}.nav a.active{background:var(--ice);color:#07111d}.hero{display:flex;gap:20px;align-items:end;justify-content:space-between;margin-bottom:24px}.eyebrow{font:12px var(--mono);color:var(--ice);text-transform:uppercase;letter-spacing:.12em}.hero h1{font-size:38px;margin:7px 0}.muted{color:var(--tx2)}.grid{display:grid;grid-template-columns:340px 1fr;gap:18px}.panel{background:var(--panel);border:1px solid var(--line-soft);border-radius:12px;padding:18px}.panel h2{font-size:16px;margin:0 0 16px}.field{margin-bottom:12px}.field label{display:block;font-size:12px;color:var(--tx2);margin-bottom:6px}.field input,.field textarea{width:100%;padding:10px 11px;background:#0a1017;border:1px solid var(--line);color:var(--tx);border-radius:7px;outline:none;font-family:inherit;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.publish{width:100%;background:var(--ice);color:#07111d;border:0;font-weight:800;margin-top:5px}.drop{border:1px dashed var(--line);padding:18px;text-align:center;border-radius:8px;color:var(--tx2);cursor:pointer}.drop img{max-width:100%;max-height:220px;border-radius:7px;margin-top:10px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{background:var(--panel);border:1px solid var(--line-soft);border-radius:12px;overflow:hidden}.card-img{width:100%;max-height:310px;object-fit:contain;background:#070b10;display:block}.body{padding:17px}.head{display:flex;justify-content:space-between;gap:10px}.ticker{font:700 20px var(--mono)}.date{font:12px var(--mono);color:var(--tx3)}.status{display:inline-block;padding:5px 8px;border-radius:5px;font:700 11px var(--mono);margin-top:8px}.s-wait{background:#26303a;color:var(--tx2)}.s-entry{background:#183d2b;color:var(--green)}.s-tp{background:#173b42;color:#8ce1ea}.s-sl{background:#4a2025;color:var(--red)}.s-closed{background:#30343a;color:var(--tx2)}.levels{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:15px 0}.level{border:1px solid var(--line-soft);padding:9px;border-radius:7px}.level small{display:block;color:var(--tx3);font-size:10px;margin-bottom:4px}.level strong{font:600 13px var(--mono)}.price{font:700 24px var(--mono);margin:10px 0}.meta{font-size:12px;color:var(--tx2)}.actions{display:flex;gap:8px;margin-top:14px}.danger{color:var(--red)}.empty{border:1px dashed var(--line);padding:40px;text-align:center;color:var(--tx2);border-radius:10px}.hint{font-size:11px;color:var(--tx3);line-height:1.5}.toolbar{display:flex;gap:8px;align-items:center;margin-bottom:15px}.toolbar .muted{margin-left:auto;font:12px var(--mono)}@media(max-width:900px){.grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.hero{display:block}.levels{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -17,7 +17,7 @@
     <nav class="nav"><a href="index.html">📊 Screener</a><a class="active" href="recommendations.html">📌 Recommendations</a></nav>
   </header>
   <section class="hero">
-    <div><div class="eyebrow">Capital Markets Desk</div><h1>Stock Recommendations</h1><div class="muted">Upload analysis, set entry/TP/SL, lalu monitor status otomatis berdasarkan data screener.</div></div>
+    <div><div class="eyebrow">Capital Markets Desk</div><h1>Stock Recommendations</h1><div class="muted">Tulis analisis, set entry/TP/SL, lalu monitor status otomatis berdasarkan data screener.</div></div>
   </section>
 
   <div class="grid">
@@ -34,11 +34,7 @@
           <div class="field"><label>TP2</label><input id="tp2" type="number" step="any" required></div>
         </div>
         <div class="field"><label>Stop Loss</label><input id="sl" type="number" step="any" required></div>
-        <div class="field"><label>Catatan</label><input id="note" placeholder="Optional"></div>
-        <div class="field">
-          <label>Gambar Analisis</label>
-          <div class="drop" id="drop">Klik untuk pilih gambar<input id="image" type="file" accept="image/*" hidden><div id="preview"></div></div>
-        </div>
+        <div class="field"><label>Keterangan / Analisis</label><textarea id="note" rows="6" placeholder="Contoh: Breakout resistance, volume meningkat, momentum masih positif..."></textarea></div>
         <button class="btn publish" type="submit">PUBLISH REKOMENDASI</button>
       </form>
       <p class="hint">Aturan monitoring: jika TP dan SL tersentuh pada candle yang sama, TP diprioritaskan sesuai pengaturan kamu. TP2 diprioritaskan di atas TP1 bila keduanya tercapai pada candle yang sama.</p>
@@ -58,39 +54,12 @@
 const KEY='spc_recommendations_v1';
 let recs=[];
 let market={};
-let imageData='';
 
 const $=id=>document.getElementById(id);
 const rupiah=v=>Number.isFinite(v)?new Intl.NumberFormat('id-ID',{maximumFractionDigits:2}).format(v):'—';
 
 function save(){localStorage.setItem(KEY,JSON.stringify(recs));}
 function read(){try{recs=JSON.parse(localStorage.getItem(KEY)||'[]');if(!Array.isArray(recs))recs=[]}catch{recs=[]}}
-
-function resizeImage(file){
- return new Promise((resolve,reject)=>{
-   const fr=new FileReader();
-   fr.onload=()=>{
-     const img=new Image();
-     img.onload=()=>{
-       const max=1600, scale=Math.min(1,max/Math.max(img.width,img.height));
-       const c=document.createElement('canvas'); c.width=Math.max(1,Math.round(img.width*scale)); c.height=Math.max(1,Math.round(img.height*scale));
-       c.getContext('2d').drawImage(img,0,0,c.width,c.height);
-       resolve(c.toDataURL('image/jpeg',.82));
-     };
-     img.onerror=reject; img.src=fr.result;
-   };
-   fr.onerror=reject; fr.readAsDataURL(file);
- });
-}
-
-$('drop').addEventListener('click',()=>$('image').click());
-$('image').addEventListener('change',async e=>{
- const f=e.target.files?.[0]; if(!f)return;
- try{
-   imageData=await resizeImage(f);
-   $('preview').innerHTML='<img src="'+imageData+'" alt="preview">';
- }catch(err){alert('Gagal membaca gambar.');}
-});
 
 async function loadMarket(){
  try{
@@ -144,7 +113,7 @@ function render(){
  [...recs].sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt)).forEach(r=>{
    const x=evaluate(r);
    const card=document.createElement('article'); card.className='card';
-   card.innerHTML=(r.image?'<img class="card-img" src="'+r.image+'" alt="Analysis '+r.ticker+'">':'')+
+   card.innerHTML=
    '<div class="body"><div class="head"><div><div class="ticker">'+r.ticker+'</div><div class="date">'+new Date(r.createdAt).toLocaleDateString('id-ID')+'</div></div><span class="status '+x.statusClass+'">'+x.status+'</span></div>'+
    '<div class="price">'+(x.current!=null?'Rp '+rupiah(x.current):'—')+'</div>'+
    '<div class="levels"><div class="level"><small>ENTRY</small><strong>Rp '+rupiah(r.entryMin)+'–'+rupiah(r.entryMax)+'</strong></div><div class="level"><small>TP1</small><strong>Rp '+rupiah(r.tp1)+'</strong></div><div class="level"><small>TP2</small><strong>Rp '+rupiah(r.tp2)+'</strong></div><div class="level"><small>SL</small><strong>Rp '+rupiah(r.sl)+'</strong></div></div>'+
@@ -163,7 +132,7 @@ function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':
 function editRec(id){
  const r=recs.find(x=>x.id===id); if(!r)return;
  $('ticker').value=r.ticker;$('entryMin').value=r.entryMin;$('entryMax').value=r.entryMax;$('tp1').value=r.tp1;$('tp2').value=r.tp2;$('sl').value=r.sl;$('note').value=r.note||'';
- imageData=r.image||'';$('preview').innerHTML=imageData?'<img src="'+imageData+'" alt="preview">':'';
+ 
  recs=recs.filter(x=>x.id!==id);save();render();window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -175,8 +144,8 @@ $('form').addEventListener('submit',e=>{
  if(entryMin>entryMax){alert('Entry Min harus <= Entry Max.');return}
  if(tp1<=entryMax||tp2<tp1){alert('TP harus berada di atas Entry dan TP2 >= TP1.');return}
  if(sl>=entryMin){alert('Stop Loss harus berada di bawah Entry.');return}
- recs.push({id:ticker+'-'+Date.now(),ticker,entryMin,entryMax,tp1,tp2,sl,note:$('note').value.trim(),image:imageData,createdAt:new Date().toISOString()});
- save();e.target.reset();imageData='';$('preview').innerHTML='';render();
+ recs.push({id:ticker+'-'+Date.now(),ticker,entryMin,entryMax,tp1,tp2,sl,note:$('note').value.trim(),createdAt:new Date().toISOString()});
+ save();e.target.reset();render();
 });
 
 read();await loadMarket();render();
