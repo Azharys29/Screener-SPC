@@ -13,6 +13,7 @@ OUTPUT_BARS=300
 BENCHMARK="^JKSE"
 CHUNK_SIZE=40
 ALLOWED_BOARDS={"Utama","Pengembangan"}
+ALLOWED_INDICES={"IDX30","LQ45","KOMPAS100"}
 
 def read_universe():
     out=[]
@@ -20,12 +21,13 @@ def read_universe():
         for row in csv.DictReader(line for line in f if not line.lstrip().startswith("#")):
             t=(row.get("ticker") or "").strip().upper()
             board=(row.get("board") or "").strip()
-            if not t or board not in ALLOWED_BOARDS: continue
+            indices=[x.strip().upper() for x in (row.get("indices") or "").split("|") if x.strip()]
+            if not t or board not in ALLOWED_BOARDS or not set(indices).intersection(ALLOWED_INDICES): continue
             out.append({
                 "ticker":t,
                 "name":(row.get("name") or "").strip(),
                 "sector":(row.get("sector") or "").strip(),
-                "indices":[x.strip().upper() for x in (row.get("indices") or "").split("|") if x.strip()],
+                "indices":indices,
                 "board":board
             })
     if not out: raise RuntimeError("universe.csv kosong")
