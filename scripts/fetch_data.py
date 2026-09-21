@@ -20,7 +20,7 @@ def read_universe():
             if line and not line.startswith("#"): rows.append(line)
     if not rows: raise RuntimeError("universe.csv kosong")
     header=[x.strip() for x in rows[0].split(",")]
-    need={"ticker","name","sector","indices"}
+    need={"ticker","name","sector","indices","board"}
     if not need.issubset(header): raise RuntimeError(f"Kolom kurang: {sorted(need-set(header))}")
     out=[]
     for line in rows[1:]:
@@ -29,7 +29,7 @@ def read_universe():
         d=dict(zip(header,p)); t=d.get("ticker","").upper().strip()
         if t:
             out.append({"ticker":t,"name":d.get("name","").strip(),"sector":d.get("sector","").strip(),
-                        "indices":[x.strip().upper() for x in d.get("indices","").split("|") if x.strip()]})
+                        "indices":[x.strip().upper() for x in d.get("indices","").split("|") if x.strip()],"board":d.get("board","").strip()})
     return out
 
 def get_close(frame,ticker):
@@ -76,7 +76,7 @@ def main():
             frame=frame[needed].dropna(subset=["Close"]).tail(OUTPUT_BARS)
             if len(frame)<120: raise ValueError(f"data hanya {len(frame)} bar")
             stocks.append({
-                "t":meta["ticker"],"n":meta["name"],"s":meta["sector"],"ix":meta["indices"],
+                "t":meta["ticker"],"n":meta["name"],"s":meta["sector"],"ix":meta["indices"],"board":meta["board"],
                 "mc":mcap(symbol),"b":beta(frame["Close"],bench),
                 "d":[x.strftime("%Y-%m-%d") for x in frame.index],
                 "o":pd.to_numeric(frame["Open"],errors="coerce").round(4).tolist(),
