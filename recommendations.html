@@ -186,7 +186,7 @@ if(!ready){
  $('authStatus').textContent='Supabase belum dikonfigurasi. Isi URL project dan anon/publishable key di supabase-config.js.';
  $('publishBtn').disabled=true;
 }
-if(sb)sb.auth.onAuthStateChange(async()=>{await refreshAuthUI();await renderWithAuth();});
+if(sb)sb.auth.onAuthStateChange(()=>{refreshAuthUI();renderWithAuth();});
 await refreshAuthUI();
 await loadRecs();
 await loadMarket();
