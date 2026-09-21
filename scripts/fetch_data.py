@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import json, math, os
+import csv, json, math, os, time
 from datetime import datetime, timezone
 import numpy as np
 import pandas as pd
@@ -11,25 +11,22 @@ UNIVERSE_PATH=os.path.join(ROOT,"universe.csv")
 OUTPUT_PATH=os.path.join(ROOT,"data","screener.json")
 OUTPUT_BARS=300
 BENCHMARK="^JKSE"
+CHUNK_SIZE=40
 
 def read_universe():
-    rows=[]
-    with open(UNIVERSE_PATH,"r",encoding="utf-8-sig") as f:
-        for line in f:
-            line=line.strip()
-            if line and not line.startswith("#"): rows.append(line)
-    if not rows: raise RuntimeError("universe.csv kosong")
-    header=[x.strip() for x in rows[0].split(",")]
-    need={"ticker","name","sector","indices","board"}
-    if not need.issubset(header): raise RuntimeError(f"Kolom kurang: {sorted(need-set(header))}")
     out=[]
-    for line in rows[1:]:
-        p=[x.strip() for x in line.split(",")]
-        p += [""]*max(0,len(header)-len(p))
-        d=dict(zip(header,p)); t=d.get("ticker","").upper().strip()
-        if t:
-            out.append({"ticker":t,"name":d.get("name","").strip(),"sector":d.get("sector","").strip(),
-                        "indices":[x.strip().upper() for x in d.get("indices","").split("|") if x.strip()],"board":d.get("board","").strip()})
+    with open(UNIVERSE_PATH,"r",encoding="utf-8-sig",newline="") as f:
+        for row in csv.DictReader(line for line in f if not line.lstrip().startswith("#")):
+            t=(row.get("ticker") or "").strip().upper()
+            if not t: continue
+            out.append({
+                "ticker":t,
+                "name":(row.get("name") or "").strip(),
+                "sector":(row.get("sector") or "").strip(),
+                "indices":[x.strip().upper() for x in (row.get("indices") or "").split("|") if x.strip()],
+                "board":(row.get("board") or "").strip()
+            })
+    if not out: raise RuntimeError("universe.csv kosong")
     return out
 
 def get_close(frame,ticker):
@@ -48,36 +45,50 @@ def beta(stock,bench):
     v=float(x.iloc[:,0].cov(x.iloc[:,1]))/var
     return round(v,4) if math.isfinite(v) else None
 
-def mcap(symbol):
-    try:
-        v=yf.Ticker(symbol).fast_info.get("market_cap")
-        if v is not None and math.isfinite(float(v)): return float(v)
-    except Exception: pass
-    try:
-        v=yf.Ticker(symbol).get_info().get("marketCap")
-        if v is not None and math.isfinite(float(v)): return float(v)
-    except Exception: pass
-    return None
-
 def main():
     universe=read_universe()
     symbols=[f"{x['ticker']}.JK" for x in universe]
+
     benchdf=yf.download(BENCHMARK,period="2y",interval="1d",auto_adjust=False,progress=False,threads=False)
     if benchdf.empty: raise RuntimeError("Data IHSG tidak tersedia")
     bench=get_close(benchdf,BENCHMARK).dropna()
-    data=yf.download(symbols,period="2y",interval="1d",auto_adjust=False,progress=False,threads=True,group_by="ticker")
+
+    # Yahoo/yfinance can return empty data or trigger throttling when ~1,000
+    # symbols are requested in one call. Download in small sequential chunks.
+    frames={}
+    for start in range(0,len(symbols),CHUNK_SIZE):
+        chunk=symbols[start:start+CHUNK_SIZE]
+        print(f"Download batch {start+1}-{start+len(chunk)} / {len(symbols)}")
+        try:
+            batch=yf.download(chunk,period="2y",interval="1d",auto_adjust=False,
+                              progress=False,threads=False,group_by="ticker")
+            if not batch.empty:
+                if isinstance(batch.columns,pd.MultiIndex):
+                    for symbol in chunk:
+                        if symbol in batch.columns.get_level_values(0):
+                            frames[symbol]=batch[symbol]
+                        elif symbol in batch.columns.get_level_values(-1):
+                            frames[symbol]=batch.xs(symbol,axis=1,level=-1)
+                elif len(chunk)==1:
+                    frames[chunk[0]]=batch
+        except Exception as e:
+            print(f"Batch gagal: {e}")
+        if start + CHUNK_SIZE < len(symbols):
+            time.sleep(1)
+
     stocks=[]; skipped=[]
     for i,meta in enumerate(universe,1):
         symbol=f"{meta['ticker']}.JK"
         try:
-            frame=data[symbol] if isinstance(data.columns,pd.MultiIndex) and symbol in data.columns.get_level_values(0) else data
+            frame=frames.get(symbol)
+            if frame is None: raise ValueError("data tidak tersedia dari Yahoo")
             needed=["Open","High","Low","Close","Volume"]
             if not all(c in frame.columns for c in needed): raise ValueError("OHLCV tidak lengkap")
             frame=frame[needed].dropna(subset=["Close"]).tail(OUTPUT_BARS)
             if len(frame)<120: raise ValueError(f"data hanya {len(frame)} bar")
             stocks.append({
                 "t":meta["ticker"],"n":meta["name"],"s":meta["sector"],"ix":meta["indices"],"board":meta["board"],
-                "mc":mcap(symbol),"b":beta(frame["Close"],bench),
+                "mc":None,"b":beta(frame["Close"],bench),
                 "d":[x.strftime("%Y-%m-%d") for x in frame.index],
                 "o":pd.to_numeric(frame["Open"],errors="coerce").round(4).tolist(),
                 "h":pd.to_numeric(frame["High"],errors="coerce").round(4).tolist(),
@@ -89,13 +100,15 @@ def main():
         except Exception as e:
             skipped.append({"ticker":meta["ticker"],"reason":str(e)})
             print(f"[{i}/{len(universe)}] {meta['ticker']}: SKIP — {e}")
+
     if not stocks: raise RuntimeError("Tidak ada saham yang berhasil diambil")
     asof=max(s["d"][-1] for s in stocks)
     payload={"asof":asof,"generated_at":datetime.now(timezone.utc).isoformat().replace("+00:00","Z"),
              "source":"Yahoo Finance via yfinance","benchmark":BENCHMARK,"bars":OUTPUT_BARS,
              "stocks":stocks,"skipped":skipped}
     os.makedirs(os.path.dirname(OUTPUT_PATH),exist_ok=True)
-    with open(OUTPUT_PATH,"w",encoding="utf-8") as f: json.dump(payload,f,ensure_ascii=False,separators=(",",":"))
+    with open(OUTPUT_PATH,"w",encoding="utf-8") as f:
+        json.dump(payload,f,ensure_ascii=False,separators=(",",":"))
     print(f"Selesai: {OUTPUT_PATH}; stocks={len(stocks)} skipped={len(skipped)} asof={asof}")
 
 if __name__=="__main__": main()
