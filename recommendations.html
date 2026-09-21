@@ -23,6 +23,14 @@
   <div class="grid">
     <aside class="panel">
       <h2>+ Tambah Rekomendasi</h2>
+      <div id="authBox" class="field" style="border:1px solid var(--line-soft);padding:12px;border-radius:8px;margin-bottom:16px">
+        <label>Admin Login</label>
+        <input id="authEmail" type="email" placeholder="Email admin" autocomplete="username" style="margin-bottom:8px">
+        <input id="authPassword" type="password" placeholder="Password" autocomplete="current-password">
+        <button id="loginBtn" class="btn" type="button" style="margin-top:8px;width:100%">LOGIN ADMIN</button>
+        <button id="logoutBtn" class="btn" type="button" style="margin-top:8px;width:100%;display:none">LOGOUT</button>
+        <div id="authStatus" class="hint" style="margin-top:8px">Mode publik: semua user dapat melihat rekomendasi. Login diperlukan untuk publish/edit/hapus.</div>
+      </div>
       <form id="form">
         <div class="field"><label>Ticker</label><input id="ticker" required placeholder="BBCA" maxlength="12"></div>
         <div class="row">
@@ -35,10 +43,10 @@
         </div>
         <div class="field"><label>Stop Loss</label><input id="sl" type="number" step="any" required></div>
         <div class="field"><label>Keterangan / Analisis</label><textarea id="note" rows="6" placeholder="Contoh: Breakout resistance, volume meningkat, momentum masih positif..."></textarea></div>
-        <button class="btn publish" type="submit">PUBLISH REKOMENDASI</button>
+        <button id="publishBtn" class="btn publish" type="submit">PUBLISH REKOMENDASI</button>
       </form>
       <p class="hint">Aturan monitoring: jika TP dan SL tersentuh pada candle yang sama, TP diprioritaskan sesuai pengaturan kamu. TP2 diprioritaskan di atas TP1 bila keduanya tercapai pada candle yang sama.</p>
-      <p class="hint">Data rekomendasi disimpan di browser ini (localStorage). Data harga tetap diperbarui dari <code>data/screener.json</code>.</p>
+      <p class="hint">Rekomendasi disimpan permanen di database Supabase dan dapat dilihat semua user. Data harga tetap diperbarui dari <code>data/screener.json</code>.</p>
     </aside>
 
     <section>
@@ -49,106 +57,141 @@
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
 <script>
 (async()=> {
-const KEY='spc_recommendations_v1';
-let recs=[];
-let market={};
+const cfg=window.SPC_SUPABASE||{};
+const ready=cfg.url && !cfg.url.includes('PASTE_YOUR') && cfg.anonKey && !cfg.anonKey.includes('PASTE_YOUR');
+const sb=ready?window.supabase.createClient(cfg.url,cfg.anonKey):null;
+let recs=[],market={},editingId=null;
 
 const $=id=>document.getElementById(id);
 const rupiah=v=>Number.isFinite(v)?new Intl.NumberFormat('id-ID',{maximumFractionDigits:2}).format(v):'—';
 
-function save(){localStorage.setItem(KEY,JSON.stringify(recs));}
-function read(){try{recs=JSON.parse(localStorage.getItem(KEY)||'[]');if(!Array.isArray(recs))recs=[]}catch{recs=[]}}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
 
+async function getUser(){
+ if(!sb)return null;
+ const {data}=await sb.auth.getUser();
+ return data?.user||null;
+}
+async function refreshAuthUI(){
+ const user=await getUser();
+ const logged=!!user;
+ $('loginBtn').style.display=logged?'none':'block';
+ $('logoutBtn').style.display=logged?'block':'none';
+ $('authEmail').style.display=logged?'none':'block';
+ $('authPassword').style.display=logged?'none':'block';
+ $('authStatus').textContent=logged?'Login admin aktif: '+user.email:'Mode publik: semua user dapat melihat rekomendasi. Login diperlukan untuk publish/edit/hapus.';
+ $('publishBtn').disabled=!logged;
+ $('publishBtn').title=logged?'':'Login admin diperlukan';
+}
+async function loadRecs(){
+ if(!sb){recs=[];return;}
+ const {data,error}=await sb.from('recommendations').select('*').order('created_at',{ascending:false});
+ if(error){$('lastUpdate').textContent='Database error: '+error.message;recs=[];return;}
+ recs=(data||[]).map(r=>({id:r.id,ticker:r.ticker,entryMin:Number(r.entry_min),entryMax:Number(r.entry_max),tp1:Number(r.tp1),tp2:Number(r.tp2),sl:Number(r.sl),note:r.note||'',createdAt:r.created_at,createdBy:r.created_by}));
+}
 async function loadMarket(){
  try{
    const r=await fetch('data/screener.json',{cache:'no-cache'});
    if(!r.ok)throw new Error('HTTP '+r.status);
    const d=await r.json();
    market={}; (d.stocks||[]).forEach(s=>{
-     const prices=s.c||[], dates=s.d||[], opens=s.o||[], highs=s.h||[], lows=s.l||[];
+     const prices=s.c||[],dates=s.d||[],opens=s.o||[],highs=s.h||[],lows=s.l||[];
      market[s.t]={ticker:s.t,close:prices[prices.length-1],dates,opens,highs,lows,closes:prices,asof:d.asof};
    });
    $('lastUpdate').textContent='Market as of '+(d.asof||'—');
  }catch(e){$('lastUpdate').textContent='Data screener belum tersedia';}
 }
-
 function evaluate(r){
  const m=market[r.ticker];
  if(!m||!m.closes?.length)return {...r,status:'NO DATA',statusClass:'s-wait',current:null,returnPct:null};
-
- let state='WAITING';
- let hitDate=null;
- const entryMin=Math.min(r.entryMin,r.entryMax), entryMax=Math.max(r.entryMin,r.entryMax);
+ let state='WAITING',hitDate=null;
+ const entryMin=Math.min(r.entryMin,r.entryMax),entryMax=Math.max(r.entryMin,r.entryMax);
  const targets=[{name:'TP1',v:Number(r.tp1)},{name:'TP2',v:Number(r.tp2)}].sort((a,b)=>a.v-b.v);
  const sl=Number(r.sl);
-
  for(let i=0;i<m.closes.length;i++){
-   const hi=Number(m.highs[i]), lo=Number(m.lows[i]), cl=Number(m.closes[i]);
+   const hi=Number(m.highs[i]),lo=Number(m.lows[i]);
    if(!Number.isFinite(hi)||!Number.isFinite(lo))continue;
-
-   if(state==='WAITING' && hi>=entryMin && lo<=entryMax) state='ENTRY';
-
-   if(state==='ENTRY' || state==='TP1 HIT'){
-     // TP has priority over SL on the same candle.
+   if(state==='WAITING'&&hi>=entryMin&&lo<=entryMax)state='ENTRY';
+   if(state==='ENTRY'||state==='TP1 HIT'){
      if(hi>=targets[1].v){state='TP2 HIT';hitDate=m.dates[i];}
-     else if(state==='ENTRY' && hi>=targets[0].v){state='TP1 HIT';hitDate=m.dates[i];}
-     else if(state==='ENTRY' && lo<=sl){state='STOP LOSS';hitDate=m.dates[i];}
+     else if(state==='ENTRY'&&hi>=targets[0].v){state='TP1 HIT';hitDate=m.dates[i];}
+     else if(state==='ENTRY'&&lo<=sl){state='STOP LOSS';hitDate=m.dates[i];}
    }
  }
- // If an old recommendation is already at TP2/TP1, retain that milestone.
  const current=Number(m.close);
- let ret=null;
- if(Number.isFinite(current)&&Number.isFinite(entryMin)&&entryMin>0)ret=(current-entryMin)/entryMin*100;
- let cls=state==='STOP LOSS'?'s-sl':state.startsWith('TP')?'s-tp':state==='ENTRY'?'s-entry':state==='CLOSED'?'s-closed':'s-wait';
+ const ret=Number.isFinite(current)&&entryMin>0?(current-entryMin)/entryMin*100:null;
+ const cls=state==='STOP LOSS'?'s-sl':state.startsWith('TP')?'s-tp':state==='ENTRY'?'s-entry':state==='CLOSED'?'s-closed':'s-wait';
  return {...r,status:state,statusClass:cls,current,returnPct:ret,hitDate};
 }
-
 function render(){
- const root=$('cards'); root.innerHTML='';
+ const root=$('cards');root.innerHTML='';
  if(!recs.length){$('empty').hidden=false;return}
  $('empty').hidden=true;
- [...recs].sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt)).forEach(r=>{
-   const x=evaluate(r);
-   const card=document.createElement('article'); card.className='card';
-   card.innerHTML=
-   '<div class="body"><div class="head"><div><div class="ticker">'+r.ticker+'</div><div class="date">'+new Date(r.createdAt).toLocaleDateString('id-ID')+'</div></div><span class="status '+x.statusClass+'">'+x.status+'</span></div>'+
+ [...recs].forEach(r=>{
+   const x=evaluate(r),card=document.createElement('article');card.className='card';
+   card.innerHTML='<div class="body"><div class="head"><div><div class="ticker">'+escapeHtml(r.ticker)+'</div><div class="date">'+new Date(r.createdAt).toLocaleDateString('id-ID')+'</div></div><span class="status '+x.statusClass+'">'+x.status+'</span></div>'+
    '<div class="price">'+(x.current!=null?'Rp '+rupiah(x.current):'—')+'</div>'+
    '<div class="levels"><div class="level"><small>ENTRY</small><strong>Rp '+rupiah(r.entryMin)+'–'+rupiah(r.entryMax)+'</strong></div><div class="level"><small>TP1</small><strong>Rp '+rupiah(r.tp1)+'</strong></div><div class="level"><small>TP2</small><strong>Rp '+rupiah(r.tp2)+'</strong></div><div class="level"><small>SL</small><strong>Rp '+rupiah(r.sl)+'</strong></div></div>'+
    (x.returnPct!=null?'<div class="meta">Return vs Entry Min: '+(x.returnPct>=0?'+':'')+x.returnPct.toFixed(2)+'%</div>':'')+
-   (r.note?'<div class="meta" style="margin-top:8px">'+escapeHtml(r.note)+'</div>':'')+
-   (x.hitDate?'<div class="meta" style="margin-top:6px">Milestone: '+x.hitDate+'</div>':'')+
-   '<div class="actions"><button class="btn" data-edit="'+r.id+'">Edit</button><button class="btn danger" data-delete="'+r.id+'">Hapus</button></div></div>';
+   (r.note?'<div class="meta" style="margin-top:8px">'+escapeHtml(r.note).replace(/\n/g,'<br>')+'</div>':'')+
+   (x.hitDate?'<div class="meta" style="margin-top:6px">Milestone: '+escapeHtml(x.hitDate)+'</div>':'')+
+   (awaitableUser?'<div class="actions"><button class="btn" data-edit="'+r.id+'">Edit</button><button class="btn danger" data-delete="'+r.id+'">Hapus</button></div>':'')+
+   '</div>';
    root.appendChild(card);
  });
- root.querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>{if(confirm('Hapus rekomendasi ini?')){recs=recs.filter(x=>x.id!==b.dataset.delete);save();render();}});
+ root.querySelectorAll('[data-delete]').forEach(b=>b.onclick=async()=>{
+   if(!confirm('Hapus rekomendasi ini?'))return;
+   const {error}=await sb.from('recommendations').delete().eq('id',b.dataset.delete);
+   if(error)alert(error.message);else{await loadRecs();render();}
+ });
  root.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>editRec(b.dataset.edit));
 }
-
-function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
-
+let awaitableUser=false;
+async function renderWithAuth(){awaitableUser=!!(await getUser());render();}
 function editRec(id){
- const r=recs.find(x=>x.id===id); if(!r)return;
+ const r=recs.find(x=>x.id===id);if(!r)return;
+ editingId=id;
  $('ticker').value=r.ticker;$('entryMin').value=r.entryMin;$('entryMax').value=r.entryMax;$('tp1').value=r.tp1;$('tp2').value=r.tp2;$('sl').value=r.sl;$('note').value=r.note||'';
- 
- recs=recs.filter(x=>x.id!==id);save();render();window.scrollTo({top:0,behavior:'smooth'});
+ $('publishBtn').textContent='UPDATE REKOMENDASI';window.scrollTo({top:0,behavior:'smooth'});
 }
-
-$('form').addEventListener('submit',e=>{
+$('loginBtn').onclick=async()=>{
+ if(!sb){alert('Isi supabase-config.js terlebih dahulu.');return;}
+ const email=$('authEmail').value.trim(),password=$('authPassword').value;
+ const {error}=await sb.auth.signInWithPassword({email,password});
+ if(error)alert(error.message);else{await refreshAuthUI();await renderWithAuth();}
+};
+$('logoutBtn').onclick=async()=>{await sb.auth.signOut();editingId=null;await refreshAuthUI();await renderWithAuth();};
+$('form').addEventListener('submit',async e=>{
  e.preventDefault();
+ const user=await getUser();if(!user){alert('Login admin terlebih dahulu.');return;}
  const ticker=$('ticker').value.trim().toUpperCase();
  const entryMin=Number($('entryMin').value),entryMax=Number($('entryMax').value),tp1=Number($('tp1').value),tp2=Number($('tp2').value),sl=Number($('sl').value);
  if(!ticker||![entryMin,entryMax,tp1,tp2,sl].every(Number.isFinite)){alert('Lengkapi semua level.');return}
  if(entryMin>entryMax){alert('Entry Min harus <= Entry Max.');return}
  if(tp1<=entryMax||tp2<tp1){alert('TP harus berada di atas Entry dan TP2 >= TP1.');return}
  if(sl>=entryMin){alert('Stop Loss harus berada di bawah Entry.');return}
- recs.push({id:ticker+'-'+Date.now(),ticker,entryMin,entryMax,tp1,tp2,sl,note:$('note').value.trim(),createdAt:new Date().toISOString()});
- save();e.target.reset();render();
+ const payload={ticker,entry_min:entryMin,entry_max:entryMax,tp1,tp2,sl,note:$('note').value.trim()};
+ let result;
+ if(editingId) result=await sb.from('recommendations').update(payload).eq('id',editingId);
+ else result=await sb.from('recommendations').insert({...payload,created_by:user.id});
+ if(result.error){alert(result.error.message);return}
+ editingId=null;$('publishBtn').textContent='PUBLISH REKOMENDASI';e.target.reset();
+ await loadRecs();await renderWithAuth();
 });
-
-read();await loadMarket();render();
-setInterval(async()=>{await loadMarket();render()},60000);
+if(!ready){
+ $('authStatus').textContent='Supabase belum dikonfigurasi. Isi URL project dan anon/publishable key di supabase-config.js.';
+ $('publishBtn').disabled=true;
+}
+if(sb)sb.auth.onAuthStateChange(async()=>{await refreshAuthUI();await renderWithAuth();});
+await refreshAuthUI();
+await loadRecs();
+await loadMarket();
+await renderWithAuth();
+setInterval(async()=>{await loadMarket();render();},60000);
 })();
 </script>
 </body>
