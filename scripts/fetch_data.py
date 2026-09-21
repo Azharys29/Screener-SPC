@@ -12,19 +12,21 @@ OUTPUT_PATH=os.path.join(ROOT,"data","screener.json")
 OUTPUT_BARS=300
 BENCHMARK="^JKSE"
 CHUNK_SIZE=40
+ALLOWED_BOARDS={"Utama","Pengembangan"}
 
 def read_universe():
     out=[]
     with open(UNIVERSE_PATH,"r",encoding="utf-8-sig",newline="") as f:
         for row in csv.DictReader(line for line in f if not line.lstrip().startswith("#")):
             t=(row.get("ticker") or "").strip().upper()
-            if not t: continue
+            board=(row.get("board") or "").strip()
+            if not t or board not in ALLOWED_BOARDS: continue
             out.append({
                 "ticker":t,
                 "name":(row.get("name") or "").strip(),
                 "sector":(row.get("sector") or "").strip(),
                 "indices":[x.strip().upper() for x in (row.get("indices") or "").split("|") if x.strip()],
-                "board":(row.get("board") or "").strip()
+                "board":board
             })
     if not out: raise RuntimeError("universe.csv kosong")
     return out
