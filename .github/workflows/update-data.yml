@@ -2,6 +2,11 @@ name: Update data screener
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "scripts/fetch_data.py"
+      - "universe.csv"
+      - ".github/workflows/update-data.yml"
   schedule:
     - cron: "30 10 * * 1-5"
 
