@@ -102,7 +102,7 @@ def analyze(s):
     k, d = stochastic(h, l, c, P["sk"], P["ss"], P["sd"])
     fast, slow = ema(c, P["mf"]), ema(c, P["ms"])
     mac_line = [a-b if finite(a) and finite(b) else float("nan") for a,b in zip(fast,slow)]
-    sig = ema([0 if not finite(x) else x for x in mac_line], P["mg"])
+    sig = ema(mac_line, P["mg"])
     hist = [a-b if finite(a) and finite(b) else float("nan") for a,b in zip(mac_line,sig)]
     i = n-1
     vals = [ra[i], ra[i-1], k[i], d[i], hist[i], hist[i-1]]
