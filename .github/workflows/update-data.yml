@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - "scripts/fetch_data.py"
+      - "scripts/build_signals.py"
       - "universe.csv"
       - ".github/workflows/update-data.yml"
   schedule:
